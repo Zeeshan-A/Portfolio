@@ -495,3 +495,79 @@ a:hover .arr-ne,button:hover .arr-ne{transform:translate(3px,-3px)}
 .ds-more{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-12);padding-top:var(--space-6);border-top:1px solid var(--line)}
 .ds-more p{margin:0}
 @container page (max-width:720px){.ds-more{flex-direction:column;align-items:flex-start}}
+
+/* Kind words: auto-rotating recommendations (CSS only, pauses on hover) */
+.q-stage{display:grid;gap:var(--space-8)}
+.q-slide{grid-area:1/1;margin:0;display:flex;flex-direction:column;gap:var(--space-8)}
+.q-slide blockquote{margin:0}
+.q-text{font-size:clamp(17px,1.55cqi,22px);line-height:1.5;font-weight:500;letter-spacing:-0.01em;margin:0;max-width:60ch}
+.q-who{display:flex;flex-direction:column;gap:var(--space-1)}
+.q-name{font-weight:600;font-size:17px}
+.q-rel{font-size:14px}
+.q-dots{grid-area:2/1;display:flex;gap:var(--space-2)}
+.q-dots span{position:relative;width:40px;height:2px;background:var(--line);overflow:hidden}
+.q-dots span::after{content:"";position:absolute;inset:0;background:var(--signal);transform:scaleX(0);transform-origin:left}
+@keyframes q-show{0%{opacity:0;transform:translateY(10px)}2.5%{opacity:1;transform:none}22.5%{opacity:1;transform:none}25%{opacity:0;transform:translateY(-10px)}100%{opacity:0}}
+@keyframes q-bar{0%{transform:scaleX(0)}25%{transform:scaleX(1)}25.01%,100%{transform:scaleX(0)}}
+@media (prefers-reduced-motion:no-preference){
+  .q-slide{animation:q-show 24s linear infinite both}
+  .q-slide:nth-of-type(2){animation-delay:6s}
+  .q-slide:nth-of-type(3){animation-delay:12s}
+  .q-slide:nth-of-type(4){animation-delay:18s}
+  .q-dots span::after{animation:q-bar 24s linear infinite both}
+  .q-dots span:nth-child(2)::after{animation-delay:6s}
+  .q-dots span:nth-child(3)::after{animation-delay:12s}
+  .q-dots span:nth-child(4)::after{animation-delay:18s}
+  .q-stage:hover .q-slide,.q-stage:hover .q-dots span::after,.q-stage:focus-within .q-slide,.q-stage:focus-within .q-dots span::after{animation-play-state:paused}
+}
+@media (prefers-reduced-motion:reduce){
+  .q-slide{grid-area:auto;padding-bottom:var(--space-8);border-bottom:1px solid var(--line)}
+  .q-dots{display:none}
+}
+
+/* Recognition badges */
+.rec-body{display:flex;flex-direction:column;gap:var(--space-12);min-width:0}
+.badges{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-6)}
+.badges li{display:flex;flex-direction:column;gap:var(--space-2);align-items:flex-start}
+.badges img{display:block;width:100%;max-width:126px;height:auto;aspect-ratio:1;object-fit:contain;margin-bottom:var(--space-3);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.badges img:not(.b-round){border:1px solid var(--line)}
+.badges li:hover img{transform:translateY(-4px) rotate(-2deg)}
+.b-name{font-weight:600;font-size:15px}
+@media (prefers-reduced-motion:reduce){.badges li:hover img{transform:none}}
+@container page (max-width:720px){.badges{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4)}.badges .label{font-size:10px}.b-name{font-size:13px}}
+#recognition{align-items:start}
+.badges .label{white-space:normal;line-height:1.5}
+
+/* Experience as a journey: current role first, the rest on demand */
+.exp-journey{display:flex;flex-direction:column;gap:var(--space-6);align-items:flex-start;min-width:0}
+#about .about-grid{align-items:start}
+.journey-list{list-style:none;margin:0;padding:0;width:100%}
+.journey-list>sc-if,.journey-list>.jr-extra{display:contents}
+.jr{position:relative;padding:0 0 var(--space-12) var(--space-12)}
+.jr::before{content:"";position:absolute;left:7px;top:22px;bottom:-2px;width:2px;background:var(--line)}
+.jr.jr-last{padding-bottom:var(--space-2)}
+.jr.jr-last::before{background:linear-gradient(var(--line),transparent)}
+.jr-dot{position:absolute;left:0;top:4px;width:16px;height:16px;border-radius:50%;border:2px solid var(--line);background:var(--bg);box-sizing:border-box}
+.jr.is-current .jr-dot{border-color:var(--signal);background:var(--signal);box-shadow:0 0 0 4px rgba(37,99,235,.15)}
+.jr-body{display:flex;flex-direction:column;gap:var(--space-2)}
+.jr-body .cv-when{display:inline-flex;align-items:center;gap:var(--space-3);flex-wrap:wrap;color:var(--muted)}
+.jr-now{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--signal-ink);border:1px solid var(--signal);padding:2px var(--space-2)}
+.jr-more{margin-left:var(--space-12)}
+@media (prefers-reduced-motion:no-preference){
+  .jr.is-current .jr-dot::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--signal);opacity:0;animation:jr-pulse 2.4s ease-out infinite}
+  .journey-list>sc-if>.jr,.journey-list>.jr-extra>.jr{animation:jr-in .45s cubic-bezier(.2,.7,.2,1) both}
+  .journey-list>sc-if>.jr:nth-child(2),.journey-list>.jr-extra>.jr:nth-child(2){animation-delay:.08s}
+  .journey-list>sc-if>.jr:nth-child(3),.journey-list>.jr-extra>.jr:nth-child(3){animation-delay:.16s}
+}
+@keyframes jr-pulse{0%{opacity:.6;transform:scale(.7)}100%{opacity:0;transform:scale(1.6)}}
+@keyframes jr-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@container page (max-width:720px){.jr{padding-left:var(--space-8)}.jr-more{margin-left:var(--space-8)}}
+
+/* Badges: hover lift, tilt and a light sweep */
+.b-img{position:relative;display:block;width:100%;max-width:126px;margin-bottom:var(--space-3);overflow:hidden;border:1px solid var(--line);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s ease}
+.b-img img{max-width:none!important;margin:0!important;border:0!important;transform:none!important}
+.b-img::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-120%);pointer-events:none}
+.badges li:hover .b-img{transform:translateY(-6px) scale(1.06) rotate(-2deg);box-shadow:0 18px 32px -16px rgba(11,12,14,.45)}
+.badges li:hover .b-img::after{transition:transform .8s ease;transform:translateX(120%)}
+.badges li:nth-child(2):hover .b-img{transform:translateY(-6px) scale(1.06) rotate(2deg)}
+@media (prefers-reduced-motion:reduce){.b-img{transition:none}.badges li:hover .b-img{transform:none;box-shadow:none}.b-img::after{display:none}}

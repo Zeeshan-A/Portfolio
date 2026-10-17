@@ -121,6 +121,21 @@
     });
   });
 
+  // Home: experience journey
+  document.querySelectorAll('[data-toggle-exp]').forEach(function (btn) {
+    var extra = document.querySelector('[data-exp-extra]');
+    var label = btn.querySelector('[data-exp-label]');
+    var arr = btn.querySelector('.arr');
+    btn.addEventListener('click', function () {
+      if (!extra) return;
+      var open = extra.hidden;
+      extra.hidden = !open;
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (label) label.textContent = open ? 'Show less' : 'Show full journey (3 more)';
+      if (arr) { arr.textContent = open ? '\u2191' : '\u2193'; arr.className = 'arr ' + (open ? 'arr-u' : 'arr-d'); }
+    });
+  });
+
   // Copy email
   document.querySelectorAll('[data-copy-email]').forEach(function (btn) {
     btn.addEventListener('click', function () {
