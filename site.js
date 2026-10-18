@@ -136,6 +136,43 @@
     });
   });
 
+
+  // Home: design-thinking journey fallback when scroll-driven animation isn't supported
+  var dtl = document.querySelector('.dt-steps');
+  if (dtl && !calm && !(window.CSS && CSS.supports && CSS.supports('animation-timeline: view()'))) {
+    dtl.classList.add('js-dt');
+    var dsteps = dtl.querySelectorAll('.dt-step');
+    var dtick = function () {
+      var vh = window.innerHeight;
+      var trk = dtl.closest('.dt-track'), stg = trk && trk.querySelector('.dt-stage');
+      if (stg && getComputedStyle(stg).position === 'sticky') {
+        var tr = trk.getBoundingClientRect(), span = tr.height - vh, p = span > 0 ? -tr.top / span : 0;
+        var on = [-1, 0.16, 0.34, 0.52, 0.70], ln = [0.08, 0.26, 0.44, 0.62];
+        dsteps.forEach(function (el, i) {
+          el.classList.toggle('is-on', i === 0 ? tr.top < vh * 0.4 : p >= on[i]);
+          el.classList.toggle('is-linked', i < 4 && p >= ln[i]);
+        });
+        return;
+      }
+      var row = dsteps.length > 1 && Math.abs(dsteps[0].getBoundingClientRect().top - dsteps[1].getBoundingClientRect().top) < 4;
+      var lt = dtl.getBoundingClientRect().top;
+      dsteps.forEach(function (el, i) {
+        var t = row ? lt + i * vh * 0.13 : el.getBoundingClientRect().top;
+        el.classList.toggle('is-on', t < vh * 0.85);
+        el.classList.toggle('is-linked', row ? lt + (i + 0.6) * vh * 0.13 < vh * 0.85 : t < vh * 0.45);
+      });
+    };
+    window.addEventListener('scroll', dtick, { passive: true }); window.addEventListener('resize', dtick); dtick();
+  }
+
+  // Section titles turn blue while their section is in view (fallback for browsers without scroll timelines)
+  if (!(window.CSS && CSS.supports && CSS.supports('animation-timeline: view()')) && 'IntersectionObserver' in window) {
+    var sio2 = new IntersectionObserver(function (ents) {
+      ents.forEach(function (en) { var l = en.target.querySelector('.sec-label'); if (l) l.classList.toggle('is-current', en.isIntersecting); });
+    }, { rootMargin: '-35% 0px -45% 0px' });
+    document.querySelectorAll('section').forEach(function (sec) { if (sec.querySelector('.sec-label')) sio2.observe(sec); });
+  }
+
   // Copy email
   document.querySelectorAll('[data-copy-email]').forEach(function (btn) {
     btn.addEventListener('click', function () {

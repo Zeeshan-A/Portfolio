@@ -800,3 +800,143 @@ a:hover .arr-ne,button:hover .arr-ne{transform:translate(3px,-3px)}
 .btn:hover::before,.btn:focus-visible::before{opacity:1;animation:btn-sweep 1.3s linear infinite}
 @keyframes btn-sweep{to{--btn-a:360deg}}
 @media (prefers-reduced-motion:reduce){.btn:hover::before,.btn:focus-visible::before{animation:none}}
+
+/* home: design thinking journey on white, a soft glow drifting behind, one step per scroll */
+.dt-band{position:relative;isolation:isolate;overflow:clip;background:#FFFFFF}
+.dt-glow{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.dt-glow span{position:absolute;width:44vw;max-width:620px;aspect-ratio:1;border-radius:50%;filter:blur(70px);opacity:.55}
+.dt-glow span:nth-child(1){left:-8%;top:8%;background:radial-gradient(circle,rgba(37,99,235,.22),transparent 65%);animation:dt-drift-a 22s ease-in-out infinite alternate}
+.dt-glow span:nth-child(2){right:-10%;top:38%;background:radial-gradient(circle,rgba(96,165,250,.24),transparent 65%);animation:dt-drift-b 26s ease-in-out infinite alternate}
+.dt-glow span:nth-child(3){left:30%;bottom:-12%;background:radial-gradient(circle,rgba(56,189,248,.16),transparent 65%);animation:dt-drift-c 30s ease-in-out infinite alternate}
+@keyframes dt-drift-a{to{transform:translate(18vw,22vh) scale(1.15)}}
+@keyframes dt-drift-b{to{transform:translate(-20vw,-16vh) scale(.9)}}
+@keyframes dt-drift-c{to{transform:translate(-14vw,-26vh) scale(1.1)}}
+.dt-lead{margin:0;color:var(--muted);font-size:16px;line-height:1.65}
+/* horizontal journey: node on top, card below, a thread joining each node to the next */
+.dt-steps{--node:52px;--gap:var(--space-6);list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--gap);view-timeline-name:--dt}
+.dt-step{position:relative;display:flex;flex-direction:column;gap:var(--space-6)}
+.dt-node{position:relative;z-index:1;display:grid;place-items:center;width:var(--node);height:var(--node);border-radius:50%;background:#FFFFFF;border:2px solid var(--signal);box-shadow:0 0 0 6px rgba(37,99,235,.08),0 8px 22px -8px rgba(37,99,235,.45)}
+.dt-node .mono{font-size:13px;font-weight:600;color:var(--signal-ink)}
+.dt-body{position:relative;flex:1;display:flex;flex-direction:column;gap:var(--space-2);padding:var(--space-6) var(--space-5,20px);background:#FFFFFF;border:1px solid var(--line);box-shadow:0 18px 40px -28px rgba(37,99,235,.45);transition:border-color .3s ease,box-shadow .3s ease}
+.dt-tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--signal-ink)}
+.dt-body .h-item{font-size:clamp(18px,1.5cqi,21px)}
+.dt-body p{margin:0;font-size:14px;line-height:1.6;color:var(--muted)}
+.dt-step:not(:last-child)::after{content:"";position:absolute;top:calc(var(--node) / 2 - 1px);left:calc(var(--node) + 8px);right:calc(-1 * var(--gap) + 8px);height:2px;background:linear-gradient(90deg,#2563EB,rgba(37,99,235,.3));box-shadow:0 0 10px rgba(37,99,235,.35);transform-origin:0 50%}
+/* hover: a blue line sweeps across the top, then down the left side */
+.dt-body:hover{border-color:rgba(37,99,235,.45);box-shadow:0 20px 42px -28px rgba(37,99,235,.5)}
+@keyframes dt-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes dt-pop{from{opacity:0}to{opacity:1}}
+@keyframes dt-draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes dt-draw-y{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@media (prefers-reduced-motion:reduce){.dt-glow span{animation:none}.dt-body{transition:none}}
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    /* one step per stretch of scroll: node pops, card rises, then the thread runs to the next node */
+    .dt-step .dt-node{animation:dt-pop linear both;animation-timeline:--dt}
+    .dt-step .dt-body{animation:dt-in linear both;animation-timeline:--dt}
+    .dt-step:not(:last-child)::after{animation:dt-draw linear both;animation-timeline:--dt}
+    .dt-step:nth-child(1) .dt-node{animation-range:cover 4% cover 10%}
+    .dt-step:nth-child(1) .dt-body{animation-range:cover 6% cover 14%}
+    .dt-step:nth-child(1)::after{animation-range:cover 14% cover 20%}
+    .dt-step:nth-child(2) .dt-node{animation-range:cover 19% cover 23%}
+    .dt-step:nth-child(2) .dt-body{animation-range:cover 20% cover 26%}
+    .dt-step:nth-child(2)::after{animation-range:cover 26% cover 31%}
+    .dt-step:nth-child(3) .dt-node{animation-range:cover 30% cover 34%}
+    .dt-step:nth-child(3) .dt-body{animation-range:cover 31% cover 37%}
+    .dt-step:nth-child(3)::after{animation-range:cover 37% cover 42%}
+    .dt-step:nth-child(4) .dt-node{animation-range:cover 41% cover 45%}
+    .dt-step:nth-child(4) .dt-body{animation-range:cover 42% cover 48%}
+    .dt-step:nth-child(4)::after{animation-range:cover 48% cover 53%}
+    .dt-step:nth-child(5) .dt-node{animation-range:cover 52% cover 56%}
+    .dt-step:nth-child(5) .dt-body{animation-range:cover 53% cover 59%}
+  }
+  /* fallback: site.js adds .js-dt and marks steps in sequence */
+  .dt-steps.js-dt .dt-node{opacity:0;transition:opacity .4s linear}
+  .dt-steps.js-dt .dt-body{opacity:0;transform:translateY(20px);transition:opacity .45s linear,transform .45s linear}
+  .dt-steps.js-dt .dt-step::after{transform:scaleX(0);transition:transform .45s linear}
+  .dt-steps.js-dt .is-on .dt-node,.dt-steps.js-dt .is-on .dt-body{opacity:1;transform:none}
+  .dt-steps.js-dt .is-linked::after{transform:scaleX(1)}
+}
+@container page (max-width:1024px){
+  /* tablet and phone: the journey runs down the left, one step per scroll */
+  .dt-steps{--node:44px;grid-template-columns:minmax(0,1fr);gap:var(--space-8);view-timeline-name:none}
+  .dt-step{display:grid;grid-template-columns:var(--node) minmax(0,1fr);column-gap:var(--space-4);align-items:start;view-timeline-name:--dts}
+  .dt-step:not(:last-child)::after{top:calc(var(--node) + 6px);left:calc(var(--node) / 2 - 1px);right:auto;width:2px;height:calc(100% - var(--node) + var(--space-8) - 12px);background:linear-gradient(180deg,#2563EB,rgba(37,99,235,.3));transform-origin:50% 0}
+  .dt-steps.js-dt .dt-step::after{transform:scaleY(0)}
+  .dt-steps.js-dt .is-linked::after{transform:scaleY(1)}
+}
+@media (prefers-reduced-motion:no-preference){@supports (animation-timeline:view()){@container page (max-width:1024px){
+  .dt-step:nth-child(n) .dt-node{animation-timeline:--dts;animation-range:entry 15% entry 50%}
+  .dt-step:nth-child(n) .dt-body{animation-timeline:--dts;animation-range:entry 25% entry 80%}
+  .dt-step:nth-child(n)::after{animation-name:dt-draw-y;animation-timeline:--dts;animation-range:entry 90% cover 60%}
+}}}
+
+/* how I work, desktop: the section holds still until all five steps are in, at an even, linear pace */
+@media (min-height:600px) and (max-height:1500px) and (prefers-reduced-motion:no-preference){@container page (min-width:1025px){
+  .dt-band{padding-block:0}
+  .dt-track{height:calc(100vh * 3);view-timeline-name:--dtt}
+  .dt-stage{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:calc(var(--nav-h) + var(--space-4));padding-bottom:var(--space-6)}
+  .dt-stage .s-head{margin-bottom:clamp(20px,4vh,40px)}
+  .dt-stage .s-head.reveal{animation:none}
+}}
+@media (min-height:600px) and (max-height:860px) and (prefers-reduced-motion:no-preference){@container page (min-width:1025px){
+  .dt-stage .h-section{font-size:clamp(28px,5.2vh,44px)}
+  .dt-stage .dt-lead{font-size:14px;line-height:1.55}
+  .dt-stage .dt-steps{--node:44px}
+  .dt-stage .dt-step{gap:var(--space-4)}
+  .dt-stage .dt-body{padding:var(--space-4)}
+  .dt-stage .dt-body p{font-size:13px;line-height:1.5}
+}}
+@media (min-height:600px) and (max-height:1500px) and (prefers-reduced-motion:no-preference){@supports (animation-timeline:view()){@container page (min-width:1025px){
+  .dt-step .dt-node,.dt-step .dt-body,.dt-step:not(:last-child)::after{animation-timeline:--dtt;animation-timing-function:linear}
+  .dt-step:nth-child(1) .dt-node,.dt-step:nth-child(1) .dt-body{animation-range:entry 70% entry 100%}
+  .dt-step:nth-child(1)::after{animation-range:contain 4% contain 14%}
+  .dt-step:nth-child(2) .dt-node,.dt-step:nth-child(2) .dt-body{animation-range:contain 14% contain 20%}
+  .dt-step:nth-child(2)::after{animation-range:contain 22% contain 32%}
+  .dt-step:nth-child(3) .dt-node,.dt-step:nth-child(3) .dt-body{animation-range:contain 32% contain 38%}
+  .dt-step:nth-child(3)::after{animation-range:contain 40% contain 50%}
+  .dt-step:nth-child(4) .dt-node,.dt-step:nth-child(4) .dt-body{animation-range:contain 50% contain 56%}
+  .dt-step:nth-child(4)::after{animation-range:contain 58% contain 68%}
+  .dt-step:nth-child(5) .dt-node,.dt-step:nth-child(5) .dt-body{animation-range:contain 68% contain 74%}
+}}}
+
+/* sharp corners on every card and frame across the site (phone screenshots keep their device shape) */
+.shot,.shot-media img,.ba-table,.d-stack,.d-card,.ds-fig img,.dt-body,.m-pair,.m-rail,.nds-card,.nj-theme li,.nv-badges,.nv-ds,.nds-chips{border-radius:0}
+@container page (max-width:720px){.shot,.m-rail,.m-pair,.d-stack,.d-card,.nv-badges,.nv-ds{border-radius:0}}
+
+/* section titles: a little larger, and they turn blue while you're in that section */
+.sec-label{font-size:14px;letter-spacing:.14em;transition:color .35s ease}
+.sec-label i{width:40px;height:2px;transition:background-color .35s ease,width .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes sec-on{0%{color:var(--muted)}6%,94%{color:var(--signal-ink)}100%{color:var(--muted)}}
+@keyframes sec-on-i{0%{background:var(--line);width:40px}6%,94%{background:var(--signal);width:56px}100%{background:var(--line);width:40px}}
+@supports (animation-timeline:view()){
+  /* each section is its own timeline; its title is blue while the section fills the middle of the screen */
+  section,footer{view-timeline-name:--sec}
+  .sec-label{animation:sec-on linear none;animation-timeline:--sec;animation-range:cover 45vh cover calc(100% - 45vh)}
+  .sec-label i{animation:sec-on-i linear none;animation-timeline:--sec;animation-range:cover 45vh cover calc(100% - 45vh)}
+}
+/* fallback: site.js adds .is-current */
+.sec-label.is-current{color:var(--signal-ink)}
+.sec-label.is-current i{background:var(--signal);width:56px}
+@container page (max-width:720px){.sec-label{font-size:13px}}
+
+/* custom cursor: the brand arrow in primary blue (thin white edge keeps it visible on blue) */
+.is-root,.is-root *{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2222%22%20height%3D%2226%22%20viewBox%3D%220%200%2064.81%2076.31%22%3E%3Cpolygon%20fill%3D%22%232563EB%22%20points%3D%2264.81%2037.99%2024.85%2061.06%2024.79%2047.63%2040.95%2038.3%2012.41%2021.51%2012.58%2068.87%200%2076.31%200%200%2064.81%2037.99%22/%3E%3C/svg%3E") 2 2,auto}
+.is-root input,.is-root textarea,.is-root [contenteditable="true"]{cursor:text}
+.view-on .feature,.view-on .mini,.view-on .row{cursor:none}
+
+/* section titles: no dash */
+.sec-label i{display:none}
+
+/* how I work: what each step produces (same chip as skills & tools) */
+.dt-outs{margin-top:auto;gap:6px}
+.dt-out{min-height:30px;padding:4px var(--space-3,12px);font-size:13px;line-height:1.35}
+.dt-body p{margin-bottom:var(--space-2)}
+@media (max-height:860px){@container page (min-width:1025px){.dt-stage .dt-out{min-height:28px;padding:3px 10px;font-size:12.5px}}}
+
+/* how I work: wider cards, details grouped so the pill sits at the bottom */
+.dt-more{display:flex;flex-direction:column;gap:var(--space-2);flex:1}
+.dt-more p{margin-top:0}
+@container page (min-width:1025px){
+  .dt-steps{--dt-w:min(112%, calc(100vw - 48px));width:var(--dt-w);margin-inline:calc((100% - var(--dt-w)) / 2)}
+}
