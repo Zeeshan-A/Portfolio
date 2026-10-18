@@ -115,7 +115,7 @@
       var open = extra.hidden;
       extra.hidden = !open;
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      if (label) label.textContent = open ? 'Show less' : 'Load more projects (5)';
+      if (label) label.textContent = open ? 'Show less' : 'Load more projects (4)';
       if (arr) { arr.textContent = open ? '↑' : '↓'; arr.className = 'arr ' + (open ? 'arr-u' : 'arr-d'); }
       if (!open) { var sec = document.getElementById('more'); if (sec) sec.scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'start' }); }
     });

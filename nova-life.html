@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nova Life — Case study · Zeeshan Ahmad</title>
+<meta name="description" content="Taking NOVA LIFE's recovery app from a broad vision through discovery to a defined MVP: a patient app plus therapist and admin portals.">
+<meta property="og:title" content="Nova Life — Case study · Zeeshan Ahmad">
+<meta property="og:description" content="Taking NOVA LIFE's recovery app from a broad vision through discovery to a defined MVP: a patient app plus therapist and admin portals.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="sindh-ombudsman-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..700;1,400..700&amp;family=Inter:wght@300..700&amp;family=Oswald:wght@400..600&amp;family=Sora:wght@300..600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="top" class="is-root is-light" style="position: relative; font-family: 'Sora', ui-sans-serif, system-ui, sans-serif; color: var(--text)">
+<span class="cursor-glow" aria-hidden="true"></span>
+<span class="view-cursor mono" aria-hidden="true"></span>
+<a class="skip mono" href="#context">Skip to case study</a>
+
+<header class="nav">
+<div class="wrap nav-row">
+<a class="brand" href="./" aria-label="Zeeshan Ahmad, home">
+<span class="mark" aria-hidden="true"><svg class="mark-svg" viewBox="50 61.6 863.5 546" focusable="false"><polygon fill="currentColor" points="50,61.6 50,166.1 302.1,166.1 50,607.6 409.3,607.6 602.9,269.2 739.4,510.1 583.4,510.1 527.7,607.6 913.5,607.6 602.9,61.6 345.2,511.5 226.9,511.5 487.3,61.6"></polygon></svg></span>
+
+</a>
+<nav class="nav-links" aria-label="Primary">
+<a class="link mono" href="./">Work</a>
+<a class="link mono" href="./">About</a>
+<a class="link mono" href="#contact">Contact</a>
+<a class="link mono" href="Zeeshan_Ahmad_UIUX_Designer_CV.pdf" download="Zeeshan_Ahmad_UIUX_Designer_CV.pdf">CV <span class="arr arr-d" aria-hidden="true">↓</span></a>
+</nav>
+<div class="nav-actions">
+<a class="btn btn-primary btn-sm mono" href="#contact">Let's talk <span class="arr arr-r" aria-hidden="true">→</span></a>
+</div>
+</div>
+</header>
+
+<main>
+<!-- HEADER -->
+<section class="wrap cs-top" style="display: flex; flex-direction: column; gap: var(--space-8)">
+<a class="link mono" href="./" style="align-self: flex-start"><span class="arr arr-l" aria-hidden="true">←</span> All work</a>
+<div class="hero-top enter"><p class="mono label">Case study · P. 05</p><div class="tags"><span class="tag mono">US · Health &amp; wellness</span><span class="tag mono">New product · Mobile + Web</span></div></div>
+<h1 class="serif h-display enter" style="max-width: 1100px">Nova Life: recovery support that <em>doesn't stop</em> at the clinic door.</h1>
+<p class="lead enter-2" style="max-width: 760px; color: var(--muted)">NOVA LIFE helps people recover from addiction, suicidal ideation and related challenges. Its new mobile app comes with portals for therapists and staff. I took it from a broad vision through discovery to a defined MVP and its design.</p>
+</section>
+
+<section class="wrap" aria-label="Project facts">
+<dl class="cs-meta" style="margin: 0">
+<div><dt class="mono label">Role</dt><dd style="margin: 0">UI/UX Designer, with a Product Owner</dd></div>
+<div><dt class="mono label">Client</dt><dd style="margin: 0">NOVA LIFE, US health and wellness</dd></div>
+<div><dt class="mono label">Work</dt><dd style="margin: 0">Discovery · User flows · Wireframes · UI</dd></div>
+<div><dt class="mono label">Platforms</dt><dd style="margin: 0">Mobile app (React Native) · Web portals</dd></div>
+<div><dt class="mono label">Users</dt><dd style="margin: 0">Patients · Therapists · Staff</dd></div>
+</dl>
+</section>
+
+<section class="wrap" style="padding-top: var(--space-12)">
+<div class="ph has-img enter-3" style="aspect-ratio: 16 / 9; width: 100%"><img src="cover-nova-life.jpg" alt="Nova Life: project cover with the teal Nova Life globe logo above flowing waves" style="object-position: 50% 50%"></div>
+</section>
+
+<!-- BODY WITH STICKY INDEX -->
+<div class="wrap cs-layout" style="position: relative">
+<nav class="cs-index" aria-label="Case study chapters">
+<a class="mono" href="#context" aria-current="false"><span>01</span>Context</a>
+<a class="mono" href="#problem" aria-current="false"><span>02</span>Problem</a>
+<a class="mono" href="#process" aria-current="false"><span>03</span>Process</a>
+<a class="mono" href="#solution" aria-current="false"><span>04</span>Patient app</a>
+<a class="mono" href="#portals" aria-current="false"><span>05</span>Portals</a>
+<a class="mono" href="#outcomes" aria-current="false"><span>06</span>Outcomes</a>
+<a class="mono" href="#learnings" aria-current="false"><span>07</span>Learnings</a>
+</nav>
+
+<div class="cs-main">
+<!-- 01 CONTEXT -->
+<section id="context" class="chapter reveal" aria-labelledby="c1">
+<div class="ch-head">
+<p class="mono sec-label">01 <i></i> Context</p>
+<h2 id="c1" class="serif h-section">What is NOVA LIFE?</h2>
+</div>
+<div class="body">
+<p class="lead">NOVA LIFE is a US health and wellness organization supporting people through addiction, suicidal ideation and related challenges. It runs structured rehabilitation programs and intensive care, with a team of licensed providers and therapists.</p>
+<p class="muted">They wanted a mobile app to take that support beyond their facilities, so people could keep getting help throughout their recovery, not just during sessions.</p>
+<p class="muted">I joined as the UI/UX designer alongside a Product Owner. We started with a discovery phase to turn the client's early ideas into a clear MVP, then designed the patient app and the portals behind it.</p>
+</div>
+<div class="cards3" style="margin-top: var(--space-12)">
+<div><span class="mono" style="color: var(--signal-ink)">Patients</span><p style="font-size: 15px">People in recovery who need support, content and check-ins between sessions.</p></div>
+<div><span class="mono" style="color: var(--signal-ink)">Therapists &amp; providers</span><p style="font-size: 15px">Licensed staff who follow their patients' progress and stay reachable.</p></div>
+<div><span class="mono" style="color: var(--signal-ink)">Admins &amp; staff</span><p style="font-size: 15px">The team that manages patients, providers and content.</p></div>
+</div>
+<div class="sub">
+<h3 class="serif h-item">My role</h3>
+<ul class="callouts">
+<li><span class="mono">01</span><strong style="font-weight: 600">Stakeholder discovery</strong><span class="muted">Meetings with NOVA LIFE to clarify what they needed.</span></li>
+<li><span class="mono">02</span><strong style="font-weight: 600">Journeys and flows</strong><span class="muted">High-level user journeys and app flows for all three users.</span></li>
+<li><span class="mono">03</span><strong style="font-weight: 600">MVP scope</strong><span class="muted">Prioritized features and a written MVP scope, with the Product Owner.</span></li>
+<li><span class="mono">04</span><strong style="font-weight: 600">Wireframes to UI</strong><span class="muted">Wireframes for the key screens, then the patient app and portals.</span></li>
+</ul>
+</div>
+</section>
+
+<!-- 02 PROBLEM -->
+<section id="problem" class="chapter band reveal" aria-labelledby="c2">
+<div class="ch-head">
+<p class="mono sec-label">02 <i></i> Problem</p>
+<h2 id="c2" class="serif h-section">A big vision, and no clear <em>first version</em>.</h2>
+</div>
+<div class="body">
+<p class="lead">NOVA LIFE came with a promising idea for an app. Each part made sense on its own, but together it was a wish list, not a plan a team could build.</p>
+</div>
+<div class="sub" style="border-top: 0">
+<div class="sub-head"><span class="mono">02 A</span><h3 class="serif h-item">The client's starting vision</h3></div>
+<p class="muted body">Four ideas, all still preliminary:</p>
+<ul class="nj-theme nv-ideas">
+<li><span class="mono label">Idea 01</span><strong>On-demand content</strong><span class="muted">Video sessions, motivational and religious material, and therapy resources.</span></li>
+<li><span class="mono label">Idea 02</span><strong>AI-powered therapist</strong><span class="muted">An empathetic AI companion for support at any hour.</span></li>
+<li><span class="mono label">Idea 03</span><strong>Periodic check-ins</strong><span class="muted">Wellness check-ins that track progress over time.</span></li>
+<li><span class="mono label">Idea 04</span><strong>Therapist access</strong><span class="muted">A direct line to licensed providers and therapists.</span></li>
+</ul>
+</div>
+<div class="sub"><div class="sub-head"><span class="mono">02 B</span><h3 class="serif h-item">Support stopped at the clinic door</h3></div><p class="muted body">Recovery happens every day, but help was tied to sessions and programs. Between visits, people had little to lean on.</p></div>
+<div class="sub"><div class="sub-head"><span class="mono">02 C</span><h3 class="serif h-item">No priorities, no MVP</h3></div><p class="muted body">There was no agreed first release, so there was nothing to estimate, design or build against yet.</p></div>
+<div class="sub"><div class="sub-head"><span class="mono">02 D</span><h3 class="serif h-item">Three users, one system</h3></div><p class="muted body">Patients, therapists and staff each needed something different, and every flow had to connect them.</p></div>
+<div class="sub"><div class="sub-head"><span class="mono">02 E</span><h3 class="serif h-item">A vulnerable audience</h3></div><p class="muted body">For people facing addiction or suicidal thoughts, an app has to feel calm and safe, especially an AI companion.</p></div>
+<div class="sub">
+<div class="sub-head"><span class="mono">02 F</span><h3 class="serif h-item">What discovery had to answer</h3></div>
+<ul class="callouts">
+<li><span class="mono">Q1</span><strong style="font-weight: 600">Today's process</strong><span class="muted">What happens when a patient comes in, and which programs follow?</span></li>
+<li><span class="mono">Q2</span><strong style="font-weight: 600">The first release</strong><span class="muted">Which features matter most for the MVP?</span></li>
+<li><span class="mono">Q3</span><strong style="font-weight: 600">The journeys</strong><span class="muted">How do patients, therapists and staff move through the product?</span></li>
+</ul>
+</div>
+</section>
+
+<!-- 03 PROCESS -->
+<section id="process" class="chapter reveal" aria-labelledby="c3">
+<div class="ch-head">
+<p class="mono sec-label">03 <i></i> Process</p>
+<h2 id="c3" class="serif h-section">From vision to <em>MVP</em>.</h2>
+</div>
+<div class="body">
+<p class="lead">We listened first, sketched early, and only moved to high fidelity once the client had agreed on the big picture.</p>
+</div>
+<div class="sub" style="border-top: 0">
+<div class="sub-head"><span class="mono">03 A</span><h3 class="serif h-item">How we got there</h3></div>
+<ol class="nj-steps nv-steps">
+<li><span class="mono">01</span><div><strong>Listen and take notes</strong><p class="muted">Several meetings with NOVA LIFE, noting what they said each time.</p></div></li>
+<li><span class="mono">02</span><div><strong>Propose wireframes</strong><p class="muted">Low-fidelity screens of the main ideas, to react to early.</p></div></li>
+<li><span class="mono">03</span><div><strong>Map user journeys</strong><p class="muted">Built from the interviews and the client's requirements document.</p></div></li>
+<li><span class="mono">04</span><div><strong>Agree the big picture</strong><p class="muted">The whole app walked through screen by screen, proposed and approved by the client.</p></div></li>
+<li><span class="mono">05</span><div><strong>Type and design system</strong><p class="muted">Typography first, then the components the app is built from.</p></div></li>
+<li><span class="mono">06</span><div><strong>High fidelity</strong><p class="muted">Final screens for the patient app and the portals.</p></div></li>
+</ol>
+</div>
+<div class="sub">
+<div class="sub-head"><span class="mono">03 B</span><h3 class="serif h-item">The big picture, in screens</h3></div>
+<figure class="fig">
+<div class="m-rail" tabindex="0" aria-label="Big-picture flow screens, scroll sideways">
+<figure class="m-shot"><img src="wf-login.jpg" alt="Login wireframe: email or phone and password" width="402" height="882" loading="lazy"><p class="screen-cap"><span class="mono">01</span>Log in</p></figure>
+<figure class="m-shot"><img src="wf-signup.jpg" alt="Sign-up wireframe with username, email or phone, password, and Google or Apple sign-up" width="402" height="882" loading="lazy"><p class="screen-cap"><span class="mono">02</span>Sign up</p></figure>
+<figure class="m-shot"><img src="wf-home.jpg" alt="Home wireframe: a sobriety timer, milestones and streak, a daily pledge and inspiration, next milestone, and ways to contact NOVA LIFE or call the emergency hotline" width="402" height="1385" loading="lazy"><p class="screen-cap"><span class="mono">03</span>Home</p></figure>
+<figure class="m-shot"><img src="wf-library.jpg" alt="Content library wireframe with favourites, breathwork, meditation and inspiration rows" width="402" height="882" loading="lazy"><p class="screen-cap"><span class="mono">04</span>Content library</p></figure>
+<figure class="m-shot"><img src="wf-favourites.jpg" alt="Favourites wireframe: saved videos in a grid with category filters" width="402" height="882" loading="lazy"><p class="screen-cap"><span class="mono">05</span>Favourites</p></figure>
+<figure class="m-shot"><img src="wf-player.jpg" alt="Full-screen video player wireframe with a progress bar and playback controls" width="402" height="882" loading="lazy"><p class="screen-cap"><span class="mono">06</span>Video player</p></figure>
+<figure class="m-shot"><img src="wf-ai.jpg" alt="Nova AI chat wireframe: the AI replies to an urge, recommends a breathing exercise, and notes it is not a substitute for a medical practitioner" width="402" height="882" loading="lazy"><p class="screen-cap"><span class="mono">07</span>Nova AI</p></figure>
+<figure class="m-shot"><img src="wf-milestones.jpg" alt="Milestones wireframe: next milestone progress, the most recent milestone, and a grid of achievements" width="402" height="892" loading="lazy"><p class="screen-cap"><span class="mono">08</span>Milestones</p></figure>
+</div>
+<figcaption class="mono">Fig 01. The big-picture flow we proposed and the client approved, scroll sideways</figcaption>
+</figure>
+</div>
+<div class="sub">
+<div class="sub-head"><span class="mono">03 C</span><h3 class="serif h-item">Type and design system</h3></div>
+<p class="muted body">Once the flow was agreed, we set the foundations: a calm teal primary, soft neutrals, a condensed title face over a readable body face, and a small set of components every screen is built from.</p>
+<div class="nv-ds">
+<div class="nds-card nds-type">
+<span class="mono label nds-h">Typography</span>
+<ul class="nds-type-list"><li><span class="nds-t-title">Recovery, one day at a time</span><span class="mono label">Titles · Oswald · Large 32/36</span></li><li><span class="nds-t-bold">You’ve been sober for 3 days</span><span class="mono label">Bold · Inter · 24/Auto</span></li><li><span class="nds-t-med">Your daily pledge</span><span class="mono label">Medium · Inter · 20/Auto</span></li><li><span class="nds-t-reg">Take a moment to breathe.</span><span class="mono label">Regular · Inter · 16/Auto</span></li><li><span class="nds-t-light">Resume whenever you’re ready.</span><span class="mono label">Light · Inter · 14/Auto</span></li></ul>
+</div>
+<div class="nds-card nds-colors">
+<span class="mono label nds-h">Colour</span>
+<div class="nds-pal"><span class="mono label">Primary</span><ul class="nds-chips"><li style="background: #E7F1F0"><span class="mono">B50</span></li><li style="background: #9CC7C3"><span class="mono">B75</span></li><li style="background: #73B0AA"><span class="mono">B100</span></li><li style="background: #378D86"><span class="mono">B200</span></li><li style="background: #0E766D"><span class="mono">B300</span></li><li style="background: #0A534C"><span class="mono">B400</span></li><li style="background: #094842"><span class="mono">B500</span></li></ul></div>
+<div class="nds-pal"><span class="mono label">Neutral</span><ul class="nds-chips"><li style="background: #FFFFFF"><span class="mono">G0</span></li><li style="background: #EDEDED"><span class="mono">G30</span></li><li style="background: #B8B8B8"><span class="mono">G60</span></li><li style="background: #838383"><span class="mono">G100</span></li><li style="background: #5C5C5C"><span class="mono">G400</span></li><li style="background: #333333"><span class="mono">G700</span></li><li style="background: #1A1A1A"><span class="mono">G900</span></li></ul></div>
+<div class="nds-pal"><span class="mono label">Red</span><ul class="nds-chips"><li style="background: #FFE5E8"><span class="mono">R50</span></li><li style="background: #FF90A1"><span class="mono">R100</span></li><li style="background: #FF6078"><span class="mono">R200</span></li><li style="background: #FB003A"><span class="mono">R300</span></li><li style="background: #F70000"><span class="mono">R400</span></li><li style="background: #AD0000"><span class="mono">R500</span></li><li style="background: #970002"><span class="mono">R600</span></li></ul></div>
+<div class="nds-more" aria-label="Four more palettes: blue, violet, yellow and green">
+<div class="nds-pal"><span class="mono label">Blue</span><ul class="nds-chips" aria-hidden="true"><li style="background: #E4F0FF"><span class="mono">B50</span></li><li style="background: #8CC1FF"><span class="mono">B100</span></li><li style="background: #57A7FF"><span class="mono">B200</span></li><li style="background: #0081FF"><span class="mono">B300</span></li><li style="background: #0067FF"><span class="mono">B400</span></li><li style="background: #0048B9"><span class="mono">B500</span></li><li style="background: #003FA2"><span class="mono">B600</span></li></ul></div>
+<div class="nds-pal"><span class="mono label">Violet</span><ul class="nds-chips" aria-hidden="true"><li style="background: #EFE9FE"><span class="mono">V50</span></li><li style="background: #C0A5F7"><span class="mono">V100</span></li><li style="background: #A57FF2"><span class="mono">V200</span></li><li style="background: #7C47EA"><span class="mono">V300</span></li><li style="background: #6221E4"><span class="mono">V400</span></li><li style="background: #4317A0"><span class="mono">V500</span></li><li style="background: #3B158C"><span class="mono">V600</span></li></ul></div>
+<div class="nds-pal"><span class="mono label">Yellow</span><ul class="nds-chips" aria-hidden="true"><li style="background: #FFFAE4"><span class="mono">Y50</span></li><li style="background: #FFE989"><span class="mono">Y100</span></li><li style="background: #FFE051"><span class="mono">Y200</span></li><li style="background: #FFD300"><span class="mono">Y300</span></li><li style="background: #FFC900"><span class="mono">Y400</span></li><li style="background: #BA8D00"><span class="mono">Y500</span></li><li style="background: #A27A00"><span class="mono">Y600</span></li></ul></div>
+<div class="nds-pal"><span class="mono label">Green</span><ul class="nds-chips" aria-hidden="true"><li style="background: #E3F8EF"><span class="mono">G50</span></li><li style="background: #87E3C0"><span class="mono">G100</span></li><li style="background: #4CD8A6"><span class="mono">G200</span></li><li style="background: #00C67D"><span class="mono">G300</span></li><li style="background: #00BA61"><span class="mono">G400</span></li><li style="background: #008244"><span class="mono">G500</span></li><li style="background: #00723C"><span class="mono">G600</span></li></ul></div>
+<span class="mono label nds-more-tag">+4 palettes</span>
+</div>
+</div>
+<div class="nds-card nds-comp">
+<span class="mono label nds-h">Components</span>
+<div class="nds-comp-grid">
+<div class="nds-group">
+<span class="nds-btn is-primary"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path></svg>Primary</span>
+<span class="nds-btn is-soft"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path></svg>Secondary</span>
+<span class="nds-btn is-dark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path></svg>Pressed</span>
+<span class="nds-btn is-off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path></svg>Disabled</span>
+</div>
+<div class="nds-group">
+<span class="nds-field"><span class="nds-field-l">Why I am doing this?</span><span class="nds-field-v">Take control of my life</span></span>
+<span class="nds-select is-on">Pledge made <span class="nds-tick" aria-hidden="true"></span></span>
+</div>
+<div class="nds-group nds-row">
+<span class="nds-check is-on" aria-hidden="true"></span><span class="nds-radio is-on" aria-hidden="true"></span><span class="nds-toggle is-on" aria-hidden="true"></span><span class="nds-toggle" aria-hidden="true"></span>
+<span class="nds-chip is-err">Error</span><span class="nds-chip is-ok">Successful</span><span class="nds-chip is-warn">Warning</span>
+</div>
+</div>
+</div>
+</div>
+<p class="mono label nds-cap">Fig 02. Foundations and core components from the Nova Life design system</p>
+</div>
+</section>
+
+<!-- 04 PATIENT APP -->
+<section id="solution" class="chapter band reveal" aria-labelledby="c4">
+<div class="ch-head">
+<p class="mono sec-label">04 <i></i> Patient app</p>
+<h2 id="c4" class="serif h-section">Calm, simple and <em>low effort</em>, from the first screen.</h2>
+</div>
+<div class="sub" style="border-top: 0">
+<div class="sub-head"><span class="mono">A.01</span><h3 class="serif h-item">Voice-based onboarding</h3></div>
+<p class="muted body">Instead of a long intake form, the AI companion asks 31 questions out loud and the patient simply answers. They can take a break at any point, and review every answer before it's saved.</p>
+<figure class="fig">
+<div class="m-rail" tabindex="0" aria-label="Voice onboarding screens, scroll sideways">
+<figure class="m-shot"><img src="ob-intro.jpg" alt="Onboarding intro: the AI companion explains it will ask 31 questions in about 10 to 15 minutes to build a personalized care plan, with Begin conversation" width="662" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">01</span>Let's get to know you</p></figure>
+<figure class="m-shot"><img src="ob-speaking.jpg" alt="The AI speaks the first question, What is your full name?, with a progress bar, mic and speaker buttons and Take a break" width="662" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">02</span>AI asks</p></figure>
+<figure class="m-shot"><img src="ob-listening.jpg" alt="Listening state while the patient answers Where are you currently located?" width="662" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">03</span>You answer by voice</p></figure>
+<figure class="m-shot"><img src="ob-processing.jpg" alt="Processing state after the patient answers a sensitive question about traumatic events" width="662" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">04</span>Processing</p></figure>
+<figure class="m-shot"><img src="ob-muted.jpg" alt="Mic muted and sound off, shown in red and outline, during a question about mental health conditions" width="662" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">05</span>Mic and sound off</p></figure>
+<figure class="m-shot"><img src="ob-break.jpg" alt="Take your time screen: progress saved at 48 percent, with Resume conversation" width="662" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">06</span>Take a break</p></figure>
+<figure class="m-shot"><img src="ob-review.jpg" alt="Review your answers: each question with its transcribed answer and an edit icon, and Complete onboarding" width="662" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">07</span>Review your answers</p></figure>
+<figure class="m-shot"><img src="ob-edit.jpg" alt="Editing a transcribed answer in place, with Save and Cancel" width="662" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">08</span>Fix a transcript</p></figure>
+</div>
+<figcaption class="mono">Fig 03. Voice onboarding, from the first question to review, scroll sideways</figcaption>
+</figure>
+</div>
+<div class="sub">
+<div class="sub-head"><span class="mono">A.02</span><h3 class="serif h-item">Secure, quick sign-in</h3></div>
+<p class="muted body">A one-time code to verify, then a 4-digit PIN with an optional hint, and Face ID or Touch ID, so getting back into the app takes a second.</p>
+<figure class="fig">
+<div class="m-rail" tabindex="0" aria-label="Sign-in screens, scroll sideways">
+<figure class="m-shot"><img src="au-otp.jpg" alt="Enter your OTP screen with six code boxes and Continue" width="662" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">01</span>Verify with a code</p></figure>
+<figure class="m-shot"><img src="au-setpin.jpg" alt="Set up your PIN: four PIN boxes, Show pin and Continue" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">02</span>Set up a PIN</p></figure>
+<figure class="m-shot"><img src="au-hint.jpg" alt="Add a hint for your PIN sheet with an empty field, Save hint disabled and Skip" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">03</span>Add a PIN hint</p></figure>
+<figure class="m-shot"><img src="au-hint2.jpg" alt="The same hint sheet with Save hint enabled" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">04</span>Hint ready to save</p></figure>
+<figure class="m-shot"><img src="au-bio.jpg" alt="Login with Face ID or Touch ID: Enable or Maybe later" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">05</span>Face ID or Touch ID</p></figure>
+<figure class="m-shot"><img src="au-login.jpg" alt="Login dialog: enter a 4-digit PIN, Show hint, Proceed, a fingerprint button and Forgot PIN" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">06</span>Quick PIN login</p></figure>
+<figure class="m-shot"><img src="au-loginhint.jpg" alt="Login dialog with the hint shown below the PIN dots" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">07</span>Hint when you need it</p></figure>
+</div>
+<figcaption class="mono">Fig 04. Code, PIN, hint and biometrics, scroll sideways</figcaption>
+</figure>
+</div>
+<div class="sub">
+<div class="sub-head"><span class="mono">A.03</span><h3 class="serif h-item">Home, library and milestones</h3></div>
+<figure class="fig">
+<div class="m-rail" tabindex="0" aria-label="Home, library and milestone screens, scroll sideways">
+<figure class="m-shot m-long"><div class="m-scroll" tabindex="0" aria-label="Full Home screen, scroll down inside"><img src="home-full.jpg" alt="Full Home screen: days sober counter, daily pledge taken, an encouraging quote, next milestone progress, wellness snapshot via Nova AI, vital snapshot via face scan, emergency hotline, and contact or booking" width="660" height="3270" loading="lazy"></div><p class="screen-cap"><span class="mono">01</span>Home, scroll inside</p></figure>
+<figure class="m-shot"><img src="rs-confirm.jpg" alt="Reset sobriety confirmation sheet: changing your start date can be a meaningful step, your pledge date is not a test, with Yes and No buttons" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">02</span>Reset the counter?</p></figure>
+<figure class="m-shot"><img src="rs-date.jpg" alt="Reset sobriety sheet with a month, day and year picker, Cancel and Save" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">03</span>Pick a new start date</p></figure>
+<figure class="m-shot"><img src="rs-done.jpg" alt="Counter reset confirmation with a heart and This moment counts. We are here with you." width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">04</span>Counter reset</p></figure>
+<figure class="m-shot"><img src="library.jpg" alt="Library with live classes coming soon and rows of 2-minute sessions for balance, energy and faith" width="660" height="1457" loading="lazy"><p class="screen-cap"><span class="mono">05</span>Short guided sessions</p></figure>
+<figure class="m-shot"><img src="player.jpg" alt="Full-screen video player with skip intro, 10-second skips, download and favourite" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">06</span>Video player</p></figure>
+<figure class="m-shot"><img src="ms-list.jpg" alt="Milestones before the first badge: a grey 7-day badge, encouragement, and a timeline of upcoming milestones with progress" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">07</span>On the way</p></figure>
+<figure class="m-shot"><img src="ms-unlocked.jpg" alt="Celebration screen: a 7-day badge in colour with sparkles and Congratulations" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">08</span>New milestone unlocked</p></figure>
+<figure class="m-shot"><img src="ms-earned.jpg" alt="Milestones after earning 7 days: the badge in colour, Congrats, and progress toward 14 days" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">09</span>Earned, and what's next</p></figure>
+</div>
+<figcaption class="mono">Fig 05. Day to day: Home, resetting the counter, guided sessions and milestones, scroll sideways</figcaption>
+</figure>
+<figure class="fig" style="margin-top: var(--space-12)">
+<div class="nv-badges"><img src="badges.png" alt="Eight milestone badges, each a wavy seal with its own colour and name: 30 days, A Month of Choice; 60, Roots Taking Hold; 90, Clear and Steady; 120, Living With Intention; 180, Half a Year, Fully Present; 240, This Is Who I Am Now; 300, Trusting Myself Again; 365, A Year of Clarity" width="723" height="723" loading="lazy"></div>
+<figcaption class="mono">Fig 06. Milestone badges, from 30 days to a year, each with its own name</figcaption>
+</figure>
+</div>
+<div class="sub">
+<div class="sub-head"><span class="mono">A.04</span><h3 class="serif h-item">Taking the daily pledge</h3></div>
+<figure class="fig">
+<div class="m-rail" tabindex="0" aria-label="Daily pledge screens, scroll sideways">
+<figure class="m-shot"><img src="pl-empty.jpg" alt="Empty state: no pledge added yet, a short note on what a pledge is, and a plus button to add one" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">01</span>No pledge yet</p></figure>
+<figure class="m-shot"><img src="pl-edit.jpg" alt="Bottom sheet to add or edit a reason, with examples, Cancel, Update and delete" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">02</span>Write your reason</p></figure>
+<figure class="m-shot"><img src="pl-swipe.jpg" alt="The reasons shown in grey before pledging, with a Swipe to make pledge control" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">03</span>Swipe to make the pledge</p></figure>
+<figure class="m-shot"><img src="pl-made.jpg" alt="Reasons in full colour after pledging, with a Pledge made confirmation" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">04</span>Pledge made</p></figure>
+<figure class="m-shot"><img src="pl-moment.jpg" alt="Confirmation moment with a heart and the words This moment counts. We are here with you." width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">05</span>This moment counts</p></figure>
+</div>
+<figcaption class="mono">Fig 07. From writing your reasons to the moment you pledge, scroll sideways</figcaption>
+</figure>
+</div>
+<div class="sub">
+<div class="sub-head"><span class="mono">A.05</span><h3 class="serif h-item">Nova AI, by text or voice</h3></div>
+<figure class="fig">
+<div class="m-rail" tabindex="0" aria-label="Nova AI chat screens, scroll sideways">
+<figure class="m-shot"><img src="ai-start.jpg" alt="Nova AI start screen: How can I help you?, quick suggestions such as I had a craving today, and a text box with a mic button" width="662" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">01</span>Ask anything</p></figure>
+<figure class="m-shot"><img src="ai-typing.jpg" alt="The patient taps I had a craving today and Nova AI shows a typing indicator" width="662" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">02</span>Nova AI is replying</p></figure>
+<figure class="m-shot"><img src="ai-reply.jpg" alt="Nova AI replies with a calm, supportive message and an invitation to talk" width="662" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">03</span>A gentle reply</p></figure>
+<figure class="m-shot"><img src="ai-voice.jpg" alt="Voice chat mode: the Nova Life logo with Listening, and mic and speaker buttons" width="662" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">04</span>Talk instead of typing</p></figure>
+</div>
+<figcaption class="mono">Fig 08. Nova AI chat, from a quick suggestion to voice, scroll sideways</figcaption>
+</figure>
+</div>
+<div class="sub">
+<div class="sub-head"><span class="mono">A.06</span><h3 class="serif h-item">Profile and settings</h3></div>
+<figure class="fig">
+<div class="m-rail" tabindex="0" aria-label="Profile screens, scroll sideways">
+<figure class="m-shot"><img src="pf-main.jpg" alt="Profile: avatar, name, streaks and library usage, support and booking cards, the emergency hotline, and Downloads" width="660" height="1445" loading="lazy"><p class="screen-cap"><span class="mono">01</span>Profile</p></figure>
+<figure class="m-shot"><img src="pf-edit.jpg" alt="Edit profile: photo, username, email, date of birth, gender, Save changes and Delete account" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">02</span>Edit your details</p></figure>
+<figure class="m-shot"><img src="pf-notif.jpg" alt="Notification settings: daily pledge and daily review reminders, each with an on-off switch and a time" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">03</span>Reminders</p></figure>
+<figure class="m-shot"><img src="pf-dlempty.jpg" alt="Downloads empty state: no videos downloaded yet" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">04</span>Downloads</p></figure>
+<figure class="m-shot"><img src="pf-dldelete.jpg" alt="Confirmation sheet before deleting a downloaded video, with Cancel and Delete" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">05</span>Remove a download</p></figure>
+</div>
+<figcaption class="mono">Fig 09. Profile, reminders and downloads, scroll sideways</figcaption>
+</figure>
+</div>
+</section>
+
+<!-- 05 PORTALS -->
+<section id="portals" class="chapter reveal" aria-labelledby="c5">
+<div class="ch-head">
+<p class="mono sec-label">05 <i></i> Portals</p>
+<h2 id="c5" class="serif h-section">The team behind the app, <em>in one place</em>.</h2>
+</div>
+<div class="sub" style="border-top: 0; margin-top: 0; padding-top: 0">
+<div class="sub-head"><span class="mono">P.01</span><h3 class="serif h-item">Admin portal</h3></div>
+<p class="muted body">Staff sign in to see patient and therapist accounts at a glance, review therapists, and manage the menus, series and videos patients see in the app.</p>
+<figure class="fig">
+<div class="d-stack" role="group" aria-label="Admin portal screens"><input class="d-in" type="radio" name="adm" id="adm-1" aria-label="Show Dashboard"><input class="d-in" type="radio" name="adm" id="adm-2" aria-label="Show Sign in"><input class="d-in" type="radio" name="adm" id="adm-3" aria-label="Show Video manager"><input class="d-in" type="radio" name="adm" id="adm-4" aria-label="Show Empty menu"><input class="d-in" type="radio" name="adm" id="adm-5" aria-label="Show Empty series"><div class="d-deck" style="--n: 4"><label class="d-card" for="adm-1" style="--i: 0"><img src="ad2-dash.jpg" alt="Admin dashboard: patient and therapist account counts, active patients in the last 24 hours, new signups, and a table of therapists with license ID, documents, state and pending status" width="1440" height="1024" loading="lazy"></label><label class="d-card" for="adm-2" style="--i: 1"><img src="ad2-login.jpg" alt="Admin portal login: the brand panel on the left and an email and password form on the right" width="1440" height="1024" loading="lazy"></label><label class="d-card" for="adm-3" style="--i: 2"><img src="ad2-videos.jpg" alt="Video manager: a table of breathing videos with thumbnail, title, category, date, edit and delete, plus Add video" width="1440" height="1024" loading="lazy"></label><label class="d-card" for="adm-4" style="--i: 3"><img src="ad2-menu-empty.jpg" alt="Empty state for menus: no menu added yet, with an Add menu button" width="1440" height="1024" loading="lazy"></label><label class="d-card" for="adm-5" style="--i: 4"><img src="ad2-series-empty.jpg" alt="Empty state for series: no series added yet, with an Add series button" width="1440" height="1024" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="adm-1"><span class="mono">01</span>Dashboard</label><label class="d-tab" for="adm-2"><span class="mono">02</span>Sign in</label><label class="d-tab" for="adm-3"><span class="mono">03</span>Video manager</label><label class="d-tab" for="adm-4"><span class="mono">04</span>Empty menu</label><label class="d-tab" for="adm-5"><span class="mono">05</span>Empty series</label></div></div>
+<figcaption class="mono">Fig 10. Admin portal, web. Pick a screen to bring it to the front</figcaption>
+</figure>
+</div>
+<div class="sub">
+<div class="sub-head"><span class="mono">P.02</span><h3 class="serif h-item">Super admin</h3></div>
+<p class="muted body">The super admin invites patients by link, email or QR code, and approves the therapists who sign up, each with their license, documents and a clear status.</p>
+<figure class="fig">
+<div class="d-stack" role="group" aria-label="Super admin screens"><input class="d-in" type="radio" name="sup" id="sup-1" aria-label="Show Therapists and invites"><input class="d-in" type="radio" name="sup" id="sup-2" aria-label="Show Registered, pending approval"><div class="d-deck" style="--n: 1"><label class="d-card" for="sup-1" style="--i: 0"><img src="sa2-therapists.jpg" alt="Super admin therapists page: invite a new patient by link, email or QR code, and a paginated list of therapists with license ID, documents, state and status" width="1440" height="1078" loading="lazy"></label><label class="d-card" for="sup-2" style="--i: 1"><img src="sa2-registered.jpg" alt="Success dialog for a newly registered therapist: the account is pending approval and they can log back in once approved by email" width="1440" height="1078" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="sup-1"><span class="mono">01</span>Therapists and invites</label><label class="d-tab" for="sup-2"><span class="mono">02</span>Registered, pending approval</label></div></div>
+<figcaption class="mono">Fig 11. Super admin, web. Pick a screen to bring it to the front</figcaption>
+</figure>
+</div>
+<div class="sub">
+<div class="sub-head"><span class="mono">P.03</span><h3 class="serif h-item">Therapist portal</h3></div>
+<p class="muted body">Therapists verify their license to join, invite patients, then follow each one between sessions: days sober, how they use the app, wellness trends, and an AI summary of their chats.</p>
+<figure class="fig">
+<div class="desk-hero"><figure class="shot"><div class="shot-media"><img src="th-reg-file.jpg" alt="The registration form with a PDF certificate attached and a Replace file button" width="1440" height="1024" loading="lazy"></div><p class="screen-cap"><span class="mono">01</span>Verify credentials, certificate attached</p></figure></div>
+<figcaption class="mono">Fig 12. Joining as a therapist</figcaption>
+</figure>
+<figure class="fig" style="margin-top: var(--space-12)">
+<div class="d-stack" role="group" aria-label="Therapist patient screens"><input class="d-in" type="radio" name="thw" id="thw-1" aria-label="Show My patients"><input class="d-in" type="radio" name="thw" id="thw-2" aria-label="Show Invite by QR"><input class="d-in" type="radio" name="thw" id="thw-3" aria-label="Show Patient overview"><input class="d-in" type="radio" name="thw" id="thw-4" aria-label="Show Wellness trends"><input class="d-in" type="radio" name="thw" id="thw-5" aria-label="Show Video surveys"><input class="d-in" type="radio" name="thw" id="thw-6" aria-label="Show Before and after"><div class="d-deck" style="--n: 5"><label class="d-card" for="thw-1" style="--i: 0"><img src="th-patients.jpg" alt="My patients: invite a patient by link, email or QR code, and cards for each active patient with days sober and View progress details" width="1440" height="1024" loading="lazy"></label><label class="d-card" for="thw-2" style="--i: 1"><img src="th-qr.jpg" alt="Open in mobile app dialog with a QR code to scan with a phone camera" width="1440" height="1024" loading="lazy"></label><label class="d-card" for="thw-3" style="--i: 2"><img src="th-overview.jpg" alt="Patient overview: days sober, current milestone, recovery metrics, video history topics and an AI chat summary" width="1440" height="1024" loading="lazy"></label><label class="d-card" for="thw-4" style="--i: 3"><img src="th-canary.jpg" alt="Canary statistics: line charts for mood, energy, wellness, stress and aggression over time" width="1440" height="1024" loading="lazy"></label><label class="d-card" for="thw-5" style="--i: 4"><img src="th-surveys.jpg" alt="Video surveys: a table of watched videos with duration, date and See details" width="1440" height="1024" loading="lazy"></label><label class="d-card" for="thw-6" style="--i: 5"><img src="th-survey-detail.jpg" alt="Survey details panel: biomarkers before and after the video, and the questions and answers" width="1440" height="1024" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="thw-1"><span class="mono">01</span>My patients</label><label class="d-tab" for="thw-2"><span class="mono">02</span>Invite by QR</label><label class="d-tab" for="thw-3"><span class="mono">03</span>Patient overview</label><label class="d-tab" for="thw-4"><span class="mono">04</span>Wellness trends</label><label class="d-tab" for="thw-5"><span class="mono">05</span>Video surveys</label><label class="d-tab" for="thw-6"><span class="mono">06</span>Before and after</label></div></div>
+<figcaption class="mono">Fig 13. Following a patient's progress. Pick a screen to bring it to the front</figcaption>
+</figure>
+</div>
+</section>
+
+<!-- 06 OUTCOMES -->
+<section id="outcomes" class="chapter band reveal" aria-labelledby="c6">
+<div class="ch-head">
+<p class="mono sec-label">06 <i></i> Outcomes</p>
+<h2 id="c6" class="serif h-section">Small daily wins that <em>add up</em> to sober days.</h2>
+</div>
+<div class="body">
+<p class="lead">Nova Life is in use by more than 100 of NOVA LIFE's own patients, along with their therapists and the admin team.</p>
+<p class="muted">Patients keep coming back because staying sober feels like progress they can see: a pledge each morning, milestones to unlock, and short sessions for the hard moments. Therapists see that progress between sessions instead of waiting for the next visit.</p>
+</div>
+<dl class="stats" style="margin: var(--space-12) 0 0">
+<div class="stat"><dt class="mono label" style="order: 2">Patients using the app</dt><dd class="serif stat-num" style="margin: 0; color: var(--signal-ink)">100+</dd><dd class="muted stat-sub" style="order: 3">all direct patients of NOVA LIFE</dd></div>
+<div class="stat"><dt class="mono label" style="order: 2">Products in use</dt><dd class="serif stat-num" style="margin: 0; color: var(--signal-ink)">3</dd><dd class="muted stat-sub" style="order: 3">patient app, therapist and admin portals</dd></div>
+
+<div class="stat"><dt class="mono label" style="order: 2">User roles</dt><dd class="serif stat-num" style="margin: 0">4</dd><dd class="muted stat-sub" style="order: 3">patients, therapists, admins and a super admin</dd></div>
+</dl>
+<div class="sub">
+<div class="sub-head"><span class="mono">06 A</span><h3 class="serif h-item">What keeps patients going</h3></div>
+<ul class="callouts">
+<li><span class="mono">01</span><strong style="font-weight: 600">A daily pledge</strong><span class="muted">One swipe each morning to recommit, with their own reasons in front of them.</span></li>
+<li><span class="mono">02</span><strong style="font-weight: 600">Milestones to unlock</strong><span class="muted">Named badges and a celebration at each step, so every sober day counts.</span></li>
+<li><span class="mono">03</span><strong style="font-weight: 600">A library for hard moments</strong><span class="muted">Short guided sessions for breath, balance and faith, ready when a craving hits.</span></li>
+<li><span class="mono">04</span><strong style="font-weight: 600">Care that follows them</strong><span class="muted">Therapists see days sober, app use and wellness trends between sessions.</span></li>
+</ul>
+</div>
+</section>
+
+<!-- 07 LEARNINGS -->
+<section id="learnings" class="chapter reveal" aria-labelledby="c7">
+<div class="ch-head">
+<p class="mono sec-label">07 <i></i> Learnings</p>
+<h2 id="c7" class="serif h-section">What I'd take to the next project.</h2>
+</div>
+<div class="nj-soon"><span class="mono label">Coming next</span></div>
+</section>
+
+</div>
+</div>
+</main>
+
+<footer id="contact" class="contact" aria-labelledby="contact-title">
+<div class="wrap" style="display: flex; flex-direction: column; gap: var(--space-12)">
+<p class="mono sec-label">Get in touch</p>
+<h2 id="contact-title" class="serif h-contact reveal">Let's build something people actually <em>finish</em> using.</h2>
+<div class="email-row">
+<a class="email" href="mailto:z.khanzk7@gmail.com">z.khanzk7@gmail.com</a>
+<button class="btn btn-sm mono" type="button" data-copy-email aria-live="polite">Copy email</button>
+</div>
+<div class="contact-actions">
+<a class="btn btn-primary mono" href="mailto:z.khanzk7@gmail.com">Email me <span class="arr arr-r" aria-hidden="true">→</span></a>
+<a class="btn mono" href="https://www.linkedin.com/in/zeeshan-ahmad-98650314a/" target="_blank" rel="noopener">LinkedIn <span class="arr arr-ne" aria-hidden="true">↗</span></a>
+<a class="btn mono" href="https://www.behance.net/zeeshanahmad66" target="_blank" rel="noopener">Behance <span class="arr arr-ne" aria-hidden="true">↗</span></a>
+<a class="btn mono" href="Zeeshan_Ahmad_UIUX_Designer_CV.pdf" download="Zeeshan_Ahmad_UIUX_Designer_CV.pdf">Download CV <span class="arr arr-d" aria-hidden="true">↓</span></a>
+</div>
+<p class="mono label" style="display: flex; align-items: center; gap: var(--space-3); white-space: normal"><span class="dot" aria-hidden="true"></span>Open to full-time roles, on-site or remote</p>
+<div class="foot">
+<div class="foot-col"><span class="mono label">Pages</span><a class="link mono" href="./">Work</a><a class="link mono" href="./">About</a><a class="link mono" href="#top">Back to top <span class="arr arr-u" aria-hidden="true">↑</span></a></div>
+<div class="foot-col"><span class="mono label">Elsewhere</span><a class="link mono" href="https://www.linkedin.com/in/zeeshan-ahmad-98650314a/" target="_blank" rel="noopener">LinkedIn <span class="arr arr-ne" aria-hidden="true">↗</span></a><a class="link mono" href="https://www.behance.net/zeeshanahmad66" target="_blank" rel="noopener">Behance <span class="arr arr-ne" aria-hidden="true">↗</span></a><a class="link mono" href="Zeeshan_Ahmad_UIUX_Designer_CV.pdf" download="Zeeshan_Ahmad_UIUX_Designer_CV.pdf">Resume <span class="arr arr-d" aria-hidden="true">↓</span></a></div>
+<div class="foot-col"><span class="mono label">Based in</span><span style="font-size: 15px">Islamabad, Pakistan</span><span class="muted" style="font-size: 15px">Working with US teams</span><span class="mono label" style="margin-top: var(--space-4)">© 2026 Zeeshan Ahmad</span></div>
+</div>
+</div>
+</footer>
+</div>
+<script src="site.js" defer></script>
+</body>
+</html>
