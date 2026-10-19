@@ -180,7 +180,7 @@
 
 <div class="sub">
 <div class="sub-head"><span class="mono">D.02</span><h3 class="serif h-item">QuickPay: choose, then confirm</h3><span class="mono label">Answers 02 A</span></div>
-<p class="muted body">All five payment terms are now visible as options, so vendors can compare them before choosing. The legal text became three plain-language points after the choice, not before it. A confirmation dialog shows the term, the fee and a worked example on a $1,000 invoice before anything changes. Opting in went from 4 clicks to 2.</p>
+<p class="muted body">All five payment terms are now visible as options, so vendors can compare them before choosing. The legal text became three plain-language points after the choice, not before it. A confirmation dialog shows the term, the fee and a worked example on a $1,000 invoice before anything changes. By design, opting in now takes 2 clicks instead of 4.</p>
 <figure class="fig">
 <div class="d-stack" role="group" aria-label="Payment term, before and after" style="--arw: 1440; --arh: 715"><input class="d-in" type="radio" name="nj-term" id="nj-term-1" aria-label="Show Before: terms hidden in a dropdown"><input class="d-in" type="radio" name="nj-term" id="nj-term-2" aria-label="Show After: all five terms side by side"><div class="d-deck" style="--n: 1"><label class="d-card" for="nj-term-1" style="--i: 0"><img src="nj-old-qp-1.jpg" alt="Before: the old Automatic QuickPay screen, terms hidden in a dropdown and Opt-in disabled" width="1440" height="715" loading="lazy"></label><label class="d-card" for="nj-term-2" style="--i: 1"><img src="nj-quickpay-new.jpg" alt="After: a plain-language explainer, five payment terms as radio buttons, an Opt-in button, and the QuickPay list below" width="1440" height="793" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="nj-term-1"><span class="mono">01</span>Before: terms hidden in a dropdown</label><label class="d-tab" for="nj-term-2"><span class="mono">02</span>After: all five terms side by side</label></div></div>
 <figcaption class="mono">Fig 04. Choosing a payment term. Pick a screen to bring it to the front</figcaption>
@@ -327,17 +327,13 @@
 <p class="lead">The redesign is shipped. It changed what vendors see on every screen without changing the code underneath.</p>
 </div>
 <div class="table-box" style="margin-top: var(--space-8)">
-<table class="table">
-<thead><tr><th scope="col">What</th><th scope="col">Result</th></tr></thead>
+<table class="table ev-table">
+<thead><tr><th scope="col">Evidence</th><th scope="col">Result</th></tr></thead>
 <tbody>
-<tr><td><strong style="font-weight: 600">QuickPay opt-in</strong></td><td>4 clicks → 2, with every term and its cost visible before committing</td></tr>
-<tr><td><strong style="font-weight: 600">Portal</strong></td><td>300+ screens on one customized MUI theme, across 5 breakpoints</td></tr>
-<tr><td><strong style="font-weight: 600">Mobile</strong></td><td>One inspection flow for Area and Regional Managers, including ad-hoc inspections they couldn't record before, plus the vendor and checklist flows</td></tr>
-<tr><td><strong style="font-weight: 600">Codebase</strong></td><td>No rebuild: the developers' existing components and logic stayed</td></tr>
+<tr><td><span class="ev-tag mono">By design</span></td><td>QuickPay opt-in takes 2 clicks instead of 4, with every term and its cost visible before committing. Managers can record ad-hoc inspections, which they couldn't before</td></tr><tr><td><span class="ev-tag mono">Delivered</span></td><td>300+ screens on one customized MUI theme, across 5 breakpoints. One inspection flow for Area and Regional Managers, plus the vendor and checklist flows. No rebuild: the developers' components and logic stayed</td></tr><tr><td><span class="ev-tag mono is-open">Not yet measured</span></td><td>The QuickPay opt-in rate, vendor support questions, and how long inspections take on site</td></tr>
 </tbody>
 </table>
 </div>
-<p class="muted" style="margin-top: var(--space-6)">Vendor-side results, such as the QuickPay opt-in rate or support questions, haven't been measured yet.</p>
 </section>
 
 <!-- 07 LEARNINGS -->
