@@ -119,6 +119,7 @@
 <div class="sub"><div class="sub-head"><span class="mono">02 B</span><h3 class="serif h-item">After filing, silence</h3></div><p class="muted body">Citizens heard nothing until a letter or hearing notice arrived. To check progress they called or visited, and staff had to find the file to answer.</p></div>
 <div class="sub"><div class="sub-head"><span class="mono">02 C</span><h3 class="serif h-item">Finding a case meant searching by hand</h3></div><p class="muted body">Registers were handwritten and searched by name or date, so every hearing and reply started with a hunt for the folder.</p></div>
 <div class="sub"><div class="sub-head"><span class="mono">02 D</span><h3 class="serif h-item">No live view for officers</h3></div><p class="muted body">Cause lists and disposals were written by hand, so pending, overdue and escalated cases only showed up when someone counted them.</p></div>
+</div>
 </section>
 
 
@@ -226,7 +227,6 @@
 <p class="muted body">Any case can be found by CNIC or complaint number from any screen; paper registers could only be searched by name or date. The dashboard is the first screen officers see, and it changes by role: each role sees only the numbers for its own work. Overdue and escalated counts sit beside the totals, and district charts show which offices are falling behind. The whole dashboard mirrors into Urdu right to left, not just the labels.</p>
 <figure class="fig">
 <div class="d-stack" role="group" aria-label="Insights dashboard screens" style="--arw: 1440; --arh: 1000"><input class="d-in" type="radio" name="so-ins" id="so-ins-1" aria-label="Show Insights, English"><input class="d-in" type="radio" name="so-ins" id="so-ins-2" aria-label="Show Urdu, right to left"><input class="d-in" type="radio" name="so-ins" id="so-ins-3" aria-label="Show Collapsed navigation"><input class="d-in" type="radio" name="so-ins" id="so-ins-4" aria-label="Show Department officer view"><div class="d-deck" style="--n: 3"><label class="d-card" for="so-ins-1" style="--i: 0"><img src="insights-en.jpg" alt="Insights dashboard in English: total, resolved, new today, overdue, pending escalations and average resolution time cards, a bar chart of average response time for the top five districts, and an area chart of resolved versus new complaints across ten districts" width="1440" height="1000" loading="lazy"></label><label class="d-card" for="so-ins-2" style="--i: 1"><img src="insights-ur.jpg" alt="The same Insights dashboard in Urdu with a right-to-left layout: the sidebar moves to the right and the charts and cards are mirrored" width="1440" height="1000" loading="lazy"></label><label class="d-card" for="so-ins-3" style="--i: 2"><img src="insights-collapsed.jpg" alt="Insights dashboard with the sidebar collapsed to icons, giving the cards and charts more width" width="1440" height="1000" loading="lazy"></label><label class="d-card" for="so-ins-4" style="--i: 3"><img src="officer-overview.jpg" alt="Department officer overview: a shorter sidebar, three summary cards and a paginated list of all complaints with status, office and department" width="1440" height="1000" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="so-ins-1"><span class="mono">01</span>Insights, English</label><label class="d-tab" for="so-ins-2"><span class="mono">02</span>Urdu, right to left</label><label class="d-tab" for="so-ins-3"><span class="mono">03</span>Collapsed navigation</label><label class="d-tab" for="so-ins-4"><span class="mono">04</span>Department officer view</label></div></div>
-</div>
 <figcaption class="mono">Fig 04. Insights dashboard, web. Pick a screen to bring it to the front</figcaption>
 </figure>
 </div>
@@ -281,6 +281,7 @@
 </div>
 <div class="sub"><div class="sub-head"><span class="mono">I.01</span><h3 class="serif h-item">Tabs instead of sub-menus</h3></div><p class="muted body">The first design nested each module's pages as sub-items in the side menu, which made the menu long and meant a lot of scrolling. Those pages became tabs inside the module, so the menu stays short and the screen space goes to the work.</p></div>
 <div class="sub"><div class="sub-head"><span class="mono">I.02</span><h3 class="serif h-item">Multiple documents in one upload</h3></div><p class="muted body">The first design took one file at a time. A complaint often comes with several supporting papers and required documents, so the uploader now takes them together.</p></div>
+<p class="muted body" style="margin-top: var(--space-8)">Both changes came from staff review. Their effect on task time hasn't been measured.</p>
 </section>
 
 <!-- 06 OUTCOMES -->
@@ -289,25 +290,24 @@
 <p class="mono sec-label">06 <i></i> Outcomes</p>
 <h2 id="c6" class="serif h-section">About three times the complaints, resolved in <em>under half</em> the time.</h2>
 </div>
-<p class="mono label" style="margin-bottom: var(--space-6)">Key impact metrics</p>
-<dl class="stats stats-2" style="margin: 0">
-<div class="stat"><dt class="mono label" style="order: 2">Complaints in 9 months</dt><dd class="serif stat-num" style="margin: 0; color: var(--signal-ink)">18,000+</dd><dd class="muted stat-sub" style="order: 3">vs 7–8K a year on paper</dd></div>
-<div class="stat"><dt class="mono label" style="order: 2">Days, average resolution</dt><dd class="serif stat-num" style="margin: 0; color: var(--signal-ink)">120 → 50</dd><dd class="muted stat-sub" style="order: 3">Less than half the time</dd></div>
-<div class="stat"><dt class="mono label" style="order: 2">Cities across Sindh</dt><dd class="serif stat-num" style="margin: 0">15+</dd><dd class="muted stat-sub" style="order: 3">where the system is deployed</dd></div>
-<div class="stat"><dt class="mono label" style="order: 2">Minutes to register</dt><dd class="serif stat-num" style="margin: 0">~3</dd><dd class="muted stat-sub" style="order: 3">estimated, steps 01–04</dd></div>
+<p class="mono label" style="margin-bottom: var(--space-6)">Key results</p>
+<dl class="stats stats-3" style="margin: 0">
+<div class="stat"><dt class="mono label" style="order: 2">Complaints in 9 months</dt><dd class="serif stat-num" style="margin: 0; color: var(--signal-ink)">18,000+</dd><dd class="muted stat-sub" style="order: 3">vs 7–8K a year on paper</dd><dd class="stat-tag mono is-measured" style="order: 4">Measured</dd></div>
+<div class="stat"><dt class="mono label" style="order: 2">Days, average resolution</dt><dd class="serif stat-num" style="margin: 0; color: var(--signal-ink)">120 → 50</dd><dd class="muted stat-sub" style="order: 3">Less than half the time</dd><dd class="stat-tag mono is-measured" style="order: 4">Measured</dd></div>
+<div class="stat"><dt class="mono label" style="order: 2">Cities across Sindh</dt><dd class="serif stat-num" style="margin: 0">15+</dd><dd class="muted stat-sub" style="order: 3">where the system is deployed</dd><dd class="stat-tag mono" style="order: 4">Deployment</dd></div>
 </dl>
 <p class="mono label" style="margin-top: var(--space-6); white-space: normal">Source: the system's own reports, first 9 months after launch in March 2025. The paper baseline is estimated from the office's manuals and registers.</p>
-<div class="sub" style="border-top: 0">
-<h3 class="serif h-item">What changed for each group</h3>
-<ul class="callouts">
-<li><span class="mono">01</span><strong style="font-weight: 600">Citizens</strong><span class="muted">File from a phone instead of visiting an office, and see every step of their case. 18,000+ complaints came in during the first 9 months, against 7–8K a year on paper.</span></li>
-<li><span class="mono">02</span><strong style="font-weight: 600">Staff</strong><span class="muted">Find any case by CNIC or reference number instead of searching registers.</span></li>
-<li><span class="mono">03</span><strong style="font-weight: 600">Officers</strong><span class="muted">See pending, overdue and escalated cases live. Average resolution fell from 120 to 50 days.</span></li>
-</ul>
+<div class="table-box" style="margin-top: var(--space-12)">
+<table class="table ev-table">
+<thead><tr><th scope="col">Evidence</th><th scope="col">Result</th></tr></thead>
+<tbody>
+<tr><td><span class="ev-tag mono is-measured">Measured</span></td><td>18,000+ complaints in the first 9 months, against 7–8K a year on paper. Average resolution fell from 120 to 50 days. Both from the system's reports</td></tr><tr><td><span class="ev-tag mono">By design</span></td><td>Filing takes an estimated 3 minutes on a phone. Any case can be found by CNIC or reference number. Officers see pending, overdue and escalated cases on one screen. Module pages are tabs instead of nested menus</td></tr><tr><td><span class="ev-tag mono is-open">Not yet measured</span></td><td>How long staff take to find a case, how many first-time filers finish without help, and citizen ratings from the Decision tab</td></tr>
+</tbody>
+</table>
 </div>
-<div class="sub">
+<div class="sub" style="border-top: 0">
 <h3 class="serif h-item">What the design did, and didn't, cause</h3>
-<p class="muted body">These are system-level results. Moving off paper, the 15+ city rollout and the office's own work all contributed. The design's part was making filing short enough to do on a phone, and making every case findable and trackable.</p>
+<p class="muted body">The measured results are system-level. Moving off paper, the rollout to 15+ cities and the office's own work all contributed. The design made filing and tracking possible on a phone and made every case findable; how much of the change it accounts for hasn't been measured.</p>
 </div>
 </section>
 

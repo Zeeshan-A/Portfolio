@@ -954,3 +954,12 @@ a:hover .arr-ne,button:hover .arr-ne{transform:translate(3px,-3px)}
 /* footer: labels wrap, one column on phones (case pages sit outside the page container) */
 .foot-col .mono.label{white-space:normal}
 @media (max-width:720px){.foot{grid-template-columns:minmax(0,1fr)}}
+
+/* evidence labels: measured vs designed vs not yet measured */
+.stats-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@container page (max-width:720px){.stats-3{grid-template-columns:minmax(0,1fr)}}
+.stat-tag,.ev-tag{align-self:flex-start;display:inline-block;margin:0;padding:3px 8px;border:1px solid var(--line);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.stat-tag.is-measured,.ev-tag.is-measured{color:var(--signal-ink);border-color:rgba(37,99,235,.35);background:rgba(37,99,235,.06)}
+.ev-tag.is-open{border-style:dashed}
+.ev-table td:first-child{width:190px;vertical-align:top}
+@container page (max-width:720px){.ev-table td:first-child{width:auto}}
