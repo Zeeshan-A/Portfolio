@@ -751,8 +751,8 @@ a:hover .arr-ne,button:hover .arr-ne{transform:translate(3px,-3px)}
 .d-stack{position:relative;padding:var(--space-12) var(--space-10,40px) var(--space-8);background:var(--raised);border:1px solid var(--line);border-radius:16px;display:flex;flex-direction:column;gap:var(--space-8)}
 .d-in{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
 .d-deck{position:relative;width:100%}
-.d-deck::before{content:"";display:block;padding-top:calc(71.11% + var(--n) * 18px)}
-.d-card{position:absolute;left:0;right:0;bottom:0;aspect-ratio:1440/1024;display:block;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#FFFFFF;box-shadow:0 24px 48px -28px rgba(11,12,14,.42),0 2px 8px -2px rgba(11,12,14,.08);cursor:pointer;transform-origin:50% 0;transform:translateY(calc((var(--i) + 1) * -18px)) scale(calc(1 - (var(--i) + 1) * .04));z-index:calc(20 - var(--i));filter:brightness(.97);transition:transform .45s cubic-bezier(.2,.7,.2,1),filter .3s ease}
+.d-deck::before{content:"";display:block;padding-top:calc(100% * var(--arh,1024) / var(--arw,1440) + var(--n) * 18px)}
+.d-card{position:absolute;left:0;right:0;bottom:0;aspect-ratio:var(--arw,1440)/var(--arh,1024);display:block;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#FFFFFF;box-shadow:0 24px 48px -28px rgba(11,12,14,.42),0 2px 8px -2px rgba(11,12,14,.08);cursor:pointer;transform-origin:50% 0;transform:translateY(calc((var(--i) + 1) * -18px)) scale(calc(1 - (var(--i) + 1) * .04));z-index:calc(20 - var(--i));filter:brightness(.97);transition:transform .45s cubic-bezier(.2,.7,.2,1),filter .3s ease}
 .d-card img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
 .d-stack:not(:has(.d-in:checked)) .d-card:first-child{transform:none;z-index:30;filter:none;cursor:default}
 .d-tabs{display:flex;flex-wrap:wrap;gap:var(--space-2);justify-content:center}
@@ -787,7 +787,7 @@ a:hover .arr-ne,button:hover .arr-ne{transform:translate(3px,-3px)}
 .d-stack:has(.d-in:nth-of-type(8):checked) .d-tab:nth-child(8){background:var(--signal);color:var(--on-signal);border-color:var(--signal)}
 .d-stack:has(.d-in:nth-of-type(8):checked) .d-tab:nth-child(8) .mono{color:var(--on-signal)}
 @media (prefers-reduced-motion:reduce){.d-card{transition:none}}
-@container page (max-width:720px){.d-stack{padding:var(--space-8) var(--space-4) var(--space-6);border-radius:12px;gap:var(--space-6)}.d-deck::before{padding-top:calc(71.11% + var(--n) * 10px)}.d-card{border-radius:8px;transform:translateY(calc((var(--i) + 1) * -10px)) scale(calc(1 - (var(--i) + 1) * .04))}.d-tab{height:32px;font-size:13px}}
+@container page (max-width:720px){.d-stack{padding:var(--space-8) var(--space-4) var(--space-6);border-radius:12px;gap:var(--space-6)}.d-deck::before{padding-top:calc(100% * var(--arh,1024) / var(--arw,1440) + var(--n) * 10px)}.d-card{border-radius:8px;transform:translateY(calc((var(--i) + 1) * -10px)) scale(calc(1 - (var(--i) + 1) * .04))}.d-tab{height:32px;font-size:13px}}
 
 /* buttons: flat 2D, glowing shadow underneath, a light that travels around the border on hover */
 @property --btn-a{syntax:"<angle>";inherits:false;initial-value:0deg}
@@ -940,3 +940,17 @@ a:hover .arr-ne,button:hover .arr-ne{transform:translate(3px,-3px)}
 @container page (min-width:1025px){
   .dt-steps{--dt-w:min(112%, calc(100vw - 48px));width:var(--dt-w);margin-inline:calc((100% - var(--dt-w)) / 2)}
 }
+
+
+/* problem cards in a 2x2 grid */
+.cs-grid4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-6);margin-top:var(--space-12)}
+.cs-grid4>.sub{margin:0;padding:var(--space-8) var(--space-6);border:1px solid var(--line);background:#FFFFFF;border-radius:0;gap:var(--space-3)}
+.cs-grid4>.sub .sub-head{flex-direction:column;gap:var(--space-2)}
+@container page (max-width:720px){.cs-grid4{grid-template-columns:minmax(0,1fr)}}
+
+/* every screenshot (desktop, tablet, mobile): a 2px radius */
+.is-root .screen img,.is-root .m-shot img,.is-root .shot-media img,.is-root .d-card,.is-root .desk-shot img,.is-root .wf-card img,.is-root .ds-fig img{border-radius:2px}
+
+/* footer: labels wrap, one column on phones (case pages sit outside the page container) */
+.foot-col .mono.label{white-space:normal}
+@media (max-width:720px){.foot{grid-template-columns:minmax(0,1fr)}}

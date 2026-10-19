@@ -30,8 +30,8 @@
 
 </a>
 <nav class="nav-links" aria-label="Primary">
-<a class="link mono" href="./">Work</a>
-<a class="link mono" href="./">About</a>
+<a class="link mono" href="./#work">Work</a>
+<a class="link mono" href="./#about">About</a>
 <a class="link mono" href="#contact">Contact</a>
 <a class="link mono" href="Zeeshan_Ahmad_UIUX_Designer_CV.pdf" download="Zeeshan_Ahmad_UIUX_Designer_CV.pdf">CV <span class="arr arr-d" aria-hidden="true">↓</span></a>
 </nav>
@@ -47,16 +47,18 @@
 <a class="link mono" href="./" style="align-self: flex-start"><span class="arr arr-l" aria-hidden="true">←</span> All work</a>
 <div class="hero-top enter"><p class="mono label">Case study · P. 01</p><div class="tags"><span class="tag mono">GovTech</span><span class="tag mono">Sindh Government</span></div></div>
 <h1 class="serif h-display enter" style="max-width: 1100px">Sindh Ombudsman: a <em>30-year</em> paper process, moved online.</h1>
-<p class="lead enter-2" style="max-width: 760px; color: var(--muted)">The first digital complaint management system for the Sindh Ombudsman: citizen apps on web, mobile and tablet, plus the internal tools staff use to run every case.</p>
+<p class="lead enter-2" style="max-width: 760px; color: var(--muted)">Citizens filed complaints in person, and the average case took 120 days to close. I designed the system that replaced the paper files: citizen apps on web, mobile and tablet, and the tools staff and officers use to run each case. In its first 9 months it handled 18,000+ complaints, against 7–8K a year on paper.</p>
 </section>
 
 <section class="wrap" aria-label="Project facts">
 <dl class="cs-meta" style="margin: 0">
-<div><dt class="mono label">Role</dt><dd style="margin: 0">Lead UI/UX Designer</dd></div>
+<div><dt class="mono label">Role</dt><dd style="margin: 0">UI/UX Designer, sole designer</dd></div>
+<div><dt class="mono label">Team</dt><dd style="margin: 0">PM · Business analyst · Developers</dd></div>
 <div><dt class="mono label">Duration</dt><dd style="margin: 0">6 months</dd></div>
 <div><dt class="mono label">Status</dt><dd style="margin: 0">Shipped, in use</dd></div>
 <div><dt class="mono label">Platforms</dt><dd style="margin: 0">Web · Mobile · Tablet</dd></div>
 <div><dt class="mono label">Scope</dt><dd style="margin: 0">10+ modules · 150+ screens</dd></div>
+<div><dt class="mono label">Deployed</dt><dd style="margin: 0">15+ cities across Sindh</dd></div>
 </dl>
 </section>
 
@@ -69,10 +71,11 @@
 <nav class="cs-index" aria-label="Case study chapters">
 <a class="mono" href="#context" aria-current="false"><span>01</span>Context</a>
 <a class="mono" href="#problem" aria-current="false"><span>02</span>Problem</a>
-<a class="mono" href="#process" aria-current="false"><span>03</span>Process</a>
-<a class="mono" href="#solution" aria-current="false"><span>04</span>Solution</a>
-<a class="mono" href="#outcomes" aria-current="false"><span>05</span>Outcomes</a>
-<a class="mono" href="#learnings" aria-current="false"><span>06</span>Learnings</a>
+<a class="mono" href="#research" aria-current="false"><span>03</span>Investigation</a>
+<a class="mono" href="#solution" aria-current="false"><span>04</span>Design decisions</a>
+<a class="mono" href="#iteration" aria-current="false"><span>05</span>Iteration</a>
+<a class="mono" href="#outcomes" aria-current="false"><span>06</span>Outcomes</a>
+<a class="mono" href="#learnings" aria-current="false"><span>07</span>Learnings</a>
 </nav>
 
 <div class="cs-main">
@@ -83,52 +86,75 @@
 <h2 id="c1" class="serif h-section">What is the Sindh Ombudsman?</h2>
 </div>
 <div class="body">
-<p class="lead">The Ombudsman's office investigates citizens' complaints against Sindh government departments. For 30 years, every complaint was filed, tracked and resolved on paper.</p>
-<p class="muted">The new system had to work for three very different groups at once, from a citizen filing their first complaint on a phone to staff managing hearings across regional offices.</p>
+<p class="lead">The Sindh Ombudsman's office investigates citizens' complaints against provincial government departments. For 30 years, every complaint was filed, tracked and resolved on paper, with case files moving by hand between offices across the province.</p>
+<p class="muted">Three groups depend on the same case file.</p>
 </div>
-<div class="cards3" style="margin-top: var(--space-12)">
-<div><span class="mono" style="color: var(--signal-ink)">Citizens</span><p style="font-size: 15px">File a complaint, then follow it to resolution without visiting an office.</p></div>
-<div><span class="mono" style="color: var(--signal-ink)">Regional offices</span><p style="font-size: 15px">Register, search and process complaints at the counter.</p></div>
-<div><span class="mono" style="color: var(--signal-ink)">Case officers</span><p style="font-size: 15px">Schedule hearings, run the cause list and dispose of cases in bulk.</p></div>
+<div class="table-box" style="margin-top: var(--space-12)">
+<table class="table">
+<thead><tr><th scope="col">Role</th><th scope="col">What they need</th><th scope="col">What paper made hard</th></tr></thead>
+<tbody>
+<tr><td><strong style="font-weight: 600">Citizens</strong></td><td>File a complaint and follow it to a decision</td><td>Filing meant a visit; after that, no way to check progress</td></tr>
+<tr><td><strong style="font-weight: 600">Regional office staff</strong></td><td>Register, find and update complaints</td><td>Searching handwritten registers by name or date</td></tr>
+<tr><td><strong style="font-weight: 600">Case officers</strong></td><td>Run hearings, decide and close cases</td><td>Cause lists and disposals kept by hand, with no live view of what was pending</td></tr>
+</tbody>
+</table>
 </div>
 <div class="sub">
-<h3 class="serif h-item">My role</h3>
-<ul class="callouts">
-<li><span class="mono">A.01</span><strong style="font-weight: 600">Research &amp; flows</strong><span class="muted">Mapped the paper process into 10+ modules.</span></li>
-<li><span class="mono">A.02</span><strong style="font-weight: 600">Citizen apps</strong><span class="muted">Web, mobile and tablet experiences.</span></li>
-<li><span class="mono">A.03</span><strong style="font-weight: 600">Case management</strong><span class="muted">Internal tools for staff and officers.</span></li>
-<li><span class="mono">A.04</span><strong style="font-weight: 600">System &amp; handoff</strong><span class="muted">Components, specs and design QA.</span></li>
-</ul>
+<h3 class="serif h-item">My part</h3>
+<p class="muted body">I was the only designer, working with a PM, a business analyst and the developers. I owned the information architecture: I mapped the paper process into 10+ modules and the navigation between them. I designed every citizen and staff screen across web, mobile and tablet, built the component system, handed off to the developers and ran design QA. The product owner ran the on-site sessions with staff, mainly in Sukkur, and I joined remotely.</p>
 </div>
 </section>
 
 <!-- 02 PROBLEM -->
 <section id="problem" class="chapter band reveal" aria-labelledby="c2">
 <div class="ch-head">
-<p class="mono sec-label">02 <i></i> Problem &amp; research</p>
-<h2 id="c2" class="serif h-section">How do you move a 30-year paper process online without <em>losing</em> anyone?</h2>
+<p class="mono sec-label">02 <i></i> Problem</p>
+<h2 id="c2" class="serif h-section">A complaint took <em>120 days</em> on average, and nobody could see where it was.</h2>
 </div>
 <div class="body">
-<p class="lead">The challenge wasn't digitising forms. It was making a slow, opaque process feel quick and trustworthy to people who had only ever done it on paper.</p>
-<div class="chips"><span class="chip">Stakeholder sessions</span><span class="chip">Paper form audit</span><span class="chip">Citizen interviews</span><span class="chip">Process mapping</span></div>
+<p class="lead">Citizens had to file in person on a long paper form, then wait with no way to check progress. Staff couldn't answer "where is my case?" without pulling physical files, and officers had no live view of what was pending or overdue. The office needed a system citizens could file in and follow, and staff could run cases in, without losing the steps set out in the office's manuals.</p>
 </div>
-<div class="sub"><div class="sub-head"><span class="mono">02 A</span><h3 class="serif h-item">Registration was long and one-shot</h3></div><p class="muted body">The paper form asked for everything at once, in a single office visit. Citizens had to know which details mattered before they started, and one missing field could send them back.</p></div>
-<div class="sub"><div class="sub-head"><span class="mono">02 B</span><h3 class="serif h-item">No one could see where a complaint was</h3></div><p class="muted body">After filing, citizens heard nothing until a letter or hearing notice arrived. Checking status meant calling or visiting the office, and staff had to dig through files to answer.</p></div>
-<div class="sub"><div class="sub-head"><span class="mono">02 C</span><h3 class="serif h-item">Finding a case took too long</h3></div><p class="muted body">Staff searched handwritten registers and physical files by name or date. Finding one case meant asking colleagues and pulling folders, which slowed every hearing and reply.</p></div>
-<div class="sub"><div class="sub-head"><span class="mono">02 D</span><h3 class="serif h-item">Hearings and disposals were managed by hand</h3></div><p class="muted body">Cause lists were prepared by hand and disposals were recorded on paper, so senior officers had no live view of what was pending, overdue or escalated.</p></div>
+<div class="cs-grid4">
+<div class="sub"><div class="sub-head"><span class="mono">02 A</span><h3 class="serif h-item">Filing took a visit and a long form</h3></div><p class="muted body">The paper form asked for everything at once, in a single office visit.</p></div>
+<div class="sub"><div class="sub-head"><span class="mono">02 B</span><h3 class="serif h-item">After filing, silence</h3></div><p class="muted body">Citizens heard nothing until a letter or hearing notice arrived. To check progress they called or visited, and staff had to find the file to answer.</p></div>
+<div class="sub"><div class="sub-head"><span class="mono">02 C</span><h3 class="serif h-item">Finding a case meant searching by hand</h3></div><p class="muted body">Registers were handwritten and searched by name or date, so every hearing and reply started with a hunt for the folder.</p></div>
+<div class="sub"><div class="sub-head"><span class="mono">02 D</span><h3 class="serif h-item">No live view for officers</h3></div><p class="muted body">Cause lists and disposals were written by hand, so pending, overdue and escalated cases only showed up when someone counted them.</p></div>
 </section>
 
-<!-- 03 PROCESS -->
-<section id="process" class="chapter reveal" aria-labelledby="c3">
+
+<!-- 03 INVESTIGATION -->
+<section id="research" class="chapter reveal" aria-labelledby="c3">
 <div class="ch-head">
-<p class="mono sec-label">03 <i></i> Process</p>
-<h2 id="c3" class="serif h-section">From paper registers to 10+ connected modules.</h2>
+<p class="mono sec-label">03 <i></i> Investigation</p>
+<h2 id="c3" class="serif h-section">Learning the paper process before designing <em>a screen</em>.</h2>
 </div>
-<div class="cards3">
-<div><span class="mono" style="color: var(--signal-ink)">Phase 1</span><strong style="font-weight: 600">Map the paper process</strong><span class="muted" style="font-size: 15px">Every form, register and hand-off.</span></div>
-<div><span class="mono" style="color: var(--signal-ink)">Phase 2</span><strong style="font-weight: 600">Structure the modules</strong><span class="muted" style="font-size: 15px">Information architecture for citizens and staff.</span></div>
-<div><span class="mono" style="color: var(--signal-ink)">Phase 3</span><strong style="font-weight: 600">Design the core flows</strong><span class="muted" style="font-size: 15px">Across web, mobile and tablet.</span></div>
-<div><span class="mono" style="color: var(--signal-ink)">Phase 4</span><strong style="font-weight: 600">Test, systemise, hand off</strong><span class="muted" style="font-size: 15px">Components, specs and design QA.</span></div>
+<div class="body">
+<p class="lead">The project ran inside the Ombudsman's office, so citizens weren't part of the research. We started with the people who handle every complaint.</p>
+<p class="muted">The product owner ran sessions on site with 8+ staff and officers, mainly in Sukkur, and I joined remotely. Staff sent case files, registers and complaint material through shared channels and Teams meetings.</p>
+</div>
+<div class="table-box" style="margin-top: var(--space-12)">
+<table class="table">
+<thead><tr><th scope="col">Method</th><th scope="col">With whom</th><th scope="col">What it gave us</th></tr></thead>
+<tbody>
+<tr><td><strong style="font-weight: 600">Interviews</strong></td><td>8+ staff and officers</td><td>How a complaint moves, and where it gets stuck</td></tr>
+<tr><td><strong style="font-weight: 600">Diary study, about one week</strong></td><td>Staff, during their normal work</td><td>How cases are handled day to day, not how the manual says</td></tr>
+<tr><td><strong style="font-weight: 600">Document analysis</strong></td><td>Paper forms, registers, office manuals</td><td>Every field, register and hand-off, the order of a case's stages, and the baseline numbers</td></tr>
+<tr><td><strong style="font-weight: 600">Competitive analysis</strong></td><td>The product owner and me</td><td>How the Punjab Ombudsman's system and mobile app handle the same job</td></tr>
+<tr><td><strong style="font-weight: 600">Process mapping</strong></td><td>Me, from the above</td><td>The map that became 10+ modules</td></tr>
+</tbody>
+</table>
+</div>
+<p class="muted body" style="margin-top: var(--space-8)">What we found became the four problems above. The order a case moves through the office's manuals became the structure of the case page.</p>
+</section>
+
+<!-- 04 DESIGN DECISIONS -->
+<section id="solution" class="chapter reveal" aria-labelledby="c4">
+<div class="ch-head">
+<p class="mono sec-label">04 <i></i> Design decisions</p>
+<h2 id="c4" class="serif h-section">Each decision answers one of the <em>four problems</em>.</h2>
+</div>
+<div class="body">
+<p class="lead">The PM set the order of the modules. For each one, I designed low-fidelity wireframes and a clickable prototype for the team to review, then high-fidelity screens and a prototype that we presented to the Sindh Ombudsman's team for approval.</p>
 </div>
 <div class="sub">
 <h3 class="serif h-item">From problem to design decision</h3>
@@ -136,10 +162,10 @@
 <table class="table">
 <thead><tr><th scope="col">Problem</th><th scope="col">Design decision</th></tr></thead>
 <tbody>
-<tr><td>Long, one-shot registration</td><td>Stepped registration: one short step at a time, with progress shown</td></tr>
-<tr><td>No visibility after filing</td><td>Lifecycle stepper and status badges on every complaint</td></tr>
-<tr><td>Slow case lookup</td><td>Search by CNIC or complaint number, from any screen</td></tr>
-<tr><td>Manual hearings and disposals</td><td>Hearing/Cause List module and bulk case disposal</td></tr>
+<tr><td><span class="mono">02 A</span> Long, one-shot registration</td><td>Stepped registration: one short step at a time, with progress shown</td></tr>
+<tr><td><span class="mono">02 B</span> No visibility after filing</td><td>Lifecycle stepper and status badges on every complaint</td></tr>
+<tr><td><span class="mono">02 C</span> Slow case lookup</td><td>Search by CNIC or complaint number, from any screen</td></tr>
+<tr><td><span class="mono">02 D</span> Manual hearings and disposals</td><td>Hearing/Cause List module and bulk case disposal</td></tr>
 </tbody>
 </table>
 </div>
@@ -149,39 +175,31 @@
 <figure class="fig journey-img">
 <picture>
 <source media="(max-width: 720px)" srcset="so-journey-v.png">
-<img src="so-journey-h.png" alt="Citizen journey map in seven steps, grouped into three phases: File (about 3 minutes), Follow, and Resolve (50 days on average). The full steps are listed below for screen readers." width="1776" height="1022">
+<img src="so-journey-h.png" alt="Citizen journey map in seven steps, grouped into three phases: File (about 3 minutes, estimated), Follow, and Resolve (50 days on average). The full steps are listed below for screen readers." width="1776" height="1022">
 </picture>
 <ol class="sr-only" aria-label="The citizen's journey, step by step">
 <li>Register: picks their citizen type and signs up. System: the right form for each citizen type.</li>
 <li>Verify CNIC: confirms identity with their CNIC. System: every complaint is findable by CNIC.</li>
-<li>Describe complaint: explains the issue with the department. System: AI classifies it and suggests jurisdiction.</li>
-<li>Submit: reviews and sends it, in about 3 minutes. System: a complaint number to track it by.</li>
+<li>Describe complaint: explains the issue with the department. System: routed to the right department.</li>
+<li>Submit: reviews and sends it, in an estimated 3 minutes. System: a complaint number to track it by.</li>
 <li>Track status: follows progress without visiting an office. System: a numbered activity timeline.</li>
-<li>Hearing: attends a scheduled hearing. System: cause list; AI drafts the findings.</li>
-<li>Resolved: receives the decision and rates it. System: AI-drafted decision, refined by officials.</li>
+<li>Hearing: attends a scheduled hearing. System: listed on the cause list, with a notice sent.</li>
+<li>Resolved: receives the decision and rates it. System: the decision is recorded and shared.</li>
 </ol>
-<figcaption class="mono">Citizen journey: about 3 minutes to file, 120 → 50 days average resolution, 18,000+ complaints in 9 months</figcaption>
+<figcaption class="mono">Citizen journey: an estimated 3 minutes to file, 120 → 50 days average resolution, 18,000+ complaints in 9 months</figcaption>
 </figure>
 </div>
 
-</section>
-
-<!-- 04 SOLUTION -->
-<section id="solution" class="chapter reveal" aria-labelledby="c4">
-<div class="ch-head">
-<p class="mono sec-label">04 <i></i> Solution</p>
-<h2 id="c4" class="serif h-section">Wireframes first, then the <em>shipped</em> screens.</h2>
-</div>
-<div class="tabs" aria-label="Solution views">
+<div class="tabs" aria-label="Solution views" style="margin-top: var(--space-16)">
 <button type="button" class="tab mono is-on" aria-pressed="true" data-tab="hifi">High fidelity<span class="tab-count">17</span></button>
 <button type="button" class="tab mono" aria-pressed="false" data-tab="wf">Wireframes<span class="tab-count">22</span></button>
 </div>
 <div data-panel="hifi">
 <div class="tab-panel">
-<p class="muted body">The final screens citizens and staff use today, designed and shipped across web, tablet and mobile.</p>
+<p class="muted body">Every screen was drawn in greyscale first (22 wireframes), then taken to high fidelity. These are 17 of the key screens citizens and staff use today.</p>
 <div class="sub">
-<div class="sub-head"><span class="mono">H.01</span><h3 class="serif h-item">Stepped registration</h3></div>
-<p class="muted body">Three short screens instead of one long form: choose to log in or register, say who you are, then fill in only what's required. Optional details stay folded away, so a citizen can finish in about 3 minutes.</p>
+<div class="sub-head"><span class="mono">H.01</span><h3 class="serif h-item">Stepped registration</h3><span class="mono label">Answers 02 A</span></div>
+<p class="muted body">Instead of one long form, registration is three short screens: log in or register, choose your citizen type, then fill in only what's required. Pakistani citizens, overseas Pakistanis and foreigners need different details, so the type comes first and the form adapts. Optional details stay folded, so first-time filers aren't faced with every field at once. Urdu is one tap away from the first screen. Estimated time to file: about 3 minutes.</p>
 <figure class="fig">
 <div class="screens">
 <div class="screen"><img src="so-01-welcome.png" alt="Welcome screen with two large buttons: Login for registered citizens and Register for new citizens, and an Urdu language switch" width="402" height="882"><p class="screen-cap"><span class="mono">01</span>Log in or register</p></div>
@@ -190,17 +208,10 @@
 </div>
 <figcaption class="mono">Fig 02. Registration in three short screens, mobile</figcaption>
 </figure>
-<ul class="callouts" style="grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr))">
-<li><span class="mono">01</span><strong style="font-weight: 600">Two clear doors</strong><span class="muted">Login or Register, each explained in plain words.</span></li>
-<li><span class="mono">02</span><strong style="font-weight: 600">The right form for each citizen</strong><span class="muted">Pakistani, Overseas Pakistani or Foreigner.</span></li>
-<li><span class="mono">03</span><strong style="font-weight: 600">Errors prevented up front</strong><span class="muted">A NADRA phone hint shows before anyone types.</span></li>
-<li><span class="mono">04</span><strong style="font-weight: 600">Required first</strong><span class="muted">Optional information stays collapsed.</span></li>
-<li><span class="mono">05</span><strong style="font-weight: 600">Urdu one tap away</strong><span class="muted">A language switch from the very first screen.</span></li>
-</ul>
 </div>
 <div class="sub">
-<div class="sub-head"><span class="mono">H.02</span><h3 class="serif h-item">One complaint, its whole story</h3></div>
-<p class="muted body">Every complaint lives under one reference number and three tabs. Citizens see what they filed, everything that has happened since, and the final decision, without calling or visiting an office.</p>
+<div class="sub-head"><span class="mono">H.02</span><h3 class="serif h-item">One complaint, one reference, three tabs</h3><span class="mono label">Answers 02 B</span></div>
+<p class="muted body">Every complaint gets a reference like KHI-AK-EDU-0001/2025, built from region, department and year, so anyone can tell where it belongs from the code alone. The Activity tab is a numbered timeline of who acted, when and with which documents. That's the answer to "where is my case?" that used to need a phone call. When a case closes, the citizen can rate the decision.</p>
 <figure class="fig">
 <div class="screens">
 <div class="screen"><img src="so-04-complaint.png" alt="Complaint tab for complaint KHI-AK-EDU-0001/2025: complaint type, department, citizen and location details, then the subject and full complaint text. Personal contact details are blurred." width="402" height="886"><p class="screen-cap"><span class="mono">01</span>Complaint</p></div>
@@ -209,74 +220,36 @@
 </div>
 <figcaption class="mono">Fig 03. Complaint detail: complaint, activity and decision tabs, mobile</figcaption>
 </figure>
-<ul class="callouts">
-<li><span class="mono">01</span><strong style="font-weight: 600">One reference number</strong><span class="muted">Region, department and year in one code, e.g. KHI-AK-EDU-0001/2025.</span></li>
-<li><span class="mono">02</span><strong style="font-weight: 600">A numbered timeline</strong><span class="muted">Who acted, when, and with which documents.</span></li>
-<li><span class="mono">03</span><strong style="font-weight: 600">Feedback when it closes</strong><span class="muted">Citizens rate the decision and add comments.</span></li>
-</ul>
 </div>
 <div class="sub">
-<div class="sub-head"><span class="mono">H.03</span><h3 class="serif h-item">Insights at a glance</h3></div>
-<p class="muted body">The first screen every officer sees. Seven numbers answer "how are we doing?", and two charts show where in Sindh complaints are slow or piling up. The same dashboard mirrors fully into Urdu, right to left.</p>
+<div class="sub-head"><span class="mono">H.03</span><h3 class="serif h-item">Search and insights for staff</h3><span class="mono label">Answers 02 C and 02 D</span></div>
+<p class="muted body">Any case can be found by CNIC or complaint number from any screen; paper registers could only be searched by name or date. The dashboard is the first screen officers see, and it changes by role: each role sees only the numbers for its own work. Overdue and escalated counts sit beside the totals, and district charts show which offices are falling behind. The whole dashboard mirrors into Urdu right to left, not just the labels.</p>
 <figure class="fig">
-<div class="desk-hero"><figure class="desk-shot"><img src="insights-en.jpg" alt="Insights dashboard in English: total, resolved, new today, overdue, pending escalations and average resolution time cards, a bar chart of average response time for the top five districts, and an area chart of resolved versus new complaints across ten districts" width="1440" height="1000" loading="lazy"><p class="screen-cap"><span class="mono">01</span>Insights, English</p></figure></div>
-<div class="desk desk-3">
-<figure class="desk-shot"><img src="insights-ur.jpg" alt="The same Insights dashboard in Urdu with a right-to-left layout: the sidebar moves to the right and the charts and cards are mirrored" width="1440" height="1000" loading="lazy"><p class="screen-cap"><span class="mono">02</span>Urdu, right to left</p></figure>
-<figure class="desk-shot"><img src="insights-collapsed.jpg" alt="Insights dashboard with the sidebar collapsed to icons, giving the cards and charts more width" width="1440" height="1000" loading="lazy"><p class="screen-cap"><span class="mono">03</span>Collapsed navigation</p></figure>
-<figure class="desk-shot"><img src="officer-overview.jpg" alt="Department officer overview: a shorter sidebar, three summary cards and a paginated list of all complaints with status, office and department" width="1440" height="1000" loading="lazy"><p class="screen-cap"><span class="mono">04</span>Department officer view</p></figure>
+<div class="d-stack" role="group" aria-label="Insights dashboard screens" style="--arw: 1440; --arh: 1000"><input class="d-in" type="radio" name="so-ins" id="so-ins-1" aria-label="Show Insights, English"><input class="d-in" type="radio" name="so-ins" id="so-ins-2" aria-label="Show Urdu, right to left"><input class="d-in" type="radio" name="so-ins" id="so-ins-3" aria-label="Show Collapsed navigation"><input class="d-in" type="radio" name="so-ins" id="so-ins-4" aria-label="Show Department officer view"><div class="d-deck" style="--n: 3"><label class="d-card" for="so-ins-1" style="--i: 0"><img src="insights-en.jpg" alt="Insights dashboard in English: total, resolved, new today, overdue, pending escalations and average resolution time cards, a bar chart of average response time for the top five districts, and an area chart of resolved versus new complaints across ten districts" width="1440" height="1000" loading="lazy"></label><label class="d-card" for="so-ins-2" style="--i: 1"><img src="insights-ur.jpg" alt="The same Insights dashboard in Urdu with a right-to-left layout: the sidebar moves to the right and the charts and cards are mirrored" width="1440" height="1000" loading="lazy"></label><label class="d-card" for="so-ins-3" style="--i: 2"><img src="insights-collapsed.jpg" alt="Insights dashboard with the sidebar collapsed to icons, giving the cards and charts more width" width="1440" height="1000" loading="lazy"></label><label class="d-card" for="so-ins-4" style="--i: 3"><img src="officer-overview.jpg" alt="Department officer overview: a shorter sidebar, three summary cards and a paginated list of all complaints with status, office and department" width="1440" height="1000" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="so-ins-1"><span class="mono">01</span>Insights, English</label><label class="d-tab" for="so-ins-2"><span class="mono">02</span>Urdu, right to left</label><label class="d-tab" for="so-ins-3"><span class="mono">03</span>Collapsed navigation</label><label class="d-tab" for="so-ins-4"><span class="mono">04</span>Department officer view</label></div></div>
 </div>
-<figcaption class="mono">Fig 04. Insights dashboard, web</figcaption>
+<figcaption class="mono">Fig 04. Insights dashboard, web. Pick a screen to bring it to the front</figcaption>
 </figure>
-<ul class="callouts">
-<li><span class="mono">01</span><strong style="font-weight: 600">Problems surface first</strong><span class="muted">Overdue and escalated cases sit beside the totals, not in a report.</span></li>
-<li><span class="mono">02</span><strong style="font-weight: 600">Where, not just how many</strong><span class="muted">District charts show which offices need help.</span></li>
-<li><span class="mono">03</span><strong style="font-weight: 600">A true Urdu layout</strong><span class="muted">Navigation, cards and charts all flip right to left.</span></li>
-<li><span class="mono">04</span><strong style="font-weight: 600">Each role sees its own work</strong><span class="muted">A department officer gets a shorter menu and their complaint list.</span></li>
-</ul>
 </div>
 <div class="sub">
-<div class="sub-head"><span class="mono">H.04</span><h3 class="serif h-item">Nine stages, one case page</h3></div>
-<p class="muted body">The paper file became one page with nine tabs, in the order a case actually moves: Examination, Investigation, Decision Findings, Decision, Implementation, Representation, Disposal, Documents and Note Sheet. Officers always know which stage a case is in and what comes next.</p>
+<div class="sub-head"><span class="mono">H.04</span><h3 class="serif h-item">Nine stages, one case page</h3><span class="mono label">Answers 02 D</span></div>
+<p class="muted body">The paper file became one page with nine tabs, in the order the office's manuals set out: Examination, Investigation, Decision Findings, Decision, Implementation, Representation, Disposal, Documents and Note Sheet. Following the manuals meant officers didn't have to relearn their process, only where it lived.</p>
 <figure class="fig">
-<div class="desk">
-<figure class="desk-shot"><img src="examination.jpg" alt="Examination tab: complaint and citizen details with a Verify CNIC button, the complaint text and attachments, then diary number and officer fields with Admissible and Non-Admissible buttons. Personal contact details are blurred." width="1440" height="1000" loading="lazy"><p class="screen-cap"><span class="mono">01</span>Examination</p></figure>
-<figure class="desk-shot"><img src="findings.jpg" alt="Decision Findings tab: a decision draft text area, an attachment drop zone and Clear and Submit buttons" width="1440" height="1000" loading="lazy"><p class="screen-cap"><span class="mono">02</span>Decision findings</p></figure>
-<figure class="desk-shot"><img src="decision.jpg" alt="Decision tab: complaint and office details, the complaint text, the draft findings with an Edit button, the final decision PDF and a field to write the decision. Personal contact details are blurred." width="1440" height="1000" loading="lazy"><p class="screen-cap"><span class="mono">03</span>Decision</p></figure>
-<figure class="desk-shot"><img src="implementation.jpg" alt="Implementation tab: a numbered timeline of officer actions with dates and documents, and a composer to message the complainant or agency by WhatsApp, SMS, email or post" width="1440" height="1000" loading="lazy"><p class="screen-cap"><span class="mono">04</span>Implementation</p></figure>
-</div>
-<figcaption class="mono">Fig 05. The case page across its stages, web</figcaption>
+<div class="d-stack" role="group" aria-label="Case page screens" style="--arw: 1440; --arh: 1000"><input class="d-in" type="radio" name="so-case" id="so-case-1" aria-label="Show Examination"><input class="d-in" type="radio" name="so-case" id="so-case-2" aria-label="Show Decision findings"><input class="d-in" type="radio" name="so-case" id="so-case-3" aria-label="Show Decision"><input class="d-in" type="radio" name="so-case" id="so-case-4" aria-label="Show Implementation"><div class="d-deck" style="--n: 3"><label class="d-card" for="so-case-1" style="--i: 0"><img src="examination.jpg" alt="Examination tab: complaint and citizen details with a Verify CNIC button, the complaint text and attachments, then diary number and officer fields with Admissible and Non-Admissible buttons. Personal contact details are blurred." width="1440" height="1000" loading="lazy"></label><label class="d-card" for="so-case-2" style="--i: 1"><img src="findings.jpg" alt="Decision Findings tab: a decision draft text area, an attachment drop zone and Clear and Submit buttons" width="1440" height="1000" loading="lazy"></label><label class="d-card" for="so-case-3" style="--i: 2"><img src="decision.jpg" alt="Decision tab: complaint and office details, the complaint text, the draft findings with an Edit button, the final decision PDF and a field to write the decision. Personal contact details are blurred." width="1440" height="1000" loading="lazy"></label><label class="d-card" for="so-case-4" style="--i: 3"><img src="implementation.jpg" alt="Implementation tab: a numbered timeline of officer actions with dates and documents, and a composer to message the complainant or agency by WhatsApp, SMS, email or post" width="1440" height="1000" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="so-case-1"><span class="mono">01</span>Examination</label><label class="d-tab" for="so-case-2"><span class="mono">02</span>Decision findings</label><label class="d-tab" for="so-case-3"><span class="mono">03</span>Decision</label><label class="d-tab" for="so-case-4"><span class="mono">04</span>Implementation</label></div></div>
+<figcaption class="mono">Fig 05. The case page across its stages, web. Pick a screen to bring it to the front</figcaption>
 </figure>
 <ul class="callouts">
-<li><span class="mono">01</span><strong style="font-weight: 600">Verify before admitting</strong><span class="muted">CNIC is verified first, then one clear choice: Admissible or Non-Admissible.</span></li>
+<li><span class="mono">01</span><strong style="font-weight: 600">Verify before admitting</strong><span class="muted">CNIC is checked first, so every admitted case is tied to a real person.</span></li>
 <li><span class="mono">02</span><strong style="font-weight: 600">Drafts build on each other</strong><span class="muted">Findings feed the decision, so nothing is retyped.</span></li>
-<li><span class="mono">03</span><strong style="font-weight: 600">Reach people how they listen</strong><span class="muted">WhatsApp, SMS, email or post, chosen per update.</span></li>
+<li><span class="mono">03</span><strong style="font-weight: 600">Reach people how they listen</strong><span class="muted">WhatsApp, SMS, email or post, because citizens use different channels.</span></li>
 </ul>
 </div>
 <div class="sub">
-<div class="sub-head"><span class="mono">H.05</span><h3 class="serif h-item">AI at four stages of every case</h3></div>
-<p class="muted body">AI does the first draft at each stage of a case. Officials review and refine it instead of writing from scratch, so days of manual work become minutes.</p>
-<div class="ai-grid">
-<div><span class="mono label">AI Examination</span><p class="ai-delta">3 days → 10 min</p><p style="font-size: 15px">Runs the first examination of a complaint: reads the text, classifies its type and suggests jurisdiction and the relevant agency.</p></div>
-<div><span class="mono label">AI Findings Generator</span><p class="ai-delta">Days → minutes</p><p style="font-size: 15px">Reads the complaint and every investigation record, then generates a structured Findings document ready for review.</p></div>
-<div><span class="mono label">AI Decision Drafting</span><p class="ai-delta">3 weeks → 2 days</p><p style="font-size: 15px">Drafts a complete formal decision from the findings and case history. Officials refine it rather than write it.</p></div>
-<div><span class="mono label">AI Final Decision Refinement</span><p class="ai-delta">Hours → minutes</p><p style="font-size: 15px">Polishes the draft and checks it for consistency before the decision is officially announced.</p></div>
-</div>
-</div>
-<div class="sub">
-<div class="sub-head"><span class="mono">H.06</span><h3 class="serif h-item">Run by the office, not by developers</h3></div>
-<p class="muted body">Roles, complaint categories and regional offices are all managed from the admin panel. When a department changes or a new office opens, staff update it themselves.</p>
+<div class="sub-head"><span class="mono">H.05</span><h3 class="serif h-item">Run by the office, not by developers</h3></div>
+<p class="muted body">Roles, permissions, complaint categories and regional offices are managed in the admin panel, so when a department changes or a new office opens, staff update it themselves. Categories and offices are switched off, not deleted, so old cases keep their history.</p>
 <figure class="fig">
-<div class="desk desk-3">
-<figure class="desk-shot"><img src="roles.jpg" alt="Roles and permissions: choose a role, then tick Create, Update, View and Delete for each module, and assign" width="1440" height="1000" loading="lazy"><p class="screen-cap"><span class="mono">01</span>Roles &amp; permissions</p></figure>
-<figure class="desk-shot"><img src="categories.jpg" alt="Complaint categories: each category mapped to a department with an active toggle and edit action, and a form to add new ones" width="1440" height="1000" loading="lazy"><p class="screen-cap"><span class="mono">02</span>Complaint categories</p></figure>
-<figure class="desk-shot"><img src="offices.jpg" alt="Regional offices: each office with its contact number, status and an on/off toggle" width="1440" height="1000" loading="lazy"><p class="screen-cap"><span class="mono">03</span>Regional offices</p></figure>
-</div>
-<figcaption class="mono">Fig 06. Admin and configuration, web</figcaption>
+<div class="d-stack" role="group" aria-label="Admin and configuration screens" style="--arw: 1440; --arh: 1000"><input class="d-in" type="radio" name="so-adm" id="so-adm-1" aria-label="Show Roles &amp; permissions"><input class="d-in" type="radio" name="so-adm" id="so-adm-2" aria-label="Show Complaint categories"><input class="d-in" type="radio" name="so-adm" id="so-adm-3" aria-label="Show Regional offices"><div class="d-deck" style="--n: 2"><label class="d-card" for="so-adm-1" style="--i: 0"><img src="roles.jpg" alt="Roles and permissions: choose a role, then tick Create, Update, View and Delete for each module, and assign" width="1440" height="1000" loading="lazy"></label><label class="d-card" for="so-adm-2" style="--i: 1"><img src="categories.jpg" alt="Complaint categories: each category mapped to a department with an active toggle and edit action, and a form to add new ones" width="1440" height="1000" loading="lazy"></label><label class="d-card" for="so-adm-3" style="--i: 2"><img src="offices.jpg" alt="Regional offices: each office with its contact number, status and an on/off toggle" width="1440" height="1000" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="so-adm-1"><span class="mono">01</span>Roles &amp; permissions</label><label class="d-tab" for="so-adm-2"><span class="mono">02</span>Complaint categories</label><label class="d-tab" for="so-adm-3"><span class="mono">03</span>Regional offices</label></div></div>
+<figcaption class="mono">Fig 06. Admin and configuration, web. Pick a screen to bring it to the front</figcaption>
 </figure>
-<ul class="callouts">
-<li><span class="mono">01</span><strong style="font-weight: 600">Access by role</strong><span class="muted">Create, update, view and delete, set per module.</span></li>
-<li><span class="mono">02</span><strong style="font-weight: 600">Switch off, don't delete</strong><span class="muted">Toggles keep history intact when a category or office closes.</span></li>
-</ul>
 </div>
 </div>
 </div>
@@ -284,7 +257,7 @@
 <div class="tab-panel">
 <p class="muted body">Every screen was drawn in greyscale first, to settle structure before style. Here are four of the key ones.</p>
 <div class="wf-grid">
-<figure class="wf-card"><img src="wf-05-insights-en.png" alt="Wireframe of the English Insights dashboard with six KPI cards, response time by district and recent cases" width="1366" height="763"><figcaption><span class="mono label">Insights · Admin</span><span class="wf-cap-title">Six numbers first, districts compared at a glance.</span></figcaption></figure>
+<figure class="wf-card"><img src="wf-05-insights-en.png" alt="Wireframe of the English Insights dashboard with six KPI cards, response time by district and recent cases" width="1366" height="763"><figcaption><span class="mono label">Insights · Admin</span><span class="wf-cap-title">Key numbers first, districts compared at a glance.</span></figcaption></figure>
 <figure class="wf-card"><img src="wf-06-insights-ur.png" alt="Wireframe of the same Insights dashboard in Urdu, mirrored right to left" width="1366" height="763"><figcaption><span class="mono label">Insights · Urdu (RTL)</span><span class="wf-cap-title">Mirrored for right-to-left, not just translated.</span></figcaption></figure>
 <figure class="wf-card"><img src="wf-02-complaints.png" alt="Wireframe of the Complaints list with filters, KPI cards and a table with Escalate and Details on each row" width="1366" height="763"><figcaption><span class="mono label">Complaints · Staff</span><span class="wf-cap-title">Filters, numbers, then the table. Escalate from any row.</span></figcaption></figure>
 <figure class="wf-card"><img src="wf-01-new-complaint.png" alt="Wireframe of the New Complaint form, showing its first sections" width="736" height="1224"><figcaption><span class="mono label">New complaint · Citizen</span><span class="wf-cap-title">Four short sections, an affidavit before submit.</span></figcaption></figure>
@@ -297,41 +270,56 @@
 </div>
 </section>
 
-<!-- 06 OUTCOMES -->
-<section id="outcomes" class="chapter reveal" aria-labelledby="c5">
+<!-- 05 ITERATION -->
+<section id="iteration" class="chapter band reveal" aria-labelledby="c5i">
 <div class="ch-head">
-<p class="mono sec-label">05 <i></i> Outcomes</p>
-<h2 id="c5" class="serif h-section">About three times the complaints, resolved in <em>under half</em> the time.</h2>
+<p class="mono sec-label">05 <i></i> Iteration</p>
+<h2 id="c5i" class="serif h-section">What <em>staff</em> changed.</h2>
+</div>
+<div class="body">
+<p class="lead">Staff reviewed shared Figma prototypes at each stage. Their feedback went straight into the next version before handoff.</p>
+</div>
+<div class="sub"><div class="sub-head"><span class="mono">I.01</span><h3 class="serif h-item">Tabs instead of sub-menus</h3></div><p class="muted body">The first design nested each module's pages as sub-items in the side menu, which made the menu long and meant a lot of scrolling. Those pages became tabs inside the module, so the menu stays short and the screen space goes to the work.</p></div>
+<div class="sub"><div class="sub-head"><span class="mono">I.02</span><h3 class="serif h-item">Multiple documents in one upload</h3></div><p class="muted body">The first design took one file at a time. A complaint often comes with several supporting papers and required documents, so the uploader now takes them together.</p></div>
+</section>
+
+<!-- 06 OUTCOMES -->
+<section id="outcomes" class="chapter reveal" aria-labelledby="c6">
+<div class="ch-head">
+<p class="mono sec-label">06 <i></i> Outcomes</p>
+<h2 id="c6" class="serif h-section">About three times the complaints, resolved in <em>under half</em> the time.</h2>
 </div>
 <p class="mono label" style="margin-bottom: var(--space-6)">Key impact metrics</p>
 <dl class="stats stats-2" style="margin: 0">
 <div class="stat"><dt class="mono label" style="order: 2">Complaints in 9 months</dt><dd class="serif stat-num" style="margin: 0; color: var(--signal-ink)">18,000+</dd><dd class="muted stat-sub" style="order: 3">vs 7–8K a year on paper</dd></div>
 <div class="stat"><dt class="mono label" style="order: 2">Days, average resolution</dt><dd class="serif stat-num" style="margin: 0; color: var(--signal-ink)">120 → 50</dd><dd class="muted stat-sub" style="order: 3">Less than half the time</dd></div>
-<div class="stat"><dt class="mono label" style="order: 2">Direct interventions</dt><dd class="serif stat-num" style="margin: 0">200+</dd><dd class="muted stat-sub" style="order: 3">by the Ombudsman Sindh</dd></div>
-<div class="stat"><dt class="mono label" style="order: 2">U/S 33 and transfer approvals</dt><dd class="serif stat-num" style="margin: 0">600+</dd><dd class="muted stat-sub" style="order: 3">by the Ombudsman Sindh</dd></div>
+<div class="stat"><dt class="mono label" style="order: 2">Cities across Sindh</dt><dd class="serif stat-num" style="margin: 0">15+</dd><dd class="muted stat-sub" style="order: 3">where the system is deployed</dd></div>
+<div class="stat"><dt class="mono label" style="order: 2">Minutes to register</dt><dd class="serif stat-num" style="margin: 0">~3</dd><dd class="muted stat-sub" style="order: 3">estimated, steps 01–04</dd></div>
 </dl>
+<p class="mono label" style="margin-top: var(--space-6); white-space: normal">Source: the system's own reports, first 9 months after launch in March 2025. The paper baseline is estimated from the office's manuals and registers.</p>
 <div class="sub" style="border-top: 0">
-<div class="sub-head"><span class="mono">I.01</span><h3 class="serif h-item">Citizens file from anywhere</h3></div>
-<p class="muted body">18,000+ complaints in the first 9 months, against 7–8K a year on paper. Registering takes about 3 minutes.</p>
+<h3 class="serif h-item">What changed for each group</h3>
+<ul class="callouts">
+<li><span class="mono">01</span><strong style="font-weight: 600">Citizens</strong><span class="muted">File from a phone instead of visiting an office, and see every step of their case. 18,000+ complaints came in during the first 9 months, against 7–8K a year on paper.</span></li>
+<li><span class="mono">02</span><strong style="font-weight: 600">Staff</strong><span class="muted">Find any case by CNIC or reference number instead of searching registers.</span></li>
+<li><span class="mono">03</span><strong style="font-weight: 600">Officers</strong><span class="muted">See pending, overdue and escalated cases live. Average resolution fell from 120 to 50 days.</span></li>
+</ul>
 </div>
 <div class="sub">
-<div class="sub-head"><span class="mono">I.02</span><h3 class="serif h-item">Cases close in less than half the time</h3></div>
-<p class="muted body">Average resolution dropped from 120 to 50 days. Search, hearings and disposals moved off paper registers, and AI drafting turned weeks of writing into days.</p>
-</div>
-<div class="sub">
-<div class="sub-head"><span class="mono">I.03</span><h3 class="serif h-item">The Ombudsman acts directly</h3></div>
-<p class="muted body">200+ direct interventions and 600+ U/S 33 and transfer approvals by the Ombudsman Sindh through the system.</p>
+<h3 class="serif h-item">What the design did, and didn't, cause</h3>
+<p class="muted body">These are system-level results. Moving off paper, the 15+ city rollout and the office's own work all contributed. The design's part was making filing short enough to do on a phone, and making every case findable and trackable.</p>
 </div>
 </section>
 
 <!-- 07 LEARNINGS -->
-<section id="learnings" class="chapter reveal" aria-labelledby="c6">
+<section id="learnings" class="chapter reveal" aria-labelledby="c7">
 <div class="ch-head">
-<p class="mono sec-label">06 <i></i> Learnings</p>
-<h2 id="c6" class="serif h-section">What I'd take to the next project.</h2>
+<p class="mono sec-label">07 <i></i> Learnings</p>
+<h2 id="c7" class="serif h-section">What I'd take to the next project.</h2>
 </div>
-<div class="sub" style="border-top: 0; margin-top: 0; padding-top: 0"><div class="sub-head"><span class="mono">L.01</span><h3 class="serif h-item">Urdu is a layout, not a translation</h3></div><p class="muted body">Planning right-to-left from the wireframes stopped Urdu from becoming a broken copy of English. Next time I’ll test RTL from day one, not after the English screens are done.</p></div>
-<div class="sub"><div class="sub-head"><span class="mono">L.02</span><h3 class="serif h-item">Measure from the start</h3></div><p class="muted body">The paper process had almost no data, so proving impact meant reconstructing numbers afterwards. On the next project I’d agree on baseline metrics in week one.</p></div>
+<div class="sub" style="border-top: 0; margin-top: 0; padding-top: 0"><div class="sub-head"><span class="mono">L.01</span><h3 class="serif h-item">Urdu is a layout, not a translation</h3></div><p class="muted body">Planning right to left from the wireframes kept Urdu from becoming a mirrored copy of English with broken spacing. Next time I'd review the Urdu screens with staff in the same rounds as English, not after.</p></div>
+<div class="sub"><div class="sub-head"><span class="mono">L.02</span><h3 class="serif h-item">Agree on the baseline in week one</h3></div><p class="muted body">The paper process kept almost no data, so the before numbers had to be estimated from manuals and registers. On the next project I'd agree with the client on what to measure before launch.</p></div>
+<div class="sub"><div class="sub-head"><span class="mono">L.03</span><h3 class="serif h-item">Research through the people closest to the work</h3></div><p class="muted body">With no access to citizens, staff were our best source on where complaints got stuck. Remote sessions worked, but next time I'd push to observe the counter in person at least once.</p></div>
 </section>
 </div>
 </div>
@@ -354,7 +342,7 @@
 </div>
 <p class="mono label" style="display: flex; align-items: center; gap: var(--space-3); white-space: normal"><span class="dot" aria-hidden="true"></span>Open to full-time roles, on-site or remote</p>
 <div class="foot">
-<div class="foot-col"><span class="mono label">Pages</span><a class="link mono" href="./">Work</a><a class="link mono" href="./">About</a><a class="link mono" href="#top">Back to top <span class="arr arr-u" aria-hidden="true">↑</span></a></div>
+<div class="foot-col"><span class="mono label">Pages</span><a class="link mono" href="./#work">Work</a><a class="link mono" href="./#about">About</a><a class="link mono" href="#top">Back to top <span class="arr arr-u" aria-hidden="true">↑</span></a></div>
 <div class="foot-col"><span class="mono label">Elsewhere</span><a class="link mono" href="https://www.linkedin.com/in/zeeshan-ahmad-98650314a/" target="_blank" rel="noopener">LinkedIn <span class="arr arr-ne" aria-hidden="true">↗</span></a><a class="link mono" href="https://www.behance.net/zeeshanahmad66" target="_blank" rel="noopener">Behance <span class="arr arr-ne" aria-hidden="true">↗</span></a><a class="link mono" href="Zeeshan_Ahmad_UIUX_Designer_CV.pdf" download="Zeeshan_Ahmad_UIUX_Designer_CV.pdf">Resume <span class="arr arr-d" aria-hidden="true">↓</span></a></div>
 <div class="foot-col"><span class="mono label">Based in</span><span style="font-size: 15px">Islamabad, Pakistan</span><span class="muted" style="font-size: 15px">Working with US teams</span><span class="mono label" style="margin-top: var(--space-4)">© 2026 Zeeshan Ahmad</span></div>
 </div>

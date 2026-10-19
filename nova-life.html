@@ -30,8 +30,8 @@
 
 </a>
 <nav class="nav-links" aria-label="Primary">
-<a class="link mono" href="./">Work</a>
-<a class="link mono" href="./">About</a>
+<a class="link mono" href="./#work">Work</a>
+<a class="link mono" href="./#about">About</a>
 <a class="link mono" href="#contact">Contact</a>
 <a class="link mono" href="Zeeshan_Ahmad_UIUX_Designer_CV.pdf" download="Zeeshan_Ahmad_UIUX_Designer_CV.pdf">CV <span class="arr arr-d" aria-hidden="true">↓</span></a>
 </nav>
@@ -47,16 +47,18 @@
 <a class="link mono" href="./" style="align-self: flex-start"><span class="arr arr-l" aria-hidden="true">←</span> All work</a>
 <div class="hero-top enter"><p class="mono label">Case study · P. 05</p><div class="tags"><span class="tag mono">US · Health &amp; wellness</span><span class="tag mono">New product · Mobile + Web</span></div></div>
 <h1 class="serif h-display enter" style="max-width: 1100px">Nova Life: recovery support that <em>doesn't stop</em> at the clinic door.</h1>
-<p class="lead enter-2" style="max-width: 760px; color: var(--muted)">NOVA LIFE helps people recover from addiction, suicidal ideation and related challenges. Its new mobile app comes with portals for therapists and staff. I took it from a broad vision through discovery to a defined MVP and its design.</p>
+<p class="lead enter-2" style="max-width: 760px; color: var(--muted)">NOVA LIFE, a US recovery centre, came with four ideas for an app and no first version. With a product owner, I helped turn them into an MVP scope, then designed the patient app and the therapist and admin portals. It shipped in 3 months and is used by 80+ of the centre's patients.</p>
 </section>
 
 <section class="wrap" aria-label="Project facts">
 <dl class="cs-meta" style="margin: 0">
-<div><dt class="mono label">Role</dt><dd style="margin: 0">UI/UX Designer, with a Product Owner</dd></div>
+<div><dt class="mono label">Role</dt><dd style="margin: 0">UI/UX Designer, sole designer</dd></div>
 <div><dt class="mono label">Client</dt><dd style="margin: 0">NOVA LIFE, US health and wellness</dd></div>
 <div><dt class="mono label">Work</dt><dd style="margin: 0">Discovery · User flows · Wireframes · UI</dd></div>
 <div><dt class="mono label">Platforms</dt><dd style="margin: 0">Mobile app (React Native) · Web portals</dd></div>
 <div><dt class="mono label">Users</dt><dd style="margin: 0">Patients · Therapists · Staff</dd></div>
+<div><dt class="mono label">Duration</dt><dd style="margin: 0">3 months · Deployed</dd></div>
+<div><dt class="mono label">Team</dt><dd style="margin: 0">Product Owner · Developers</dd></div>
 </dl>
 </section>
 
@@ -69,9 +71,9 @@
 <nav class="cs-index" aria-label="Case study chapters">
 <a class="mono" href="#context" aria-current="false"><span>01</span>Context</a>
 <a class="mono" href="#problem" aria-current="false"><span>02</span>Problem</a>
-<a class="mono" href="#process" aria-current="false"><span>03</span>Process</a>
-<a class="mono" href="#solution" aria-current="false"><span>04</span>Patient app</a>
-<a class="mono" href="#portals" aria-current="false"><span>05</span>Portals</a>
+<a class="mono" href="#research" aria-current="false"><span>03</span>Investigation</a>
+<a class="mono" href="#solution" aria-current="false"><span>04</span>Design decisions</a>
+<a class="mono" href="#iteration" aria-current="false"><span>05</span>Iteration</a>
 <a class="mono" href="#outcomes" aria-current="false"><span>06</span>Outcomes</a>
 <a class="mono" href="#learnings" aria-current="false"><span>07</span>Learnings</a>
 </nav>
@@ -84,23 +86,21 @@
 <h2 id="c1" class="serif h-section">What is NOVA LIFE?</h2>
 </div>
 <div class="body">
-<p class="lead">NOVA LIFE is a US health and wellness organization supporting people through addiction, suicidal ideation and related challenges. It runs structured rehabilitation programs and intensive care, with a team of licensed providers and therapists.</p>
-<p class="muted">They wanted a mobile app to take that support beyond their facilities, so people could keep getting help throughout their recovery, not just during sessions.</p>
-<p class="muted">I joined as the UI/UX designer alongside a Product Owner. We started with a discovery phase to turn the client's early ideas into a clear MVP, then designed the patient app and the portals behind it.</p>
+<p class="lead">NOVA LIFE runs rehabilitation programs and intensive care for people facing addiction, suicidal ideation and related challenges, with licensed providers and therapists. It wanted to keep supporting patients between sessions, not only inside its facilities.</p>
 </div>
-<div class="cards3" style="margin-top: var(--space-12)">
-<div><span class="mono" style="color: var(--signal-ink)">Patients</span><p style="font-size: 15px">People in recovery who need support, content and check-ins between sessions.</p></div>
-<div><span class="mono" style="color: var(--signal-ink)">Therapists &amp; providers</span><p style="font-size: 15px">Licensed staff who follow their patients' progress and stay reachable.</p></div>
-<div><span class="mono" style="color: var(--signal-ink)">Admins &amp; staff</span><p style="font-size: 15px">The team that manages patients, providers and content.</p></div>
+<div class="table-box" style="margin-top: var(--space-12)">
+<table class="table">
+<thead><tr><th scope="col">Role</th><th scope="col">What they need from the product</th></tr></thead>
+<tbody>
+<tr><td><strong style="font-weight: 600">Patients</strong></td><td>Support, content and check-ins between sessions</td></tr>
+<tr><td><strong style="font-weight: 600">Therapists and providers</strong></td><td>A view of each patient's progress between visits</td></tr>
+<tr><td><strong style="font-weight: 600">Admins and super admin</strong></td><td>Manage patients, therapists and the app's content</td></tr>
+</tbody>
+</table>
 </div>
 <div class="sub">
-<h3 class="serif h-item">My role</h3>
-<ul class="callouts">
-<li><span class="mono">01</span><strong style="font-weight: 600">Stakeholder discovery</strong><span class="muted">Meetings with NOVA LIFE to clarify what they needed.</span></li>
-<li><span class="mono">02</span><strong style="font-weight: 600">Journeys and flows</strong><span class="muted">High-level user journeys and app flows for all three users.</span></li>
-<li><span class="mono">03</span><strong style="font-weight: 600">MVP scope</strong><span class="muted">Prioritized features and a written MVP scope, with the Product Owner.</span></li>
-<li><span class="mono">04</span><strong style="font-weight: 600">Wireframes to UI</strong><span class="muted">Wireframes for the key screens, then the patient app and portals.</span></li>
-</ul>
+<h3 class="serif h-item">My part</h3>
+<p class="muted body">I was the only designer, working with the product owner and the developers. With the product owner I ran discovery with the client and mapped the user journeys; the product owner wrote the MVP scope. I proposed the sobriety counter, daily pledge and milestones, then designed the wireframes, the design system, the patient app and all three portals end to end.</p>
 </div>
 </section>
 
@@ -111,11 +111,10 @@
 <h2 id="c2" class="serif h-section">A big vision, and no clear <em>first version</em>.</h2>
 </div>
 <div class="body">
-<p class="lead">NOVA LIFE came with a promising idea for an app. Each part made sense on its own, but together it was a wish list, not a plan a team could build.</p>
+<p class="lead">Between sessions, NOVA LIFE's patients had little support. The centre had four ideas to change that, but no agreed first release, so there was nothing a team could estimate or build. The first version had to serve patients, therapists and staff at once, and feel safe for people facing addiction or suicidal thoughts.</p>
 </div>
 <div class="sub" style="border-top: 0">
-<div class="sub-head"><span class="mono">02 A</span><h3 class="serif h-item">The client's starting vision</h3></div>
-<p class="muted body">Four ideas, all still preliminary:</p>
+<div class="sub-head"><span class="mono">02 A</span><h3 class="serif h-item">Four ideas, all preliminary</h3></div>
 <ul class="nj-theme nv-ideas">
 <li><span class="mono label">Idea 01</span><strong>On-demand content</strong><span class="muted">Video sessions, motivational and religious material, and therapy resources.</span></li>
 <li><span class="mono label">Idea 02</span><strong>AI-powered therapist</strong><span class="muted">An empathetic AI companion for support at any hour.</span></li>
@@ -123,42 +122,33 @@
 <li><span class="mono label">Idea 04</span><strong>Therapist access</strong><span class="muted">A direct line to licensed providers and therapists.</span></li>
 </ul>
 </div>
-<div class="sub"><div class="sub-head"><span class="mono">02 B</span><h3 class="serif h-item">Support stopped at the clinic door</h3></div><p class="muted body">Recovery happens every day, but help was tied to sessions and programs. Between visits, people had little to lean on.</p></div>
-<div class="sub"><div class="sub-head"><span class="mono">02 C</span><h3 class="serif h-item">No priorities, no MVP</h3></div><p class="muted body">There was no agreed first release, so there was nothing to estimate, design or build against yet.</p></div>
-<div class="sub"><div class="sub-head"><span class="mono">02 D</span><h3 class="serif h-item">Three users, one system</h3></div><p class="muted body">Patients, therapists and staff each needed something different, and every flow had to connect them.</p></div>
-<div class="sub"><div class="sub-head"><span class="mono">02 E</span><h3 class="serif h-item">A vulnerable audience</h3></div><p class="muted body">For people facing addiction or suicidal thoughts, an app has to feel calm and safe, especially an AI companion.</p></div>
-<div class="sub">
-<div class="sub-head"><span class="mono">02 F</span><h3 class="serif h-item">What discovery had to answer</h3></div>
-<ul class="callouts">
-<li><span class="mono">Q1</span><strong style="font-weight: 600">Today's process</strong><span class="muted">What happens when a patient comes in, and which programs follow?</span></li>
-<li><span class="mono">Q2</span><strong style="font-weight: 600">The first release</strong><span class="muted">Which features matter most for the MVP?</span></li>
-<li><span class="mono">Q3</span><strong style="font-weight: 600">The journeys</strong><span class="muted">How do patients, therapists and staff move through the product?</span></li>
-</ul>
-</div>
+<div class="sub"><div class="sub-head"><span class="mono">02 B</span><h3 class="serif h-item">Three users, one system</h3></div><p class="muted body">Patients, therapists and staff each needed something different, and every flow had to connect them.</p></div>
+<div class="sub"><div class="sub-head"><span class="mono">02 C</span><h3 class="serif h-item">A vulnerable audience</h3></div><p class="muted body">Calm and safe came before clever, especially for an AI companion.</p></div>
 </section>
 
-<!-- 03 PROCESS -->
-<section id="process" class="chapter reveal" aria-labelledby="c3">
+<!-- 03 INVESTIGATION -->
+<section id="research" class="chapter reveal" aria-labelledby="c3">
 <div class="ch-head">
-<p class="mono sec-label">03 <i></i> Process</p>
-<h2 id="c3" class="serif h-section">From vision to <em>MVP</em>.</h2>
+<p class="mono sec-label">03 <i></i> Investigation</p>
+<h2 id="c3" class="serif h-section">Discovery through the people who <em>run the care</em>.</h2>
 </div>
 <div class="body">
-<p class="lead">We listened first, sketched early, and only moved to high fidelity once the client had agreed on the big picture.</p>
+<p class="lead">Discovery was with NOVA LIFE's team and stakeholders. We didn't interview patients directly, for privacy and clinical-access reasons, so the centre's staff spoke for them.</p>
+<p class="muted">Over several meetings, the product owner and I worked through three questions.</p>
 </div>
-<div class="sub" style="border-top: 0">
-<div class="sub-head"><span class="mono">03 A</span><h3 class="serif h-item">How we got there</h3></div>
-<ol class="nj-steps nv-steps">
-<li><span class="mono">01</span><div><strong>Listen and take notes</strong><p class="muted">Several meetings with NOVA LIFE, noting what they said each time.</p></div></li>
-<li><span class="mono">02</span><div><strong>Propose wireframes</strong><p class="muted">Low-fidelity screens of the main ideas, to react to early.</p></div></li>
-<li><span class="mono">03</span><div><strong>Map user journeys</strong><p class="muted">Built from the interviews and the client's requirements document.</p></div></li>
-<li><span class="mono">04</span><div><strong>Agree the big picture</strong><p class="muted">The whole app walked through screen by screen, proposed and approved by the client.</p></div></li>
-<li><span class="mono">05</span><div><strong>Type and design system</strong><p class="muted">Typography first, then the components the app is built from.</p></div></li>
-<li><span class="mono">06</span><div><strong>High fidelity</strong><p class="muted">Final screens for the patient app and the portals.</p></div></li>
-</ol>
+<div class="table-box" style="margin-top: var(--space-8)">
+<table class="table">
+<thead><tr><th scope="col">Question</th><th scope="col">What we learned</th></tr></thead>
+<tbody>
+<tr><td><strong style="font-weight: 600">What happens when a patient comes in?</strong></td><td>Patients join the app when they're onboarded at the clinic in person, so the app picks up where the intake leaves off</td></tr>
+<tr><td><strong style="font-weight: 600">What does the first release need?</strong></td><td>All four of the client's ideas: the content library, Nova AI, check-ins through video surveys, and the therapist portal. Live classes and the Canary wellness insights were left for a later release</td></tr>
+<tr><td><strong style="font-weight: 600">How does each user move through the product?</strong></td><td>User journeys for all three groups, built from the meetings and the client's requirements document</td></tr>
+</tbody>
+</table>
 </div>
 <div class="sub">
-<div class="sub-head"><span class="mono">03 B</span><h3 class="serif h-item">The big picture, in screens</h3></div>
+<div class="sub-head"><span class="mono">03 A</span><h3 class="serif h-item">The big picture, in screens</h3></div>
+<p class="muted body">I turned each round of notes into low-fidelity wireframes, so the client could react to screens rather than descriptions. The whole app was then walked through screen by screen, and the client approved the big picture before any high-fidelity work.</p>
 <figure class="fig">
 <div class="m-rail" tabindex="0" aria-label="Big-picture flow screens, scroll sideways">
 <figure class="m-shot"><img src="wf-login.jpg" alt="Login wireframe: email or phone and password" width="402" height="882" loading="lazy"><p class="screen-cap"><span class="mono">01</span>Log in</p></figure>
@@ -173,9 +163,18 @@
 <figcaption class="mono">Fig 01. The big-picture flow we proposed and the client approved, scroll sideways</figcaption>
 </figure>
 </div>
-<div class="sub">
-<div class="sub-head"><span class="mono">03 C</span><h3 class="serif h-item">Type and design system</h3></div>
-<p class="muted body">Once the flow was agreed, we set the foundations: a calm teal primary, soft neutrals, a condensed title face over a readable body face, and a small set of components every screen is built from.</p>
+</section>
+
+
+<!-- 04 DESIGN DECISIONS -->
+<section id="solution" class="chapter band reveal" aria-labelledby="c4">
+<div class="ch-head">
+<p class="mono sec-label">04 <i></i> Design decisions</p>
+<h2 id="c4" class="serif h-section">Calm, simple and <em>low effort</em>, from the first screen.</h2>
+</div>
+<div class="sub" style="border-top: 0">
+<div class="sub-head"><span class="mono">D.01</span><h3 class="serif h-item">A calm foundation</h3></div>
+<p class="muted body">A calm teal primary, soft neutrals, a condensed title face over a readable body face, and a small set of components every screen uses. For people in a hard moment, the interface shouldn't add noise.</p>
 <div class="nv-ds">
 <div class="nds-card nds-type">
 <span class="mono label nds-h">Typography</span>
@@ -216,17 +215,9 @@
 </div>
 <p class="mono label nds-cap">Fig 02. Foundations and core components from the Nova Life design system</p>
 </div>
-</section>
-
-<!-- 04 PATIENT APP -->
-<section id="solution" class="chapter band reveal" aria-labelledby="c4">
-<div class="ch-head">
-<p class="mono sec-label">04 <i></i> Patient app</p>
-<h2 id="c4" class="serif h-section">Calm, simple and <em>low effort</em>, from the first screen.</h2>
-</div>
-<div class="sub" style="border-top: 0">
-<div class="sub-head"><span class="mono">A.01</span><h3 class="serif h-item">Voice-based onboarding</h3></div>
-<p class="muted body">Instead of a long intake form, the AI companion asks 31 questions out loud and the patient simply answers. They can take a break at any point, and review every answer before it's saved.</p>
+<div class="sub">
+<div class="sub-head"><span class="mono">D.02</span><h3 class="serif h-item">Onboarding by conversation</h3></div>
+<p class="muted body">Instead of a 31-question intake form, the AI companion asks out loud and the patient answers. Patients vary widely, and clinic assistants often sit with them during onboarding, so a conversation is easier for both. Patients can pause at any time and review every answer before it's saved.</p>
 <figure class="fig">
 <div class="m-rail" tabindex="0" aria-label="Voice onboarding screens, scroll sideways">
 <figure class="m-shot"><img src="ob-intro.jpg" alt="Onboarding intro: the AI companion explains it will ask 31 questions in about 10 to 15 minutes to build a personalized care plan, with Begin conversation" width="662" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">01</span>Let's get to know you</p></figure>
@@ -242,8 +233,8 @@
 </figure>
 </div>
 <div class="sub">
-<div class="sub-head"><span class="mono">A.02</span><h3 class="serif h-item">Secure, quick sign-in</h3></div>
-<p class="muted body">A one-time code to verify, then a 4-digit PIN with an optional hint, and Face ID or Touch ID, so getting back into the app takes a second.</p>
+<div class="sub-head"><span class="mono">D.03</span><h3 class="serif h-item">Private, but quick to reopen</h3></div>
+<p class="muted body">A one-time code, then a 4-digit PIN with an optional hint, and Face ID or Touch ID. The app holds sensitive health data, so it locks, but getting back in takes a second.</p>
 <figure class="fig">
 <div class="m-rail" tabindex="0" aria-label="Sign-in screens, scroll sideways">
 <figure class="m-shot"><img src="au-otp.jpg" alt="Enter your OTP screen with six code boxes and Continue" width="662" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">01</span>Verify with a code</p></figure>
@@ -258,7 +249,8 @@
 </figure>
 </div>
 <div class="sub">
-<div class="sub-head"><span class="mono">A.03</span><h3 class="serif h-item">Home, library and milestones</h3></div>
+<div class="sub-head"><span class="mono">D.04</span><h3 class="serif h-item">Progress you can see</h3></div>
+<p class="muted body">Home leads with days sober and the next milestone. Milestone badges, from 7 days to a year, each have a name and a celebration. Resetting the counter is framed gently ("This moment counts"), so a relapse doesn't feel like failure in the app. The library holds short guided sessions for breath, balance and faith.</p>
 <figure class="fig">
 <div class="m-rail" tabindex="0" aria-label="Home, library and milestone screens, scroll sideways">
 <figure class="m-shot m-long"><div class="m-scroll" tabindex="0" aria-label="Full Home screen, scroll down inside"><img src="home-full.jpg" alt="Full Home screen: days sober counter, daily pledge taken, an encouraging quote, next milestone progress, wellness snapshot via Nova AI, vital snapshot via face scan, emergency hotline, and contact or booking" width="660" height="3270" loading="lazy"></div><p class="screen-cap"><span class="mono">01</span>Home, scroll inside</p></figure>
@@ -279,7 +271,8 @@
 </figure>
 </div>
 <div class="sub">
-<div class="sub-head"><span class="mono">A.04</span><h3 class="serif h-item">Taking the daily pledge</h3></div>
+<div class="sub-head"><span class="mono">D.05</span><h3 class="serif h-item">A pledge each morning</h3></div>
+<p class="muted body">Each morning the patient swipes to recommit, with their own reasons in front of them. I proposed the pledge, the counter and the milestones as a set; the product owner approved them, then the client.</p>
 <figure class="fig">
 <div class="m-rail" tabindex="0" aria-label="Daily pledge screens, scroll sideways">
 <figure class="m-shot"><img src="pl-empty.jpg" alt="Empty state: no pledge added yet, a short note on what a pledge is, and a plus button to add one" width="660" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">01</span>No pledge yet</p></figure>
@@ -292,7 +285,8 @@
 </figure>
 </div>
 <div class="sub">
-<div class="sub-head"><span class="mono">A.05</span><h3 class="serif h-item">Nova AI, by text or voice</h3></div>
+<div class="sub-head"><span class="mono">D.06</span><h3 class="serif h-item">Help for the hard moments</h3></div>
+<p class="muted body">Nova AI answers by text or voice, and opens with quick prompts like "I had a craving today".</p>
 <figure class="fig">
 <div class="m-rail" tabindex="0" aria-label="Nova AI chat screens, scroll sideways">
 <figure class="m-shot"><img src="ai-start.jpg" alt="Nova AI start screen: How can I help you?, quick suggestions such as I had a craving today, and a text box with a mic button" width="662" height="1434" loading="lazy"><p class="screen-cap"><span class="mono">01</span>Ask anything</p></figure>
@@ -304,7 +298,8 @@
 </figure>
 </div>
 <div class="sub">
-<div class="sub-head"><span class="mono">A.06</span><h3 class="serif h-item">Profile and settings</h3></div>
+<div class="sub-head"><span class="mono">D.07</span><h3 class="serif h-item">Profile and reminders</h3></div>
+<p class="muted body">Daily reminders for the pledge and review, downloads for offline sessions, and the support and emergency options always one tap away.</p>
 <figure class="fig">
 <div class="m-rail" tabindex="0" aria-label="Profile screens, scroll sideways">
 <figure class="m-shot"><img src="pf-main.jpg" alt="Profile: avatar, name, streaks and library usage, support and booking cards, the emergency hotline, and Downloads" width="660" height="1445" loading="lazy"><p class="screen-cap"><span class="mono">01</span>Profile</p></figure>
@@ -316,16 +311,18 @@
 <figcaption class="mono">Fig 09. Profile, reminders and downloads, scroll sideways</figcaption>
 </figure>
 </div>
-</section>
-
-<!-- 05 PORTALS -->
-<section id="portals" class="chapter reveal" aria-labelledby="c5">
-<div class="ch-head">
-<p class="mono sec-label">05 <i></i> Portals</p>
-<h2 id="c5" class="serif h-section">The team behind the app, <em>in one place</em>.</h2>
+<div class="sub">
+<div class="sub-head"><span class="mono">D.08</span><h3 class="serif h-item">Safety and privacy</h3></div>
+<p class="muted body">For people facing addiction or suicidal thoughts, the app has to be safe before it is clever.</p>
+<ul class="callouts">
+<li><span class="mono">01</span><strong style="font-weight: 600">Help at any hour</strong><span class="muted">A 24/7 emergency button connects patients to support straight away.</span></li>
+<li><span class="mono">02</span><strong style="font-weight: 600">An AI with clinical guardrails</strong><span class="muted">The AI companion was set up for the client's clinical and legal requirements.</span></li>
+<li><span class="mono">03</span><strong style="font-weight: 600">Consent first</strong><span class="muted">Patients give consent during onboarding at the clinic, including for voice answers and for therapists seeing AI summaries of their chats.</span></li>
+<li><span class="mono">04</span><strong style="font-weight: 600">Private by design</strong><span class="muted">Patient data is handled under HIPAA and stays with NOVA LIFE.</span></li>
+</ul>
 </div>
-<div class="sub" style="border-top: 0; margin-top: 0; padding-top: 0">
-<div class="sub-head"><span class="mono">P.01</span><h3 class="serif h-item">Admin portal</h3></div>
+<div class="sub">
+<div class="sub-head"><span class="mono">P.01</span><h3 class="serif h-item">Portals: admin</h3></div>
 <p class="muted body">Staff sign in to see patient and therapist accounts at a glance, review therapists, and manage the menus, series and videos patients see in the app.</p>
 <figure class="fig">
 <div class="d-stack" role="group" aria-label="Admin portal screens"><input class="d-in" type="radio" name="adm" id="adm-1" aria-label="Show Dashboard"><input class="d-in" type="radio" name="adm" id="adm-2" aria-label="Show Sign in"><input class="d-in" type="radio" name="adm" id="adm-3" aria-label="Show Video manager"><input class="d-in" type="radio" name="adm" id="adm-4" aria-label="Show Empty menu"><input class="d-in" type="radio" name="adm" id="adm-5" aria-label="Show Empty series"><div class="d-deck" style="--n: 4"><label class="d-card" for="adm-1" style="--i: 0"><img src="ad2-dash.jpg" alt="Admin dashboard: patient and therapist account counts, active patients in the last 24 hours, new signups, and a table of therapists with license ID, documents, state and pending status" width="1440" height="1024" loading="lazy"></label><label class="d-card" for="adm-2" style="--i: 1"><img src="ad2-login.jpg" alt="Admin portal login: the brand panel on the left and an email and password form on the right" width="1440" height="1024" loading="lazy"></label><label class="d-card" for="adm-3" style="--i: 2"><img src="ad2-videos.jpg" alt="Video manager: a table of breathing videos with thumbnail, title, category, date, edit and delete, plus Add video" width="1440" height="1024" loading="lazy"></label><label class="d-card" for="adm-4" style="--i: 3"><img src="ad2-menu-empty.jpg" alt="Empty state for menus: no menu added yet, with an Add menu button" width="1440" height="1024" loading="lazy"></label><label class="d-card" for="adm-5" style="--i: 4"><img src="ad2-series-empty.jpg" alt="Empty state for series: no series added yet, with an Add series button" width="1440" height="1024" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="adm-1"><span class="mono">01</span>Dashboard</label><label class="d-tab" for="adm-2"><span class="mono">02</span>Sign in</label><label class="d-tab" for="adm-3"><span class="mono">03</span>Video manager</label><label class="d-tab" for="adm-4"><span class="mono">04</span>Empty menu</label><label class="d-tab" for="adm-5"><span class="mono">05</span>Empty series</label></div></div>
@@ -333,7 +330,7 @@
 </figure>
 </div>
 <div class="sub">
-<div class="sub-head"><span class="mono">P.02</span><h3 class="serif h-item">Super admin</h3></div>
+<div class="sub-head"><span class="mono">P.02</span><h3 class="serif h-item">Portals: super admin</h3></div>
 <p class="muted body">The super admin invites patients by link, email or QR code, and approves the therapists who sign up, each with their license, documents and a clear status.</p>
 <figure class="fig">
 <div class="d-stack" role="group" aria-label="Super admin screens"><input class="d-in" type="radio" name="sup" id="sup-1" aria-label="Show Therapists and invites"><input class="d-in" type="radio" name="sup" id="sup-2" aria-label="Show Registered, pending approval"><div class="d-deck" style="--n: 1"><label class="d-card" for="sup-1" style="--i: 0"><img src="sa2-therapists.jpg" alt="Super admin therapists page: invite a new patient by link, email or QR code, and a paginated list of therapists with license ID, documents, state and status" width="1440" height="1078" loading="lazy"></label><label class="d-card" for="sup-2" style="--i: 1"><img src="sa2-registered.jpg" alt="Success dialog for a newly registered therapist: the account is pending approval and they can log back in once approved by email" width="1440" height="1078" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="sup-1"><span class="mono">01</span>Therapists and invites</label><label class="d-tab" for="sup-2"><span class="mono">02</span>Registered, pending approval</label></div></div>
@@ -341,8 +338,8 @@
 </figure>
 </div>
 <div class="sub">
-<div class="sub-head"><span class="mono">P.03</span><h3 class="serif h-item">Therapist portal</h3></div>
-<p class="muted body">Therapists verify their license to join, invite patients, then follow each one between sessions: days sober, how they use the app, wellness trends, and an AI summary of their chats.</p>
+<div class="sub-head"><span class="mono">P.03</span><h3 class="serif h-item">Portals: the care team between sessions</h3></div>
+<p class="muted body">Therapists verify their license to join, invite patients, then follow each one between sessions: days sober, how they use the app, survey answers, wellness trends and an AI summary of their chats, which patients consent to at the clinic.</p>
 <figure class="fig">
 <div class="desk-hero"><figure class="shot"><div class="shot-media"><img src="th-reg-file.jpg" alt="The registration form with a PDF certificate attached and a Replace file button" width="1440" height="1024" loading="lazy"></div><p class="screen-cap"><span class="mono">01</span>Verify credentials, certificate attached</p></figure></div>
 <figcaption class="mono">Fig 12. Joining as a therapist</figcaption>
@@ -354,31 +351,39 @@
 </div>
 </section>
 
+
+<!-- 05 ITERATION -->
+<section id="iteration" class="chapter reveal" aria-labelledby="c5">
+<div class="ch-head">
+<p class="mono sec-label">05 <i></i> Iteration</p>
+<h2 id="c5" class="serif h-section">From a form to a <em>conversation</em>.</h2>
+</div>
+<div class="sub" style="border-top: 0; margin-top: 0; padding-top: 0">
+<div class="sub-head"><span class="mono">I.01</span><h3 class="serif h-item">Onboarding</h3></div>
+<p class="muted body">The first version was a standard intake form, with input fields and tap-to-select pills. Patients vary widely in how comfortable they are with forms, and clinic assistants often sit with them during onboarding. We rebuilt it as a spoken conversation with the AI companion, with pauses and a review step.</p>
+</div>
+<div class="sub">
+<div class="sub-head"><span class="mono">I.02</span><h3 class="serif h-item">The pledge cards</h3></div>
+<p class="muted body">In review, the client shared a set of spiritual shapes to use on the daily pledge cards, and the pledge design was updated around them.</p>
+</div>
+</section>
+
 <!-- 06 OUTCOMES -->
 <section id="outcomes" class="chapter band reveal" aria-labelledby="c6">
 <div class="ch-head">
 <p class="mono sec-label">06 <i></i> Outcomes</p>
-<h2 id="c6" class="serif h-section">Small daily wins that <em>add up</em> to sober days.</h2>
+<h2 id="c6" class="serif h-section">From four ideas to a <em>shipped</em> product in 3 months.</h2>
 </div>
 <div class="body">
-<p class="lead">Nova Life is in use by more than 100 of NOVA LIFE's own patients, along with their therapists and the admin team.</p>
-<p class="muted">Patients keep coming back because staying sober feels like progress they can see: a pledge each morning, milestones to unlock, and short sessions for the hard moments. Therapists see that progress between sessions instead of waiting for the next visit.</p>
+<p class="lead">What shipped: a patient app, a therapist portal and an admin portal, used by 80+ of NOVA LIFE's own patients (client-reported) with their therapists and staff.</p>
+<p class="muted">Usage data stays with the centre under HIPAA, so engagement isn't shared here.</p>
 </div>
 <dl class="stats" style="margin: var(--space-12) 0 0">
-<div class="stat"><dt class="mono label" style="order: 2">Patients using the app</dt><dd class="serif stat-num" style="margin: 0; color: var(--signal-ink)">100+</dd><dd class="muted stat-sub" style="order: 3">all direct patients of NOVA LIFE</dd></div>
+<div class="stat"><dt class="mono label" style="order: 2">Patients using the app</dt><dd class="serif stat-num" style="margin: 0; color: var(--signal-ink)">80+</dd><dd class="muted stat-sub" style="order: 3">direct patients of NOVA LIFE, client-reported</dd></div>
 <div class="stat"><dt class="mono label" style="order: 2">Products in use</dt><dd class="serif stat-num" style="margin: 0; color: var(--signal-ink)">3</dd><dd class="muted stat-sub" style="order: 3">patient app, therapist and admin portals</dd></div>
 
 <div class="stat"><dt class="mono label" style="order: 2">User roles</dt><dd class="serif stat-num" style="margin: 0">4</dd><dd class="muted stat-sub" style="order: 3">patients, therapists, admins and a super admin</dd></div>
 </dl>
-<div class="sub">
-<div class="sub-head"><span class="mono">06 A</span><h3 class="serif h-item">What keeps patients going</h3></div>
-<ul class="callouts">
-<li><span class="mono">01</span><strong style="font-weight: 600">A daily pledge</strong><span class="muted">One swipe each morning to recommit, with their own reasons in front of them.</span></li>
-<li><span class="mono">02</span><strong style="font-weight: 600">Milestones to unlock</strong><span class="muted">Named badges and a celebration at each step, so every sober day counts.</span></li>
-<li><span class="mono">03</span><strong style="font-weight: 600">A library for hard moments</strong><span class="muted">Short guided sessions for breath, balance and faith, ready when a craving hits.</span></li>
-<li><span class="mono">04</span><strong style="font-weight: 600">Care that follows them</strong><span class="muted">Therapists see days sober, app use and wellness trends between sessions.</span></li>
-</ul>
-</div>
 </section>
 
 <!-- 07 LEARNINGS -->
@@ -387,7 +392,9 @@
 <p class="mono sec-label">07 <i></i> Learnings</p>
 <h2 id="c7" class="serif h-section">What I'd take to the next project.</h2>
 </div>
-<div class="nj-soon"><span class="mono label">Coming next</span></div>
+<div class="sub" style="border-top: 0; margin-top: 0; padding-top: 0"><div class="sub-head"><span class="mono">L.01</span><h3 class="serif h-item">Shape the first release before the first screen</h3></div><p class="muted body">Agreeing the scope before high fidelity turned four big ideas into something a team could build in 3 months.</p></div>
+<div class="sub"><div class="sub-head"><span class="mono">L.02</span><h3 class="serif h-item">A conversation beats a form for this audience</h3></div><p class="muted body">Typing answers or tapping selection pills was harder for patients and the assistants helping them. Speaking kept a 31-question intake manageable, with breaks and a review step.</p></div>
+<div class="sub"><div class="sub-head"><span class="mono">L.03</span><h3 class="serif h-item">Push for safe access to real users</h3></div><p class="muted body">Without direct access to patients, the client's team had to speak for them. Next time I'd look for a safe way to hear from a few patients, for example through their therapists.</p></div>
 </section>
 
 </div>
@@ -410,7 +417,7 @@
 </div>
 <p class="mono label" style="display: flex; align-items: center; gap: var(--space-3); white-space: normal"><span class="dot" aria-hidden="true"></span>Open to full-time roles, on-site or remote</p>
 <div class="foot">
-<div class="foot-col"><span class="mono label">Pages</span><a class="link mono" href="./">Work</a><a class="link mono" href="./">About</a><a class="link mono" href="#top">Back to top <span class="arr arr-u" aria-hidden="true">↑</span></a></div>
+<div class="foot-col"><span class="mono label">Pages</span><a class="link mono" href="./#work">Work</a><a class="link mono" href="./#about">About</a><a class="link mono" href="#top">Back to top <span class="arr arr-u" aria-hidden="true">↑</span></a></div>
 <div class="foot-col"><span class="mono label">Elsewhere</span><a class="link mono" href="https://www.linkedin.com/in/zeeshan-ahmad-98650314a/" target="_blank" rel="noopener">LinkedIn <span class="arr arr-ne" aria-hidden="true">↗</span></a><a class="link mono" href="https://www.behance.net/zeeshanahmad66" target="_blank" rel="noopener">Behance <span class="arr arr-ne" aria-hidden="true">↗</span></a><a class="link mono" href="Zeeshan_Ahmad_UIUX_Designer_CV.pdf" download="Zeeshan_Ahmad_UIUX_Designer_CV.pdf">Resume <span class="arr arr-d" aria-hidden="true">↓</span></a></div>
 <div class="foot-col"><span class="mono label">Based in</span><span style="font-size: 15px">Islamabad, Pakistan</span><span class="muted" style="font-size: 15px">Working with US teams</span><span class="mono label" style="margin-top: var(--space-4)">© 2026 Zeeshan Ahmad</span></div>
 </div>

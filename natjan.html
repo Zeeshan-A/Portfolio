@@ -30,8 +30,8 @@
 
 </a>
 <nav class="nav-links" aria-label="Primary">
-<a class="link mono" href="./">Work</a>
-<a class="link mono" href="./">About</a>
+<a class="link mono" href="./#work">Work</a>
+<a class="link mono" href="./#about">About</a>
 <a class="link mono" href="#contact">Contact</a>
 <a class="link mono" href="Zeeshan_Ahmad_UIUX_Designer_CV.pdf" download="Zeeshan_Ahmad_UIUX_Designer_CV.pdf">CV <span class="arr arr-d" aria-hidden="true">↓</span></a>
 </nav>
@@ -47,16 +47,18 @@
 <a class="link mono" href="./" style="align-self: flex-start"><span class="arr arr-l" aria-hidden="true">←</span> All work</a>
 <div class="hero-top enter"><p class="mono label">Case study · P. 02</p><div class="tags"><span class="tag mono">US · Facilities</span><span class="tag mono">Redesign · Web + Mobile</span></div></div>
 <h1 class="serif h-display enter" style="max-width: 1100px">NATJAN: a vendor portal <em>redesigned</em>, without starting over.</h1>
-<p class="lead enter-2" style="max-width: 760px; color: var(--muted)">NATJAN is a janitorial management system for a US corporate facilities company, with a vendor portal, an internal portal and a mobile app. I redesigned the vendor portal on a customized MUI, and designed the main inspection and checklist flows for the mobile app.</p>
+<p class="lead enter-2" style="max-width: 760px; color: var(--muted)">Vendors for a US facilities company ran their work through a portal that had every feature but no guidance. The clearest case was a payment decision hidden in small print. As the only designer, I redesigned the vendor portal on a themed version of its existing MUI library, without a rebuild, and designed the inspection and checklist flows for a new mobile app.</p>
 </section>
 
 <section class="wrap" aria-label="Project facts">
 <dl class="cs-meta" style="margin: 0">
-<div><dt class="mono label">Role</dt><dd style="margin: 0">UI/UX Designer</dd></div>
+<div><dt class="mono label">Role</dt><dd style="margin: 0">UI/UX Designer, sole designer</dd></div>
 <div><dt class="mono label">Client</dt><dd style="margin: 0">The Facilities Group, US corporate</dd></div>
 <div><dt class="mono label">Work</dt><dd style="margin: 0">Web redesign · New mobile flows</dd></div>
 <div><dt class="mono label">Platforms</dt><dd style="margin: 0">Web · Tablet · Mobile</dd></div>
 <div><dt class="mono label">Scope</dt><dd style="margin: 0">300+ screens · 5 breakpoints</dd></div>
+<div><dt class="mono label">Duration</dt><dd style="margin: 0">About 8 months</dd></div>
+<div><dt class="mono label">Team</dt><dd style="margin: 0">PM · Scrum master · Client PO · Developers</dd></div>
 </dl>
 </section>
 
@@ -69,9 +71,9 @@
 <nav class="cs-index" aria-label="Case study chapters">
 <a class="mono" href="#context" aria-current="false"><span>01</span>Context</a>
 <a class="mono" href="#problem" aria-current="false"><span>02</span>Problem</a>
-<a class="mono" href="#process" aria-current="false"><span>03</span>Process</a>
-<a class="mono" href="#solution" aria-current="false"><span>04</span>Web redesign</a>
-<a class="mono" href="#mobile" aria-current="false"><span>05</span>Mobile app</a>
+<a class="mono" href="#research" aria-current="false"><span>03</span>Investigation</a>
+<a class="mono" href="#solution" aria-current="false"><span>04</span>Design decisions</a>
+<a class="mono" href="#iteration" aria-current="false"><span>05</span>Iteration</a>
 <a class="mono" href="#outcomes" aria-current="false"><span>06</span>Outcomes</a>
 <a class="mono" href="#learnings" aria-current="false"><span>07</span>Learnings</a>
 </nav>
@@ -84,23 +86,22 @@
 <h2 id="c1" class="serif h-section">What is NATJAN?</h2>
 </div>
 <div class="body">
-<p class="lead">NATJAN is the janitorial management system of The Facilities Group (TFG), a US corporate facilities company. It runs across several products: a vendor portal, an internal portal for TFG staff, and a mobile app for teams on site.</p>
-<p class="muted">In the vendor portal, vendors receive work orders, log crew visits, upload documents, send invoices and choose how fast they get paid.</p>
-<p class="muted">Unlike Sindh, this wasn't a blank page. The portal already worked. My job was to make it clearer and easier to use without throwing away what the developers had built, and to design the new mobile app's core flows from scratch.</p>
+<p class="lead">NATJAN is the janitorial management system of The Facilities Group (TFG), a US corporate facilities company. It has three products: a vendor portal, an internal portal for TFG staff, and a mobile app for people on site.</p>
+<p class="muted">The vendor portal already worked, and developers had built it on a stock MUI component library. The brief was to make it clearer without throwing that work away, and to design the new mobile app's core flows from scratch.</p>
 </div>
-<div class="cards3" style="margin-top: var(--space-12)">
-<div><span class="mono" style="color: var(--signal-ink)">Vendors</span><p style="font-size: 15px">Work orders, crew visits, documents, invoices and QuickPay on the web portal.</p></div>
-<div><span class="mono" style="color: var(--signal-ink)">Area Managers</span><p style="font-size: 15px">Inspection and checklist flows in the mobile app.</p></div>
-<div><span class="mono" style="color: var(--signal-ink)">Regional Managers</span><p style="font-size: 15px">Inspection flows in the mobile app, across their areas.</p></div>
+<div class="table-box" style="margin-top: var(--space-12)">
+<table class="table">
+<thead><tr><th scope="col">Role</th><th scope="col">Where</th><th scope="col">What they do</th></tr></thead>
+<tbody>
+<tr><td><strong style="font-weight: 600">Vendors</strong></td><td>Web portal and mobile app</td><td>Receive work orders, log crew visits, upload documents, invoice, and choose how fast they get paid</td></tr>
+<tr><td><strong style="font-weight: 600">Area Managers</strong></td><td>Mobile app</td><td>Inspect sites in their area, including unplanned visits</td></tr>
+<tr><td><strong style="font-weight: 600">Regional Managers</strong></td><td>Mobile app</td><td>Inspect across their region, with the same flow as Area Managers</td></tr>
+</tbody>
+</table>
 </div>
 <div class="sub">
-<h3 class="serif h-item">My role</h3>
-<ul class="callouts">
-<li><span class="mono">01</span><strong style="font-weight: 600">Portal audit</strong><span class="muted">Studied the existing portal for usability issues and inconsistencies.</span></li>
-<li><span class="mono">02</span><strong style="font-weight: 600">Web redesign</strong><span class="muted">Work orders, invoices, scheduling and QuickPay, across 5 breakpoints.</span></li>
-<li><span class="mono">03</span><strong style="font-weight: 600">MUI customization</strong><span class="muted">A themed MUI instead of a rebuild, agreed with developers.</span></li>
-<li><span class="mono">04</span><strong style="font-weight: 600">Mobile flows</strong><span class="muted">Inspection flows for three roles, plus checklist flows.</span></li>
-</ul>
+<h3 class="serif h-item">My part</h3>
+<p class="muted body">I was the only designer, working with a PM, a scrum master, the client's product owner and the developers. The PM and scrum master owned the requirements. I audited the existing portal, led the technical study with the developers that led to theming MUI instead of rebuilding, proposed the new information architecture to the client, and redesigned the vendor portal across 5 breakpoints. On mobile, I designed the inspection, vendor and checklist flows. The client reviewed and approved each module before handoff.</p>
 </div>
 </section>
 
@@ -111,11 +112,11 @@
 <h2 id="c2" class="serif h-section">The portal worked. It just didn't <em>guide</em> anyone.</h2>
 </div>
 <div class="body">
-<p class="lead">The existing portal was built on default MUI components. Every feature was there, but nothing helped a vendor see what mattered or what to do next. QuickPay, where vendors choose how fast they get paid, showed it most clearly.</p>
+<p class="lead">Vendors had every tool they needed, but the portal gave them no sense of what mattered or what to do next. The one screen with real money at stake, QuickPay, hid its options behind legal text, and the navigation was cluttered. On site, managers had no way to record an unplanned inspection. The redesign had to fix this without a rebuild, because the developers' working code had to stay.</p>
 </div>
 <div class="sub" style="border-top: 0">
 <div class="sub-head"><span class="mono">02 A</span><h3 class="serif h-item">QuickPay: a money decision buried in small print</h3></div>
-<p class="muted body">Automatic QuickPay lets a vendor trade a fee for faster payment on every invoice. It's a real financial commitment, yet the old screen asked vendors to make it without showing the options or what they would cost.</p>
+<p class="muted body">Automatic QuickPay lets a vendor trade a fee for faster payment on every invoice. It's a real financial commitment, yet the old screen asked vendors to make it without showing the options or what they would cost. The client heard this from vendors in its regular meetings with them and passed the issues to us.</p>
 <figure class="fig">
 <figure class="shot"><div class="shot-media"><img src="nj-old-qp-1.jpg" alt="Old portal: Automatic QuickPay with a long paragraph, an unticked consent checkbox in small italic text, an empty setting dropdown and a disabled Opt-in button. Markers 1 to 3 point at the dropdown, the consent checkbox and the disabled button." width="1440" height="715" loading="lazy"><span class="pin" style="left: 76.7%; top: 33.6%" aria-hidden="true">1</span><span class="pin" style="left: 13.6%; top: 38.9%" aria-hidden="true">2</span><span class="pin" style="left: 93.6%; top: 39.7%" aria-hidden="true">3</span></div><p class="screen-cap"><span class="mono">01</span>Automatic QuickPay, old portal<span class="shot-tag is-before">Before</span></p></figure>
 <figcaption class="mono">Fig 01. Where vendors got stuck</figcaption>
@@ -126,49 +127,47 @@
 <li><span class="pin" aria-hidden="true">3</span><div><strong>A button that stayed off</strong><p class="muted">Opt-in stayed disabled until both were done, with nothing saying why.</p></div></li>
 </ol>
 <figure class="fig" style="margin-top: var(--space-12)">
-<div class="desk">
-<figure class="shot"><div class="shot-media"><img src="nj-old-qp-2.jpg" alt="Old portal: the consent checkbox ticked, but the Opt-in button still disabled until a term is chosen" width="1440" height="713" loading="lazy"></div><p class="screen-cap"><span class="mono">02</span>Consent ticked, Opt-in still off<span class="shot-tag is-before">Before</span></p></figure>
-<figure class="shot"><div class="shot-media"><img src="nj-old-qp-3.jpg" alt="Old portal: 3% for 28 days chosen from the dropdown, and the Opt-in button finally enabled" width="1440" height="716" loading="lazy"></div><p class="screen-cap"><span class="mono">03</span>Term picked from the dropdown<span class="shot-tag is-before">Before</span></p></figure>
-</div>
-<figcaption class="mono">Fig 02. The rest of the old opt-in, step by step</figcaption>
+<div class="d-stack" role="group" aria-label="Old QuickPay opt-in screens" style="--arw: 1440; --arh: 713"><input class="d-in" type="radio" name="nj-old" id="nj-old-1" aria-label="Show Before: consent ticked, Opt-in still off"><input class="d-in" type="radio" name="nj-old" id="nj-old-2" aria-label="Show Before: term picked from the dropdown"><div class="d-deck" style="--n: 1"><label class="d-card" for="nj-old-1" style="--i: 0"><img src="nj-old-qp-2.jpg" alt="Old portal: the consent checkbox ticked, but the Opt-in button still disabled until a term is chosen" width="1440" height="713" loading="lazy"></label><label class="d-card" for="nj-old-2" style="--i: 1"><img src="nj-old-qp-3.jpg" alt="Old portal: 3% for 28 days chosen from the dropdown, and the Opt-in button finally enabled" width="1440" height="716" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="nj-old-1"><span class="mono">01</span>Before: consent ticked, Opt-in still off</label><label class="d-tab" for="nj-old-2"><span class="mono">02</span>Before: term picked from the dropdown</label></div></div>
+<figcaption class="mono">Fig 02. The rest of the old opt-in, step by step. Pick a screen to bring it to the front</figcaption>
 </figure>
 </div>
-<div class="sub"><div class="sub-head"><span class="mono">02 B</span><h3 class="serif h-item">Default components, no hierarchy</h3></div><p class="muted body">A plain purple header and stock data grids put tool rows like Columns, Density and Find unique values ahead of the vendor's actual tasks.</p></div>
-<div class="sub"><div class="sub-head"><span class="mono">02 C</span><h3 class="serif h-item">Lists with no context</h3></div><p class="muted body">Lists opened with 1,000 rows per page and no summary of what was open, due or overdue, so vendors had to dig for the work that needed them.</p></div>
+<div class="sub"><div class="sub-head"><span class="mono">02 B</span><h3 class="serif h-item">A cluttered navigation</h3></div><p class="muted body">Single items opened a sub-menu for no reason, labels were long ("List of work orders"), and secondary items sat among the main tasks.</p></div>
+<div class="sub"><div class="sub-head"><span class="mono">02 C</span><h3 class="serif h-item">No way to record an ad-hoc inspection</h3></div><p class="muted body">Area and Regional Managers visit sites without a planned work order, but there was no mobile flow to record those inspections. This came up in client meetings.</p></div>
 </section>
 
-<!-- 03 PROCESS -->
-<section id="process" class="chapter reveal" aria-labelledby="c3">
+
+<!-- 03 INVESTIGATION -->
+<section id="research" class="chapter reveal" aria-labelledby="c3">
 <div class="ch-head">
-<p class="mono sec-label">03 <i></i> Process</p>
-<h2 id="c3" class="serif h-section">Module by module, <em>without</em> a rebuild.</h2>
+<p class="mono sec-label">03 <i></i> Investigation</p>
+<h2 id="c3" class="serif h-section">Three sources, one list of <em>fixes</em>.</h2>
 </div>
 <div class="body">
-<p class="lead">We agreed a lightweight design workflow with the client and ran every module through it, tracked in Jira and designed in Figma.</p>
+<p class="lead">I didn't have direct access to vendors, so the evidence came from three places.</p>
 </div>
-<div class="sub" style="border-top: 0">
-<div class="sub-head"><span class="mono">03 A</span><h3 class="serif h-item">The redesign workflow</h3></div>
-<ol class="nj-steps">
-<li><span class="mono">01</span><div><strong>Analyze the existing portal</strong><p class="muted">Find usability issues, inconsistencies and pain points. Each design task is linked to its change request or bug.</p></div></li>
-<li><span class="mono">02</span><div><strong>Plan the improvements</strong><p class="muted">Redesign screens with new UI patterns, consistent with the design system and responsive across screen sizes.</p></div></li>
-<li><span class="mono">03</span><div><strong>Client review</strong><p class="muted">Present, gather feedback and revise. The task waits on the client until the screens are approved.</p></div></li>
-<li><span class="mono">04</span><div><strong>Handoff</strong><p class="muted">Organized Figma files, specs and assets for the developers, then the task closes.</p></div></li>
-</ol>
-<p class="muted body">New features went through a longer path: requirements, low-fidelity wireframes, client approval, high-fidelity design, a second approval and handoff.</p>
-<figure class="fig ds-fig nj-jira"><img src="nj-jira-flow.png" alt="Jira workflow for design tasks: Start, Not started, In progress, Waiting for reporter, Awaiting verification and Closed" width="762" height="328" loading="lazy"><figcaption class="mono">Fig 03. Design task statuses in Jira</figcaption></figure>
+<div class="table-box" style="margin-top: var(--space-8)">
+<table class="table">
+<thead><tr><th scope="col">Source</th><th scope="col">What it gave us</th></tr></thead>
+<tbody>
+<tr><td><strong style="font-weight: 600">My audit of the existing portal</strong></td><td>Usability issues and inconsistencies, module by module. Each became a design task linked to its change request in Jira</td></tr>
+<tr><td><strong style="font-weight: 600">Vendor feedback, through the client</strong></td><td>The client met vendors regularly and logged their frustration points. QuickPay came up most</td></tr>
+<tr><td><strong style="font-weight: 600">Client meetings</strong></td><td>Managers needed to record ad-hoc inspections on site. That became the first mobile flow</td></tr>
+</tbody>
+</table>
 </div>
-<div class="sub">
-<div class="sub-head"><span class="mono">03 B</span><h3 class="serif h-item">Customize MUI, don't replace it</h3></div>
-<p class="muted body">After a technical study with the developers, we chose to customize MUI rather than replace it. A new theme, tokens and restyled components changed how the portal looks and feels, while the codebase and component logic stayed in place.</p>
-<ul class="callouts">
-<li><span class="mono">01</span><strong style="font-weight: 600">No rebuild</strong><span class="muted">Working features kept running while the look changed.</span></li>
-<li><span class="mono">02</span><strong style="font-weight: 600">Familiar for developers</strong><span class="muted">The same MUI components and APIs, themed.</span></li>
-<li><span class="mono">03</span><strong style="font-weight: 600">One theme everywhere</strong><span class="muted">Applied consistently across 300+ screens.</span></li>
-</ul>
+<p class="muted body" style="margin-top: var(--space-8)">A technical study with the developers came next. It set the main constraint for every decision: theme MUI, don't replace it.</p>
+</section>
+
+<!-- 04 DESIGN DECISIONS -->
+<section id="solution" class="chapter reveal" aria-labelledby="c4">
+<div class="ch-head">
+<p class="mono sec-label">04 <i></i> Design decisions</p>
+<h2 id="c4" class="serif h-section">Same portal, clearer at <em>every</em> step.</h2>
 </div>
-<div class="sub">
-<div class="sub-head"><span class="mono">03 C</span><h3 class="serif h-item">What changed in the theme</h3></div>
-<p class="muted body">I customized the library to feel subtler and more modern, then curated the main screens to present it, and the client approved the direction.</p>
+
+<div class="sub" style="border-top: 0; margin-top: 0; padding-top: 0">
+<div class="sub-head"><span class="mono">D.01</span><h3 class="serif h-item">Theme MUI, don't replace it</h3></div>
+<p class="muted body">After the technical study, we kept MUI and changed how it looks: a new theme, tokens and restyled components. Working features kept running, developers kept the APIs they knew, and one theme covered 300+ screens. I customized the library, applied it to the main screens to show the direction, and the client approved it.</p>
 <ul class="nj-theme">
 <li><span class="mono label">Typography</span><span class="nj-was">Roboto</span><strong>Instrument Sans</strong></li>
 <li><span class="mono label">Corner radius</span><span class="nj-was">Sharp 4px corners</span><strong>Softer 8px on cards, buttons, dialogs and inputs</strong></li>
@@ -178,34 +177,20 @@
 <li><span class="mono label">Icons</span><span class="nj-was">Material Icons</span><strong>Lucide, an open-source icon library</strong></li>
 </ul>
 </div>
-</section>
 
-<!-- 04 SOLUTION -->
-<section id="solution" class="chapter reveal" aria-labelledby="c4">
-<div class="ch-head">
-<p class="mono sec-label">04 <i></i> Web redesign</p>
-<h2 id="c4" class="serif h-section">Same portal, clearer at <em>every</em> step.</h2>
-</div>
-
-<div class="sub" style="border-top: 0; margin-top: 0; padding-top: 0">
-<div class="sub-head"><span class="mono">H.01</span><h3 class="serif h-item">QuickPay, before and after</h3></div>
-<p class="muted body">Payment terms are now choices vendors can compare at a glance, with the Opt-in button right beside them. A confirmation step spells out the term, the fee and a worked example before anything changes.</p>
+<div class="sub">
+<div class="sub-head"><span class="mono">D.02</span><h3 class="serif h-item">QuickPay: choose, then confirm</h3><span class="mono label">Answers 02 A</span></div>
+<p class="muted body">All five payment terms are now visible as options, so vendors can compare them before choosing. The legal text became three plain-language points after the choice, not before it. A confirmation dialog shows the term, the fee and a worked example on a $1,000 invoice before anything changes. Opting in went from 4 clicks to 2.</p>
 <figure class="fig">
-<div class="ba">
-<figure class="shot"><div class="shot-media"><img src="nj-old-qp-1.jpg" alt="Before: the old Automatic QuickPay screen, terms hidden in a dropdown and Opt-in disabled" width="1440" height="715" loading="lazy"></div><p class="screen-cap"><span class="mono">01</span>Terms hidden in a dropdown<span class="shot-tag is-before">Before</span></p></figure>
-<figure class="shot"><div class="shot-media"><img src="nj-quickpay-new.jpg" alt="After: a plain-language explainer, five payment terms as radio buttons, an Opt-in button, and the QuickPay list below" width="1440" height="793" loading="lazy"></div><p class="screen-cap"><span class="mono">01</span>All five terms side by side<span class="shot-tag is-after">After</span></p></figure>
-</div>
-<figcaption class="mono">Fig 04. Choosing a payment term</figcaption>
+<div class="d-stack" role="group" aria-label="Payment term, before and after" style="--arw: 1440; --arh: 715"><input class="d-in" type="radio" name="nj-term" id="nj-term-1" aria-label="Show Before: terms hidden in a dropdown"><input class="d-in" type="radio" name="nj-term" id="nj-term-2" aria-label="Show After: all five terms side by side"><div class="d-deck" style="--n: 1"><label class="d-card" for="nj-term-1" style="--i: 0"><img src="nj-old-qp-1.jpg" alt="Before: the old Automatic QuickPay screen, terms hidden in a dropdown and Opt-in disabled" width="1440" height="715" loading="lazy"></label><label class="d-card" for="nj-term-2" style="--i: 1"><img src="nj-quickpay-new.jpg" alt="After: a plain-language explainer, five payment terms as radio buttons, an Opt-in button, and the QuickPay list below" width="1440" height="793" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="nj-term-1"><span class="mono">01</span>Before: terms hidden in a dropdown</label><label class="d-tab" for="nj-term-2"><span class="mono">02</span>After: all five terms side by side</label></div></div>
+<figcaption class="mono">Fig 04. Choosing a payment term. Pick a screen to bring it to the front</figcaption>
 </figure>
 <figure class="fig" style="margin-top: var(--space-12)">
-<div class="ba">
-<figure class="shot"><div class="shot-media"><img src="nj-old-qp-3.jpg" alt="Before: a term chosen and Opt-in enabled, with the legal text above as the only explanation" width="1440" height="716" loading="lazy"></div><p class="screen-cap"><span class="mono">02</span>Opt-in straight after the small print<span class="shot-tag is-before">Before</span></p></figure>
-<figure class="shot"><div class="shot-media"><img src="nj-quickpay-confirm.jpg" alt="After: Confirm Automatic QuickPay dialog with payment term and invoice fee, what opting in means with a worked example, a P.O. box warning, and Cancel or Agree and opt-in" width="1440" height="793" loading="lazy"></div><p class="screen-cap"><span class="mono">02</span>Confirm before you commit<span class="shot-tag is-after">After</span></p></figure>
-</div>
-<figcaption class="mono">Fig 05. Committing to QuickPay</figcaption>
+<div class="d-stack" role="group" aria-label="Committing to QuickPay, before and after" style="--arw: 1440; --arh: 716"><input class="d-in" type="radio" name="nj-commit" id="nj-commit-1" aria-label="Show Before: opt-in straight after the small print"><input class="d-in" type="radio" name="nj-commit" id="nj-commit-2" aria-label="Show After: confirm before you commit"><div class="d-deck" style="--n: 1"><label class="d-card" for="nj-commit-1" style="--i: 0"><img src="nj-old-qp-3.jpg" alt="Before: a term chosen and Opt-in enabled, with the legal text above as the only explanation" width="1440" height="716" loading="lazy"></label><label class="d-card" for="nj-commit-2" style="--i: 1"><img src="nj-quickpay-confirm.jpg" alt="After: Confirm Automatic QuickPay dialog with payment term and invoice fee, what opting in means with a worked example, a P.O. box warning, and Cancel or Agree and opt-in" width="1440" height="793" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="nj-commit-1"><span class="mono">01</span>Before: opt-in straight after the small print</label><label class="d-tab" for="nj-commit-2"><span class="mono">02</span>After: confirm before you commit</label></div></div>
+<figcaption class="mono">Fig 05. Committing to QuickPay. Pick a screen to bring it to the front</figcaption>
 </figure>
 <div class="ba-table" role="table" aria-label="QuickPay before and after">
-<div class="ba-row ba-head" role="row"><span role="columnheader"></span><span class="mono" role="columnheader">Before</span><span class="mono" role="columnheader">After</span></div>
+<div class="ba-row ba-head" role="row"><span role="columnheader"><span class="sr-only">Aspect</span></span><span class="mono" role="columnheader">Before</span><span class="mono" role="columnheader">After</span></div>
 <div class="ba-row" role="row"><strong role="rowheader">Payment terms</strong><span role="cell">Five rates hidden in one dropdown</span><span role="cell">All five visible as options, one preselected</span></div>
 <div class="ba-row" role="row"><strong role="rowheader">Consent</strong><span role="cell">Italic legal paragraph and a checkbox, before anything else</span><span role="cell">Three plain-language points, after the choice</span></div>
 <div class="ba-row" role="row"><strong role="rowheader">Cost</strong><span role="cell">A percentage only</span><span role="cell">A worked example on a $1,000 invoice</span></div>
@@ -217,21 +202,28 @@
 
 
 <div class="sub">
-<div class="sub-head"><span class="mono">H.03</span><h3 class="serif h-item">One work order, every detail in tabs</h3></div>
-<p class="muted body">A work order's information, recurrence, IVR, crew, notes and documents each have a tab, so vendors move through one page instead of hunting across screens.</p>
-<figure class="fig">
-<div class="desk desk-3">
-<figure class="shot"><div class="shot-media"><img src="nj-wo-info.jpg" alt="Work order information tab: PO, status, category, client, store and address details, scope of work and additional information" width="1440" height="819" loading="lazy"></div><p class="screen-cap"><span class="mono">01</span>Work order Information</p></figure>
-<figure class="shot"><div class="shot-media"><img src="nj-crew.jpg" alt="Crew tab: original NTE, deductions and total NTE, then a list of crew visits that expand to show deductions" width="1440" height="810" loading="lazy"></div><p class="screen-cap"><span class="mono">02</span>Crew visits</p></figure>
-<figure class="shot"><div class="shot-media"><img src="nj-documents.jpg" alt="Documents tab: approved and pending documents, each with file type, date, type badge, uploader, comment and Download" width="1440" height="810" loading="lazy"></div><p class="screen-cap"><span class="mono">03</span>Documents</p></figure>
+<div class="sub-head"><span class="mono">D.03</span><h3 class="serif h-item">A shorter, flatter navigation</h3><span class="mono label">Answers 02 B</span></div>
+<p class="muted body">Single items no longer open a sub-menu, labels are short ("Work orders", not "List of work orders"), and secondary items moved to the bottom of the panel. I proposed the structure in client meetings, and we refined it together in Figma before any visual design.</p>
+<div class="ba-table" role="table" aria-label="Navigation before and after">
+<div class="ba-row ba-head" role="row"><span role="columnheader"><span class="sr-only">Aspect</span></span><span class="mono" role="columnheader">Before</span><span class="mono" role="columnheader">After</span></div>
+<div class="ba-row" role="row"><strong role="rowheader">Sub-items</strong><span role="cell">Single items opened a sub-menu for no reason</span><span role="cell">Items open directly; sub-menus only where there are real sub-pages</span></div>
+<div class="ba-row" role="row"><strong role="rowheader">Labels</strong><span role="cell">Long labels, like "List of work orders"</span><span role="cell">Short labels, like "Work orders"</span></div>
+<div class="ba-row" role="row"><strong role="rowheader">Secondary items</strong><span role="cell">Mixed in with the main tasks</span><span class="is-win" role="cell">Moved to the bottom of the panel</span></div>
 </div>
-<figcaption class="mono">Fig 07. Work order detail, web</figcaption>
+</div>
+
+<div class="sub">
+<div class="sub-head"><span class="mono">D.04</span><h3 class="serif h-item">One work order, one page</h3></div>
+<p class="muted body">A work order's information, recurrence, IVR, crew, notes and documents each have a tab, so vendors work from one page instead of moving between screens. Lists open with summary cards for what's open, due and overdue.</p>
+<figure class="fig">
+<div class="d-stack" role="group" aria-label="Work order detail screens" style="--arw: 1440; --arh: 810"><input class="d-in" type="radio" name="nj-wo" id="nj-wo-1" aria-label="Show Work order Information"><input class="d-in" type="radio" name="nj-wo" id="nj-wo-2" aria-label="Show Crew visits"><input class="d-in" type="radio" name="nj-wo" id="nj-wo-3" aria-label="Show Documents"><div class="d-deck" style="--n: 2"><label class="d-card" for="nj-wo-1" style="--i: 0"><img src="nj-wo-info.jpg" alt="Work order information tab: PO, status, category, client, store and address details, scope of work and additional information" width="1440" height="819" loading="lazy"></label><label class="d-card" for="nj-wo-2" style="--i: 1"><img src="nj-crew.jpg" alt="Crew tab: original NTE, deductions and total NTE, then a list of crew visits that expand to show deductions" width="1440" height="810" loading="lazy"></label><label class="d-card" for="nj-wo-3" style="--i: 2"><img src="nj-documents.jpg" alt="Documents tab: approved and pending documents, each with file type, date, type badge, uploader, comment and Download" width="1440" height="810" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="nj-wo-1"><span class="mono">01</span>Work order Information</label><label class="d-tab" for="nj-wo-2"><span class="mono">02</span>Crew visits</label><label class="d-tab" for="nj-wo-3"><span class="mono">03</span>Documents</label></div></div>
+<figcaption class="mono">Fig 07. Work order detail, web. Pick a screen to bring it to the front</figcaption>
 </figure>
 </div>
 
 <div class="sub">
-<div class="sub-head"><span class="mono">H.04</span><h3 class="serif h-item">Design for multiple breakpoints</h3></div>
-<p class="muted body">The same overview adapts across 5 breakpoints. On tablets the sidebar collapses to icons with labels, and on phones it moves into a menu. Summary cards stack two by two, and action buttons shrink to icons so the list stays in view.</p>
+<div class="sub-head"><span class="mono">D.05</span><h3 class="serif h-item">Five breakpoints, one overview</h3></div>
+<p class="muted body">The client's Google Analytics showed vendors using the portal on a wide range of screen sizes, so the overview was designed for 5 breakpoints. On tablets the sidebar collapses to labelled icons; on phones it moves into a menu. Summary cards stack two by two, and action buttons shrink to icons so the list stays in view.</p>
 <figure class="fig">
 <div class="desk-hero"><figure class="shot"><div class="shot-media"><img src="nj-scheduling-desktop.jpg" alt="Desktop scheduling overview: full sidebar, four summary cards in a row, date range with Search and Filter, PO actions, and the scheduling list with order type badges" width="1440" height="831" loading="lazy"></div><p class="screen-cap"><span class="mono">01</span>Desktop</p></figure></div>
 <div class="nj-devices">
@@ -241,19 +233,9 @@
 <figcaption class="mono">Fig 08. The overview on desktop, tablet and phone</figcaption>
 </figure>
 </div>
-</section>
-
-<!-- 05 MOBILE -->
-<section id="mobile" class="chapter band reveal" aria-labelledby="c5">
-<div class="ch-head">
-<p class="mono sec-label">05 <i></i> Mobile app</p>
-<h2 id="c5" class="serif h-section">Inspection and checklist flows, designed <em>from scratch</em>.</h2>
-</div>
-<div class="body">
-<p class="lead">Alongside the web redesign, I designed the main flows of NATJAN's new mobile app, for the people who work on site.</p>
-</div>
-<div class="sub" style="border-top: 0">
-<div class="sub-head"><span class="mono">M.01</span><h3 class="serif h-item">Area Manager inspection</h3></div>
+<div class="sub">
+<div class="sub-head"><span class="mono">D.06</span><h3 class="serif h-item">Mobile: inspections for Area and Regional Managers</h3><span class="mono label">Answers 02 C</span></div>
+<p class="muted body">Managers had no way to record an unplanned inspection. The flow finds a nearby site, checks them in within 100 m of the store so the visit is verified, runs the checklist and checks out with a summary. Area and Regional Managers share the same flow and switch roles from the side panel.</p>
 <figure class="fig">
 <div class="m-rail" tabindex="0" aria-label="Area Manager inspection screens, scroll sideways">
 <figure class="m-shot"><img src="am-dashboard.jpg" alt="Area Manager dashboard: greeting, a recommended work order with store address, and four work order counts for today, tomorrow, this week and the future" width="780" height="1688" loading="lazy"><p class="screen-cap"><span class="mono">01</span>Dashboard</p></figure>
@@ -270,7 +252,8 @@
 </figure>
 </div>
 <div class="sub">
-<div class="sub-head"><span class="mono">M.02</span><h3 class="serif h-item">Vendor workflow</h3></div>
+<div class="sub-head"><span class="mono">D.07</span><h3 class="serif h-item">Mobile: a guided vendor visit</h3></div>
+<p class="muted body">The app recommends the next work order, verifies the vendor is at the store, then walks them through before and after photos, notes, a checklist and an e-signature. Together these are TFG's proof of work, so check-out unlocks only when everything is done.</p>
 <figure class="fig">
 <div class="m-rail" tabindex="0" aria-label="Vendor workflow screens, scroll sideways">
 <figure class="m-shot"><img src="vn-dashboard.jpg" alt="Vendor dashboard: greeting, a recommended work order with store address, and four work order counts" width="780" height="1688" loading="lazy"><p class="screen-cap"><span class="mono">01</span>Dashboard</p></figure>
@@ -287,7 +270,8 @@
 </figure>
 </div>
 <div class="sub">
-<div class="sub-head"><span class="mono">M.03</span><h3 class="serif h-item">Checklists</h3></div>
+<div class="sub-head"><span class="mono">D.08</span><h3 class="serif h-item">Checklists: one question at a time</h3></div>
+<p class="muted body">Instead of one long form, each question gets its own screen: single choice, multiple choice, a rating, a reading, a date or photos. One question at a time is easier to read and answer, a step bar shows progress, and there's a review before submitting.</p>
 <figure class="fig">
 <div class="m-rail" tabindex="0" aria-label="Checklist screens, scroll sideways">
 <figure class="m-shot"><img src="cl-wo.jpg" alt="Work order with the checklist at 3 of 12 and Check-out disabled until it is finished" width="780" height="1675" loading="lazy"><p class="screen-cap"><span class="mono">01</span>Checklist to finish</p></figure>
@@ -304,21 +288,56 @@
 <figcaption class="mono">Fig 11. One question per screen, from the open checklist to check-out</figcaption>
 </figure>
 </div>
-<p class="mono label nj-next">Next: Regional Manager inspection</p>
+</section>
+
+
+<!-- 05 ITERATION -->
+<section id="iteration" class="chapter band reveal" aria-labelledby="c5">
+<div class="ch-head">
+<p class="mono sec-label">05 <i></i> Iteration</p>
+<h2 id="c5" class="serif h-section">Module by module, through <em>client review</em>.</h2>
+</div>
+<div class="body">
+<p class="lead">Every module went through the same loop, tracked in Jira. Each design task was linked to its change request or bug, so it was always clear what was waiting on whom.</p>
+</div>
+<div class="sub" style="border-top: 0">
+<div class="sub-head"><span class="mono">I.01</span><h3 class="serif h-item">The review loop</h3></div>
+<ol class="nj-steps">
+<li><span class="mono">01</span><div><strong>Analyze the existing portal</strong><p class="muted">Find usability issues, inconsistencies and pain points. Each design task is linked to its change request or bug.</p></div></li>
+<li><span class="mono">02</span><div><strong>Plan the improvements</strong><p class="muted">Redesign screens with new UI patterns, consistent with the design system and responsive across screen sizes.</p></div></li>
+<li><span class="mono">03</span><div><strong>Client review</strong><p class="muted">Present, gather feedback and revise. The task waits on the client until the screens are approved.</p></div></li>
+<li><span class="mono">04</span><div><strong>Handoff</strong><p class="muted">Organized Figma files, specs and assets for the developers, then the task closes.</p></div></li>
+</ol>
+<p class="muted body">New features went through a longer path: requirements, low-fidelity wireframes, client approval, high-fidelity design, a second approval and handoff.</p>
+<figure class="fig ds-fig nj-jira"><img src="nj-jira-flow.png" alt="Jira workflow for design tasks: Start, Not started, In progress, Waiting for reporter, Awaiting verification and Closed" width="762" height="328" loading="lazy"><figcaption class="mono">Fig 03. Design task statuses in Jira</figcaption></figure>
+</div>
+<div class="sub">
+<div class="sub-head"><span class="mono">I.02</span><h3 class="serif h-item">One pin colour became a map key</h3></div>
+<p class="muted body">The managers' map view first used a single pin colour for every site. In review, it was clear that managers needed to tell work orders from inspections at a glance. Pins are now colour-coded by type, with a legend on the map.</p>
+</div>
 </section>
 
 <!-- 06 OUTCOMES -->
 <section id="outcomes" class="chapter reveal" aria-labelledby="c6">
 <div class="ch-head">
 <p class="mono sec-label">06 <i></i> Outcomes</p>
-<h2 id="c6" class="serif h-section">A familiar portal that's <em>easier</em> to use.</h2>
+<h2 id="c6" class="serif h-section">A familiar portal, now built to <em>guide</em>.</h2>
 </div>
-<dl class="stats stats-2" style="margin: 0">
-<div class="stat"><dt class="mono label" style="order: 2">Screens redesigned</dt><dd class="serif stat-num" style="margin: 0; color: var(--signal-ink)">300+</dd><dd class="muted stat-sub" style="order: 3">on one customized MUI theme</dd></div>
-<div class="stat"><dt class="mono label" style="order: 2">Breakpoints</dt><dd class="serif stat-num" style="margin: 0; color: var(--signal-ink)">5</dd><dd class="muted stat-sub" style="order: 3">from phone to wide desktop</dd></div>
-<div class="stat"><dt class="mono label" style="order: 2">Clicks saved</dt><dd class="serif stat-num" style="margin: 0">2</dd><dd class="muted stat-sub" style="order: 3">on the QuickPay opt-in</dd></div>
-<div class="stat"><dt class="mono label" style="order: 2">Mobile flows</dt><dd class="serif stat-num" style="margin: 0">4</dd><dd class="muted stat-sub" style="order: 3">inspections for 3 roles, plus checklists</dd></div>
-</dl>
+<div class="body">
+<p class="lead">The redesign is shipped. It changed what vendors see on every screen without changing the code underneath.</p>
+</div>
+<div class="table-box" style="margin-top: var(--space-8)">
+<table class="table">
+<thead><tr><th scope="col">What</th><th scope="col">Result</th></tr></thead>
+<tbody>
+<tr><td><strong style="font-weight: 600">QuickPay opt-in</strong></td><td>4 clicks → 2, with every term and its cost visible before committing</td></tr>
+<tr><td><strong style="font-weight: 600">Portal</strong></td><td>300+ screens on one customized MUI theme, across 5 breakpoints</td></tr>
+<tr><td><strong style="font-weight: 600">Mobile</strong></td><td>One inspection flow for Area and Regional Managers, including ad-hoc inspections they couldn't record before, plus the vendor and checklist flows</td></tr>
+<tr><td><strong style="font-weight: 600">Codebase</strong></td><td>No rebuild: the developers' existing components and logic stayed</td></tr>
+</tbody>
+</table>
+</div>
+<p class="muted" style="margin-top: var(--space-6)">Vendor-side results, such as the QuickPay opt-in rate or support questions, haven't been measured yet.</p>
 </section>
 
 <!-- 07 LEARNINGS -->
@@ -327,8 +346,8 @@
 <p class="mono sec-label">07 <i></i> Learnings</p>
 <h2 id="c7" class="serif h-section">What I'd take to the next project.</h2>
 </div>
-<div class="sub" style="border-top: 0; margin-top: 0; padding-top: 0"><div class="sub-head"><span class="mono">L.01</span><h3 class="serif h-item">Customizing can beat rebuilding</h3></div><p class="muted body">Theming MUI delivered a new experience without throwing away working code. Agreeing that with developers before designing kept every screen buildable.</p></div>
-<div class="sub"><div class="sub-head"><span class="mono">L.02</span><h3 class="serif h-item">A clear workflow keeps reviews moving</h3></div><p class="muted body">Linking each design task to its change request in Jira made it obvious what was waiting on whom, and approvals stopped stalling.</p></div>
+<div class="sub" style="border-top: 0; margin-top: 0; padding-top: 0"><div class="sub-head"><span class="mono">L.01</span><h3 class="serif h-item">Customizing can beat rebuilding</h3></div><p class="muted body">Theming MUI changed the experience without throwing away working code. Agreeing that with the developers before designing kept every screen buildable.</p></div>
+<div class="sub"><div class="sub-head"><span class="mono">L.02</span><h3 class="serif h-item">Agree on a number before launch</h3></div><p class="muted body">QuickPay was a clear UX problem, and the redesign solved it. Next time I'd agree one number with the client before launch, such as the opt-in rate, so the improvement can be shown, not just seen.</p></div>
 </section>
 </div>
 </div>
@@ -350,7 +369,7 @@
 </div>
 <p class="mono label" style="display: flex; align-items: center; gap: var(--space-3); white-space: normal"><span class="dot" aria-hidden="true"></span>Open to full-time roles, on-site or remote</p>
 <div class="foot">
-<div class="foot-col"><span class="mono label">Pages</span><a class="link mono" href="./">Work</a><a class="link mono" href="./">About</a><a class="link mono" href="#top">Back to top <span class="arr arr-u" aria-hidden="true">↑</span></a></div>
+<div class="foot-col"><span class="mono label">Pages</span><a class="link mono" href="./#work">Work</a><a class="link mono" href="./#about">About</a><a class="link mono" href="#top">Back to top <span class="arr arr-u" aria-hidden="true">↑</span></a></div>
 <div class="foot-col"><span class="mono label">Elsewhere</span><a class="link mono" href="https://www.linkedin.com/in/zeeshan-ahmad-98650314a/" target="_blank" rel="noopener">LinkedIn <span class="arr arr-ne" aria-hidden="true">↗</span></a><a class="link mono" href="https://www.behance.net/zeeshanahmad66" target="_blank" rel="noopener">Behance <span class="arr arr-ne" aria-hidden="true">↗</span></a><a class="link mono" href="Zeeshan_Ahmad_UIUX_Designer_CV.pdf" download="Zeeshan_Ahmad_UIUX_Designer_CV.pdf">Resume <span class="arr arr-d" aria-hidden="true">↓</span></a></div>
 <div class="foot-col"><span class="mono label">Based in</span><span style="font-size: 15px">Islamabad, Pakistan</span><span class="muted" style="font-size: 15px">Working with US teams</span><span class="mono label" style="margin-top: var(--space-4)">© 2026 Zeeshan Ahmad</span></div>
 </div>
