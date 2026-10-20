@@ -180,14 +180,10 @@
 
 <div class="sub">
 <div class="sub-head"><span class="mono">D.02</span><h3 class="serif h-item">QuickPay: choose, then confirm</h3><span class="mono label">Answers 02 A</span></div>
-<p class="muted body">All five payment terms are now visible as options, so vendors can compare them before choosing. The legal text became three plain-language points after the choice, not before it. A confirmation dialog shows the term, the fee and a worked example on a $1,000 invoice before anything changes. By design, opting in now takes 2 clicks instead of 4.</p>
+<p class="muted body">All five payment terms are now visible as options, so vendors can compare them before choosing. The legal text became three plain-language points after the choice, not before it. A confirmation dialog shows the term, the fee and a worked example on a $1,000 invoice before anything changes. By design, opting in now takes 3 clicks instead of 4: pick a term, Opt-in, then Agree and opt-in.</p>
 <figure class="fig">
-<div class="d-stack" role="group" aria-label="Payment term, before and after" style="--arw: 1440; --arh: 715"><input class="d-in" type="radio" name="nj-term" id="nj-term-1" aria-label="Show Before: terms hidden in a dropdown"><input class="d-in" type="radio" name="nj-term" id="nj-term-2" aria-label="Show After: all five terms side by side"><div class="d-deck" style="--n: 1"><label class="d-card" for="nj-term-1" style="--i: 0"><img src="nj-old-qp-1.jpg" alt="Before: the old Automatic QuickPay screen, terms hidden in a dropdown and Opt-in disabled" width="1440" height="715" loading="lazy"></label><label class="d-card" for="nj-term-2" style="--i: 1"><img src="nj-quickpay-new.jpg" alt="After: a plain-language explainer, five payment terms as radio buttons, an Opt-in button, and the QuickPay list below" width="1440" height="793" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="nj-term-1"><span class="mono">01</span>Before: terms hidden in a dropdown</label><label class="d-tab" for="nj-term-2"><span class="mono">02</span>After: all five terms side by side</label></div></div>
-<figcaption class="mono">Fig 04. Choosing a payment term. Pick a screen to bring it to the front</figcaption>
-</figure>
-<figure class="fig" style="margin-top: var(--space-12)">
-<div class="d-stack" role="group" aria-label="Committing to QuickPay, before and after" style="--arw: 1440; --arh: 716"><input class="d-in" type="radio" name="nj-commit" id="nj-commit-1" aria-label="Show Before: opt-in straight after the small print"><input class="d-in" type="radio" name="nj-commit" id="nj-commit-2" aria-label="Show After: confirm before you commit"><div class="d-deck" style="--n: 1"><label class="d-card" for="nj-commit-1" style="--i: 0"><img src="nj-old-qp-3.jpg" alt="Before: a term chosen and Opt-in enabled, with the legal text above as the only explanation" width="1440" height="716" loading="lazy"></label><label class="d-card" for="nj-commit-2" style="--i: 1"><img src="nj-quickpay-confirm.jpg" alt="After: Confirm Automatic QuickPay dialog with payment term and invoice fee, what opting in means with a worked example, a P.O. box warning, and Cancel or Agree and opt-in" width="1440" height="793" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="nj-commit-1"><span class="mono">01</span>Before: opt-in straight after the small print</label><label class="d-tab" for="nj-commit-2"><span class="mono">02</span>After: confirm before you commit</label></div></div>
-<figcaption class="mono">Fig 05. Committing to QuickPay. Pick a screen to bring it to the front</figcaption>
+<div class="d-stack" role="group" aria-label="Redesigned QuickPay screens" style="--arw: 2000; --arh: 1101"><input class="d-in" type="radio" name="nj-qp" id="nj-qp-1" aria-label="Show Choose a term, then opt in"><input class="d-in" type="radio" name="nj-qp" id="nj-qp-2" aria-label="Show Confirm before you commit"><div class="d-deck" style="--n: 1"><label class="d-card" for="nj-qp-1" style="--i: 0"><img src="nj-qp-choose.jpg" alt="Redesigned Automatic QuickPay screen: a plain-language explainer, all five payment terms as radio buttons with 3% for 28 days selected, the Opt-in button below them, and the QuickPay list of invoices underneath" width="2000" height="1101" loading="lazy"></label><label class="d-card" for="nj-qp-2" style="--i: 1"><img src="nj-qp-confirm.jpg" alt="Confirm Automatic QuickPay dialog: the payment term and invoice fee, three plain-language points with a worked example on a $1,000 invoice, a highlighted warning about P.O. box addresses and the $35 overnight charge, and Cancel or Agree and opt-in" width="2000" height="1101" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="nj-qp-1"><span class="mono">01</span>Choose a term, then opt in</label><label class="d-tab" for="nj-qp-2"><span class="mono">02</span>Confirm before you commit</label></div></div>
+<figcaption class="mono">Fig 03. The redesigned QuickPay opt-in, web. Pick a screen to bring it to the front</figcaption>
 </figure>
 <div class="ba-table" role="table" aria-label="QuickPay before and after">
 <div class="ba-row ba-head" role="row"><span role="columnheader"><span class="sr-only">Aspect</span></span><span class="mono" role="columnheader">Before</span><span class="mono" role="columnheader">After</span></div>
@@ -195,7 +191,7 @@
 <div class="ba-row" role="row"><strong role="rowheader">Consent</strong><span role="cell">Italic legal paragraph and a checkbox, before anything else</span><span role="cell">Three plain-language points, after the choice</span></div>
 <div class="ba-row" role="row"><strong role="rowheader">Cost</strong><span role="cell">A percentage only</span><span role="cell">A worked example on a $1,000 invoice</span></div>
 <div class="ba-row" role="row"><strong role="rowheader">Warnings</strong><span role="cell">P.O. box rule buried in the legal text</span><span role="cell">Its own highlighted warning</span></div>
-<div class="ba-row" role="row"><strong role="rowheader">Clicks to opt in</strong><span role="cell">4: tick, open dropdown, pick, Opt-in</span><span class="is-win" role="cell">2: Opt-in, then Agree and opt-in</span></div>
+<div class="ba-row" role="row"><strong role="rowheader">Clicks to opt in</strong><span role="cell">4: tick, open dropdown, pick, Opt-in</span><span class="is-win" role="cell">3: pick a term, Opt-in, Agree and opt-in</span></div>
 </div>
 </div>
 
@@ -217,7 +213,7 @@
 <p class="muted body">A work order's information, recurrence, IVR, crew, notes and documents each have a tab, so vendors work from one page instead of moving between screens. Lists open with summary cards for what's open, due and overdue.</p>
 <figure class="fig">
 <div class="d-stack" role="group" aria-label="Work order detail screens" style="--arw: 1440; --arh: 810"><input class="d-in" type="radio" name="nj-wo" id="nj-wo-1" aria-label="Show Work order Information"><input class="d-in" type="radio" name="nj-wo" id="nj-wo-2" aria-label="Show Crew visits"><input class="d-in" type="radio" name="nj-wo" id="nj-wo-3" aria-label="Show Documents"><div class="d-deck" style="--n: 2"><label class="d-card" for="nj-wo-1" style="--i: 0"><img src="nj-wo-info.jpg" alt="Work order information tab: PO, status, category, client, store and address details, scope of work and additional information" width="1440" height="819" loading="lazy"></label><label class="d-card" for="nj-wo-2" style="--i: 1"><img src="nj-crew.jpg" alt="Crew tab: original NTE, deductions and total NTE, then a list of crew visits that expand to show deductions" width="1440" height="810" loading="lazy"></label><label class="d-card" for="nj-wo-3" style="--i: 2"><img src="nj-documents.jpg" alt="Documents tab: approved and pending documents, each with file type, date, type badge, uploader, comment and Download" width="1440" height="810" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="nj-wo-1"><span class="mono">01</span>Work order Information</label><label class="d-tab" for="nj-wo-2"><span class="mono">02</span>Crew visits</label><label class="d-tab" for="nj-wo-3"><span class="mono">03</span>Documents</label></div></div>
-<figcaption class="mono">Fig 07. Work order detail, web. Pick a screen to bring it to the front</figcaption>
+<figcaption class="mono">Fig 04. Work order detail, web. Pick a screen to bring it to the front</figcaption>
 </figure>
 </div>
 
@@ -230,7 +226,7 @@
 <figure class="shot"><div class="shot-media"><img src="nj-tablet-wo.jpg" alt="Tablet work orders: icon sidebar, summary cards in a 2 by 2 grid, icon-only actions and the work orders table" width="720" height="1075" loading="lazy"></div><p class="screen-cap"><span class="mono">02</span>Tablet</p></figure>
 <figure class="shot"><div class="shot-media"><img src="nj-mobile-wo.jpg" alt="Phone work orders: a menu button, compact summary cards, icon actions and a scrolling table" width="393" height="1078" loading="lazy"></div><p class="screen-cap"><span class="mono">03</span>Phone</p></figure>
 </div>
-<figcaption class="mono">Fig 08. The overview on desktop, tablet and phone</figcaption>
+<figcaption class="mono">Fig 05. The overview on desktop, tablet and phone</figcaption>
 </figure>
 </div>
 <div class="sub">
@@ -248,7 +244,7 @@
 <figure class="m-shot"><img src="am-progress.jpg" alt="Inspection in progress: inspection information, location, links, notes, a checklist at 1 of 3, photo uploads and attachments" width="780" height="2205" loading="lazy"><p class="screen-cap"><span class="mono">08</span>Inspection in progress</p></figure>
 <figure class="m-shot"><img src="am-summary.jpg" alt="Inspection summary before check-out: duration, location, account manager, checklist completed, photo and note counts, with Check-out or Check out and complete inspection" width="780" height="1675" loading="lazy"><p class="screen-cap"><span class="mono">09</span>Summary and check-out</p></figure>
 </div>
-<figcaption class="mono">Fig 09. From the dashboard to check-out, scroll sideways</figcaption>
+<figcaption class="mono">Fig 06. From the dashboard to check-out, scroll sideways</figcaption>
 </figure>
 </div>
 <div class="sub">
@@ -266,7 +262,7 @@
 <figure class="m-shot"><img src="vn-signature.jpg" alt="Sign-off signature recorded, checklist at 3 of 3, and Check-out now enabled" width="780" height="1675" loading="lazy"><p class="screen-cap"><span class="mono">08</span>Sign-off</p></figure>
 <figure class="m-shot"><img src="vn-signedoff.jpg" alt="Success dialog: work order signed off, with check-in and check-out times and the store address" width="780" height="1675" loading="lazy"><p class="screen-cap"><span class="mono">09</span>Signed off</p></figure>
 </div>
-<figcaption class="mono">Fig 10. From the recommended work order to sign-off, scroll sideways</figcaption>
+<figcaption class="mono">Fig 07. From the recommended work order to sign-off, scroll sideways</figcaption>
 </figure>
 </div>
 <div class="sub">
@@ -285,7 +281,7 @@
 <figure class="m-shot"><img src="cl-summary.jpg" alt="Summary of the answers and photos before submitting the checklist" width="780" height="1688" loading="lazy"><p class="screen-cap"><span class="mono">09</span>Review and submit</p></figure>
 <figure class="m-shot"><img src="cl-done.jpg" alt="Work order with the checklist at 12 of 12 and Check-out enabled" width="780" height="1675" loading="lazy"><p class="screen-cap"><span class="mono">10</span>Ready to check out</p></figure>
 </div>
-<figcaption class="mono">Fig 11. One question per screen, from the open checklist to check-out</figcaption>
+<figcaption class="mono">Fig 08. One question per screen, from the open checklist to check-out</figcaption>
 </figure>
 </div>
 </section>
@@ -309,7 +305,7 @@
 <li><span class="mono">04</span><div><strong>Handoff</strong><p class="muted">Organized Figma files, specs and assets for the developers, then the task closes.</p></div></li>
 </ol>
 <p class="muted body">New features went through a longer path: requirements, low-fidelity wireframes, client approval, high-fidelity design, a second approval and handoff.</p>
-<figure class="fig ds-fig nj-jira"><img src="nj-jira-flow.png" alt="Jira workflow for design tasks: Start, Not started, In progress, Waiting for reporter, Awaiting verification and Closed" width="762" height="328" loading="lazy"><figcaption class="mono">Fig 03. Design task statuses in Jira</figcaption></figure>
+<figure class="fig ds-fig nj-jira"><img src="nj-jira-flow.png" alt="Jira workflow for design tasks: Start, Not started, In progress, Waiting for reporter, Awaiting verification and Closed" width="762" height="328" loading="lazy"><figcaption class="mono">Fig 09. Design task statuses in Jira</figcaption></figure>
 </div>
 <div class="sub">
 <div class="sub-head"><span class="mono">I.02</span><h3 class="serif h-item">One pin colour became a map key</h3></div>
@@ -330,7 +326,7 @@
 <table class="table ev-table">
 <thead><tr><th scope="col">Evidence</th><th scope="col">Result</th></tr></thead>
 <tbody>
-<tr><td><span class="ev-tag mono">By design</span></td><td>QuickPay opt-in takes 2 clicks instead of 4, with every term and its cost visible before committing. Managers can record ad-hoc inspections, which they couldn't before</td></tr><tr><td><span class="ev-tag mono">Delivered</span></td><td>300+ screens on one customized MUI theme, across 5 breakpoints. One inspection flow for Area and Regional Managers, plus the vendor and checklist flows. No rebuild: the developers' components and logic stayed</td></tr><tr><td><span class="ev-tag mono is-open">Not yet measured</span></td><td>The QuickPay opt-in rate, vendor support questions, and how long inspections take on site</td></tr>
+<tr><td><span class="ev-tag mono">By design</span></td><td>QuickPay opt-in takes 3 clicks instead of 4, with every term and its cost visible before committing. Managers can record ad-hoc inspections, which they couldn't before</td></tr><tr><td><span class="ev-tag mono">Delivered</span></td><td>300+ screens on one customized MUI theme, across 5 breakpoints. One inspection flow for Area and Regional Managers, plus the vendor and checklist flows. No rebuild: the developers' components and logic stayed</td></tr><tr><td><span class="ev-tag mono is-open">Not yet measured</span></td><td>The QuickPay opt-in rate, vendor support questions, and how long inspections take on site</td></tr>
 </tbody>
 </table>
 </div>
