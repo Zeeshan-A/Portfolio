@@ -4,6 +4,12 @@
   var mq = function (q) { return !!(window.matchMedia && window.matchMedia(q).matches); };
   var fine = mq('(hover: hover) and (pointer: fine)');
   var calm = mq('(prefers-reduced-motion: reduce)');
+  // Before/after slider: the range input drives the divider position
+  document.querySelectorAll('.ba-slider').forEach(function (el) {
+    var r = el.querySelector('.ba-range'); if (!r || r._ba) return; r._ba = 1;
+    var u = function () { el.style.setProperty('--pos', r.value + '%'); };
+    r.addEventListener('input', u); u();
+  });
 
   // Cursor glow + dot reveal (CSS reads --gx / --gy)
   if (root) {

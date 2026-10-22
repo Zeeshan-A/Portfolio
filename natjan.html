@@ -70,12 +70,13 @@
 <div class="wrap cs-layout" style="position: relative">
 <nav class="cs-index" aria-label="Case study chapters">
 <a class="mono" href="#context" aria-current="false"><span>01</span>Context</a>
-<a class="mono" href="#problem" aria-current="false"><span>02</span>Problem</a>
-<a class="mono" href="#research" aria-current="false"><span>03</span>Investigation</a>
-<a class="mono" href="#solution" aria-current="false"><span>04</span>Design decisions</a>
-<a class="mono" href="#iteration" aria-current="false"><span>05</span>Iteration</a>
-<a class="mono" href="#outcomes" aria-current="false"><span>06</span>Outcomes</a>
-<a class="mono" href="#learnings" aria-current="false"><span>07</span>Learnings</a>
+<a class="mono" href="#mui" aria-current="false"><span>02</span>MUI Customization</a>
+<a class="mono" href="#problem" aria-current="false"><span>03</span>Problem</a>
+<a class="mono" href="#research" aria-current="false"><span>04</span>Investigation</a>
+<a class="mono" href="#solution" aria-current="false"><span>05</span>Design decisions</a>
+<a class="mono" href="#iteration" aria-current="false"><span>06</span>Iteration</a>
+<a class="mono" href="#outcomes" aria-current="false"><span>07</span>Outcomes</a>
+<a class="mono" href="#learnings" aria-current="false"><span>08</span>Learnings</a>
 </nav>
 
 <div class="cs-main">
@@ -105,14 +106,37 @@
 </div>
 </section>
 
+<!-- 02 MUI CUSTOMIZATION -->
+<section id="mui" class="chapter reveal" aria-labelledby="c2m">
+<div class="ch-head">
+<p class="mono sec-label">02 <i></i> MUI Customization</p>
+<h2 id="c2m" class="serif h-section">Theme MUI, <em>don't replace it</em>.</h2>
+</div>
+<div class="body">
+<p class="lead">After a technical study with the developers, we kept MUI and changed how it looks: a new theme, tokens and restyled components. Working features kept running, developers kept the APIs they knew, and one theme covered 300+ screens. I customized the library, applied it to the main screens to show the direction, and the client approved it.</p>
+
+
+</div>
+<div style="margin-top: var(--space-12)"><ul class="nj-theme">
+<li><span class="mono label">Typography</span><span class="nj-was">Roboto</span><strong>Instrument Sans</strong></li>
+<li><span class="mono label">Corner radius</span><span class="nj-was">Sharp 4px corners</span><strong>Softer 8px on cards, buttons, dialogs and inputs</strong></li>
+<li><span class="mono label">Colour</span><span class="nj-was">Stock MUI palette</span><strong>NATJAN's primary colour as the main theme</strong></li>
+<li><span class="mono label">Shadows and borders</span><span class="nj-was">Default MUI elevation</span><strong>Subtler, softer shadows and lighter borders</strong></li>
+<li><span class="mono label">Buttons and inputs</span><span class="nj-was">Default MUI styling</span><strong>Same sizing, with the new radius and primary colour</strong></li>
+<li><span class="mono label">Icons</span><span class="nj-was">Material Icons</span><strong>Lucide, an open-source icon library</strong></li>
+</ul></div>
+
+</section>
+
 <!-- 02 PROBLEM -->
 <section id="problem" class="chapter band reveal" aria-labelledby="c2">
 <div class="ch-head">
-<p class="mono sec-label">02 <i></i> Problem</p>
+<p class="mono sec-label">03 <i></i> Problem</p>
 <h2 id="c2" class="serif h-section">The portal worked. It just didn't <em>guide</em> anyone.</h2>
 </div>
 <div class="body">
 <p class="lead">Vendors had every tool they needed, but the portal gave them no sense of what mattered or what to do next. The one screen with real money at stake, QuickPay, hid its options behind legal text, and the navigation was cluttered. On site, managers had no way to record an unplanned inspection. The redesign had to fix this without a rebuild, because the developers' working code had to stay.</p>
+<p class="muted">QuickPay was the clearest case, but not the only one. The portal also had a cluttered navigation, lists with no KPI summary cards, and an unclear visual hierarchy across its screens. The problems below are the ones with the most evidence behind them.</p>
 </div>
 <div class="sub" style="border-top: 0">
 <div class="sub-head"><span class="mono">02 A</span><h3 class="serif h-item">QuickPay: a money decision buried in small print</h3></div>
@@ -133,13 +157,14 @@
 </div>
 <div class="sub"><div class="sub-head"><span class="mono">02 B</span><h3 class="serif h-item">A cluttered navigation</h3></div><p class="muted body">Single items opened a sub-menu for no reason, labels were long ("List of work orders"), and secondary items sat among the main tasks.</p></div>
 <div class="sub"><div class="sub-head"><span class="mono">02 C</span><h3 class="serif h-item">No way to record an ad-hoc inspection</h3></div><p class="muted body">Area and Regional Managers visit sites without a planned work order, but there was no mobile flow to record those inspections. This came up in client meetings.</p></div>
+<div class="sub"><div class="sub-head"><span class="mono">02 D</span><h3 class="serif h-item">Work orders with no overview</h3></div><p class="muted body">The old Work Orders list opened at 1,000 rows per page, with grid tools (Columns, Density, Find unique values) above the data and no summary of what was open, due or overdue. Every column had the same weight, so nothing told a vendor where to look first.</p></div>
 </section>
 
 
 <!-- 03 INVESTIGATION -->
 <section id="research" class="chapter reveal" aria-labelledby="c3">
 <div class="ch-head">
-<p class="mono sec-label">03 <i></i> Investigation</p>
+<p class="mono sec-label">04 <i></i> Investigation</p>
 <h2 id="c3" class="serif h-section">Three sources, one list of <em>fixes</em>.</h2>
 </div>
 <div class="body">
@@ -155,26 +180,34 @@
 </tbody>
 </table>
 </div>
-<p class="muted body" style="margin-top: var(--space-8)">A technical study with the developers came next. It set the main constraint for every decision: theme MUI, don't replace it.</p>
+<p class="muted body" style="margin-top: var(--space-8)">The technical study with the developers set the main constraint for every decision: theme MUI, don't replace it (see MUI Customization).</p>
 </section>
 
 <!-- 04 DESIGN DECISIONS -->
 <section id="solution" class="chapter reveal" aria-labelledby="c4">
 <div class="ch-head">
-<p class="mono sec-label">04 <i></i> Design decisions</p>
+<p class="mono sec-label">05 <i></i> Design decisions</p>
 <h2 id="c4" class="serif h-section">Same portal, clearer at <em>every</em> step.</h2>
 </div>
 
 <div class="sub" style="border-top: 0; margin-top: 0; padding-top: 0">
-<div class="sub-head"><span class="mono">D.01</span><h3 class="serif h-item">Theme MUI, don't replace it</h3></div>
-<p class="muted body">After the technical study, we kept MUI and changed how it looks: a new theme, tokens and restyled components. Working features kept running, developers kept the APIs they knew, and one theme covered 300+ screens. I customized the library, applied it to the main screens to show the direction, and the client approved it.</p>
-<ul class="nj-theme">
-<li><span class="mono label">Typography</span><span class="nj-was">Roboto</span><strong>Instrument Sans</strong></li>
-<li><span class="mono label">Corner radius</span><span class="nj-was">Sharp 4px corners</span><strong>Softer 8px on cards, buttons, dialogs and inputs</strong></li>
-<li><span class="mono label">Colour</span><span class="nj-was">Stock MUI palette</span><strong>NATJAN's primary colour as the main theme</strong></li>
-<li><span class="mono label">Shadows and borders</span><span class="nj-was">Default MUI elevation</span><strong>Subtler, softer shadows and lighter borders</strong></li>
-<li><span class="mono label">Buttons and inputs</span><span class="nj-was">Default MUI styling</span><strong>Same sizing, with the new radius and primary colour</strong></li>
-<li><span class="mono label">Icons</span><span class="nj-was">Material Icons</span><strong>Lucide, an open-source icon library</strong></li>
+<div class="sub-head"><span class="mono">D.01</span><h3 class="serif h-item">A full UI overhaul, built for data</h3><span class="mono label">Answers 02 B and 02 D</span></div>
+<p class="muted body">The portal kept its features, but every screen was rebuilt around one idea: the data is the work, so the frame around it should stay quiet. Drag the line to compare the old Work Orders list with the new one.</p>
+<figure class="fig">
+<div class="ba-slider" style="--pos: 50%">
+<img class="ba-old" src="nj-wo-before.jpg" alt="Before: the old Work Orders list, with a purple header, a sub-menu, grid tool rows above the table, and 1,000 rows per page" width="2000" height="1001" loading="lazy">
+<img class="ba-new" src="nj-wo-after.jpg" alt="After: the redesigned Work Orders overview, with a dark navigation panel, four KPI cards, one row of search and PO actions, and a lighter table with category tags" width="2000" height="1154" loading="lazy">
+<span class="ba-lab is-new mono">After</span><span class="ba-lab is-old mono">Before</span>
+<span class="ba-handle" aria-hidden="true"><span class="ba-knob"></span></span>
+<input class="ba-range" type="range" min="0" max="100" value="50" step="1" aria-label="Compare the old and new Work Orders screens. Move right to show more of the new design, left to show more of the old">
+</div>
+<figcaption class="mono">Fig 03. Work Orders, old and new, web. Drag the line: right shows the new design, left shows the old</figcaption>
+</figure>
+<ul class="callouts">
+<li><span class="mono">01</span><strong style="font-weight: 600">A dark frame, a light workspace</strong><span class="muted">The navigation sits on a dark navy panel, and the data-heavy body stays white and light grey. The contrast splits the screen into two clear zones, so vendors focus on one area at a time.</span></li>
+<li><span class="mono">02</span><strong style="font-weight: 600">KPIs before rows</strong><span class="muted">Four cards for open work orders, due this week with the overdue count, completed in 30 days and total NTE value come before the table, so the first thing a vendor sees is what needs attention.</span></li>
+<li><span class="mono">03</span><strong style="font-weight: 600">A simpler navigation</strong><span class="muted">Top-level items open directly, labels are short, and secondary items moved to the bottom of the panel.</span></li>
+<li><span class="mono">04</span><strong style="font-weight: 600">A cleaner, calmer UI</strong><span class="muted">One toolbar instead of stacked grid tools, colour tags for categories, 12 rows per page instead of 1,000, and Lucide icons in place of stock Material Icons.</span></li>
 </ul>
 </div>
 
@@ -183,7 +216,7 @@
 <p class="muted body">All five payment terms are now visible as options, so vendors can compare them before choosing. The legal text became three plain-language points after the choice, not before it. A confirmation dialog shows the term, the fee and a worked example on a $1,000 invoice before anything changes. By design, opting in now takes 3 clicks instead of 4: pick a term, Opt-in, then Agree and opt-in.</p>
 <figure class="fig">
 <div class="d-stack" role="group" aria-label="Redesigned QuickPay screens" style="--arw: 2000; --arh: 1101"><input class="d-in" type="radio" name="nj-qp" id="nj-qp-1" aria-label="Show Choose a term, then opt in"><input class="d-in" type="radio" name="nj-qp" id="nj-qp-2" aria-label="Show Confirm before you commit"><div class="d-deck" style="--n: 1"><label class="d-card" for="nj-qp-1" style="--i: 0"><img src="nj-qp-choose.jpg" alt="Redesigned Automatic QuickPay screen: a plain-language explainer, all five payment terms as radio buttons with 3% for 28 days selected, the Opt-in button below them, and the QuickPay list of invoices underneath" width="2000" height="1101" loading="lazy"></label><label class="d-card" for="nj-qp-2" style="--i: 1"><img src="nj-qp-confirm.jpg" alt="Confirm Automatic QuickPay dialog: the payment term and invoice fee, three plain-language points with a worked example on a $1,000 invoice, a highlighted warning about P.O. box addresses and the $35 overnight charge, and Cancel or Agree and opt-in" width="2000" height="1101" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="nj-qp-1"><span class="mono">01</span>Choose a term, then opt in</label><label class="d-tab" for="nj-qp-2"><span class="mono">02</span>Confirm before you commit</label></div></div>
-<figcaption class="mono">Fig 03. The redesigned QuickPay opt-in, web. Pick a screen to bring it to the front</figcaption>
+<figcaption class="mono">Fig 04. The redesigned QuickPay opt-in, web. Pick a screen to bring it to the front</figcaption>
 </figure>
 <div class="ba-table" role="table" aria-label="QuickPay before and after">
 <div class="ba-row ba-head" role="row"><span role="columnheader"><span class="sr-only">Aspect</span></span><span class="mono" role="columnheader">Before</span><span class="mono" role="columnheader">After</span></div>
@@ -210,10 +243,10 @@
 
 <div class="sub">
 <div class="sub-head"><span class="mono">D.04</span><h3 class="serif h-item">One work order, one page</h3></div>
-<p class="muted body">A work order's information, recurrence, IVR, crew, notes and documents each have a tab, so vendors work from one page instead of moving between screens. Lists open with summary cards for what's open, due and overdue.</p>
+<p class="muted body">A work order's information, recurrence, IVR, crew, notes and documents each have a tab, so vendors work from one page instead of moving between screens.</p>
 <figure class="fig">
 <div class="d-stack" role="group" aria-label="Work order detail screens" style="--arw: 1440; --arh: 810"><input class="d-in" type="radio" name="nj-wo" id="nj-wo-1" aria-label="Show Work order Information"><input class="d-in" type="radio" name="nj-wo" id="nj-wo-2" aria-label="Show Crew visits"><input class="d-in" type="radio" name="nj-wo" id="nj-wo-3" aria-label="Show Documents"><div class="d-deck" style="--n: 2"><label class="d-card" for="nj-wo-1" style="--i: 0"><img src="nj-wo-info.jpg" alt="Work order information tab: PO, status, category, client, store and address details, scope of work and additional information" width="1440" height="819" loading="lazy"></label><label class="d-card" for="nj-wo-2" style="--i: 1"><img src="nj-crew.jpg" alt="Crew tab: original NTE, deductions and total NTE, then a list of crew visits that expand to show deductions" width="1440" height="810" loading="lazy"></label><label class="d-card" for="nj-wo-3" style="--i: 2"><img src="nj-documents.jpg" alt="Documents tab: approved and pending documents, each with file type, date, type badge, uploader, comment and Download" width="1440" height="810" loading="lazy"></label></div><div class="d-tabs"><label class="d-tab" for="nj-wo-1"><span class="mono">01</span>Work order Information</label><label class="d-tab" for="nj-wo-2"><span class="mono">02</span>Crew visits</label><label class="d-tab" for="nj-wo-3"><span class="mono">03</span>Documents</label></div></div>
-<figcaption class="mono">Fig 04. Work order detail, web. Pick a screen to bring it to the front</figcaption>
+<figcaption class="mono">Fig 05. Work order detail, web. Pick a screen to bring it to the front</figcaption>
 </figure>
 </div>
 
@@ -226,7 +259,7 @@
 <figure class="shot"><div class="shot-media"><img src="nj-tablet-wo.jpg" alt="Tablet work orders: icon sidebar, summary cards in a 2 by 2 grid, icon-only actions and the work orders table" width="720" height="1075" loading="lazy"></div><p class="screen-cap"><span class="mono">02</span>Tablet</p></figure>
 <figure class="shot"><div class="shot-media"><img src="nj-mobile-wo.jpg" alt="Phone work orders: a menu button, compact summary cards, icon actions and a scrolling table" width="393" height="1078" loading="lazy"></div><p class="screen-cap"><span class="mono">03</span>Phone</p></figure>
 </div>
-<figcaption class="mono">Fig 05. The overview on desktop, tablet and phone</figcaption>
+<figcaption class="mono">Fig 06. The overview on desktop, tablet and phone</figcaption>
 </figure>
 </div>
 <div class="sub">
@@ -244,7 +277,7 @@
 <figure class="m-shot"><img src="am-progress.jpg" alt="Inspection in progress: inspection information, location, links, notes, a checklist at 1 of 3, photo uploads and attachments" width="780" height="2205" loading="lazy"><p class="screen-cap"><span class="mono">08</span>Inspection in progress</p></figure>
 <figure class="m-shot"><img src="am-summary.jpg" alt="Inspection summary before check-out: duration, location, account manager, checklist completed, photo and note counts, with Check-out or Check out and complete inspection" width="780" height="1675" loading="lazy"><p class="screen-cap"><span class="mono">09</span>Summary and check-out</p></figure>
 </div>
-<figcaption class="mono">Fig 06. From the dashboard to check-out, scroll sideways</figcaption>
+<figcaption class="mono">Fig 07. From the dashboard to check-out, scroll sideways</figcaption>
 </figure>
 </div>
 <div class="sub">
@@ -262,7 +295,7 @@
 <figure class="m-shot"><img src="vn-signature.jpg" alt="Sign-off signature recorded, checklist at 3 of 3, and Check-out now enabled" width="780" height="1675" loading="lazy"><p class="screen-cap"><span class="mono">08</span>Sign-off</p></figure>
 <figure class="m-shot"><img src="vn-signedoff.jpg" alt="Success dialog: work order signed off, with check-in and check-out times and the store address" width="780" height="1675" loading="lazy"><p class="screen-cap"><span class="mono">09</span>Signed off</p></figure>
 </div>
-<figcaption class="mono">Fig 07. From the recommended work order to sign-off, scroll sideways</figcaption>
+<figcaption class="mono">Fig 08. From the recommended work order to sign-off, scroll sideways</figcaption>
 </figure>
 </div>
 <div class="sub">
@@ -281,7 +314,7 @@
 <figure class="m-shot"><img src="cl-summary.jpg" alt="Summary of the answers and photos before submitting the checklist" width="780" height="1688" loading="lazy"><p class="screen-cap"><span class="mono">09</span>Review and submit</p></figure>
 <figure class="m-shot"><img src="cl-done.jpg" alt="Work order with the checklist at 12 of 12 and Check-out enabled" width="780" height="1675" loading="lazy"><p class="screen-cap"><span class="mono">10</span>Ready to check out</p></figure>
 </div>
-<figcaption class="mono">Fig 08. One question per screen, from the open checklist to check-out</figcaption>
+<figcaption class="mono">Fig 09. One question per screen, from the open checklist to check-out</figcaption>
 </figure>
 </div>
 </section>
@@ -290,7 +323,7 @@
 <!-- 05 ITERATION -->
 <section id="iteration" class="chapter band reveal" aria-labelledby="c5">
 <div class="ch-head">
-<p class="mono sec-label">05 <i></i> Iteration</p>
+<p class="mono sec-label">06 <i></i> Iteration</p>
 <h2 id="c5" class="serif h-section">Module by module, through <em>client review</em>.</h2>
 </div>
 <div class="body">
@@ -305,7 +338,7 @@
 <li><span class="mono">04</span><div><strong>Handoff</strong><p class="muted">Organized Figma files, specs and assets for the developers, then the task closes.</p></div></li>
 </ol>
 <p class="muted body">New features went through a longer path: requirements, low-fidelity wireframes, client approval, high-fidelity design, a second approval and handoff.</p>
-<figure class="fig ds-fig nj-jira"><img src="nj-jira-flow.png" alt="Jira workflow for design tasks: Start, Not started, In progress, Waiting for reporter, Awaiting verification and Closed" width="762" height="328" loading="lazy"><figcaption class="mono">Fig 09. Design task statuses in Jira</figcaption></figure>
+<figure class="fig ds-fig nj-jira"><img src="nj-jira-flow.png" alt="Jira workflow for design tasks: Start, Not started, In progress, Waiting for reporter, Awaiting verification and Closed" width="762" height="328" loading="lazy"><figcaption class="mono">Fig 10. Design task statuses in Jira</figcaption></figure>
 </div>
 <div class="sub">
 <div class="sub-head"><span class="mono">I.02</span><h3 class="serif h-item">One pin colour became a map key</h3></div>
@@ -316,7 +349,7 @@
 <!-- 06 OUTCOMES -->
 <section id="outcomes" class="chapter reveal" aria-labelledby="c6">
 <div class="ch-head">
-<p class="mono sec-label">06 <i></i> Outcomes</p>
+<p class="mono sec-label">07 <i></i> Outcomes</p>
 <h2 id="c6" class="serif h-section">A familiar portal, now built to <em>guide</em>.</h2>
 </div>
 <div class="body">
@@ -326,7 +359,7 @@
 <table class="table ev-table">
 <thead><tr><th scope="col">Evidence</th><th scope="col">Result</th></tr></thead>
 <tbody>
-<tr><td><span class="ev-tag mono">By design</span></td><td>QuickPay opt-in takes 3 clicks instead of 4, with every term and its cost visible before committing. Managers can record ad-hoc inspections, which they couldn't before</td></tr><tr><td><span class="ev-tag mono">Delivered</span></td><td>300+ screens on one customized MUI theme, across 5 breakpoints. One inspection flow for Area and Regional Managers, plus the vendor and checklist flows. No rebuild: the developers' components and logic stayed</td></tr><tr><td><span class="ev-tag mono is-open">Not yet measured</span></td><td>The QuickPay opt-in rate, vendor support questions, and how long inspections take on site</td></tr>
+<tr><td><span class="ev-tag mono">By design</span></td><td>QuickPay opt-in takes 3 clicks instead of 4, with every term and its cost visible before committing. Work order lists open with KPI summary cards. Managers can record ad-hoc inspections, which they couldn't before</td></tr><tr><td><span class="ev-tag mono">Delivered</span></td><td>300+ screens on one customized MUI theme, across 5 breakpoints. One inspection flow for Area and Regional Managers, plus the vendor and checklist flows. No rebuild: the developers' components and logic stayed</td></tr><tr><td><span class="ev-tag mono is-open">Not yet measured</span></td><td>The QuickPay opt-in rate, vendor support questions, and how long inspections take on site</td></tr>
 </tbody>
 </table>
 </div>
@@ -335,7 +368,7 @@
 <!-- 07 LEARNINGS -->
 <section id="learnings" class="chapter reveal" aria-labelledby="c7">
 <div class="ch-head">
-<p class="mono sec-label">07 <i></i> Learnings</p>
+<p class="mono sec-label">08 <i></i> Learnings</p>
 <h2 id="c7" class="serif h-section">What I'd take to the next project.</h2>
 </div>
 <div class="sub" style="border-top: 0; margin-top: 0; padding-top: 0"><div class="sub-head"><span class="mono">L.01</span><h3 class="serif h-item">Customizing can beat rebuilding</h3></div><p class="muted body">Theming MUI changed the experience without throwing away working code. Agreeing that with the developers before designing kept every screen buildable.</p></div>
