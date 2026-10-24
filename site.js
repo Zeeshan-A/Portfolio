@@ -199,15 +199,34 @@
       btns.forEach(function (b) { b.addEventListener('click', function () { rail.scrollBy({ left: step() * (+b.getAttribute('data-dir')), behavior: 'smooth' }); }); });
       rail.addEventListener('scroll', sync, { passive: true }); window.addEventListener('resize', sync); sync();
     })();
+    // Kind words: the bars under the quotes are buttons. Click one to jump to that quote; it moves on every 6s and pauses on hover.
+    (function () {
+      var stage = document.querySelector('.q-stage'); if (!stage || stage._q) return; stage._q = 1;
+      var slides = Array.prototype.slice.call(stage.querySelectorAll('.q-slide'));
+      var dots = Array.prototype.slice.call(stage.querySelectorAll('.q-dot'));
+      if (!slides.length || slides.length !== dots.length) return;
+      var cur = 0;
+      var show = function (n) {
+        cur = (n + slides.length) % slides.length;
+        slides.forEach(function (sl, k) { sl.classList.toggle('is-on', k === cur); });
+        dots.forEach(function (d, k) { d.classList.toggle('is-on', k === cur); if (k === cur) { d.setAttribute('aria-current', 'true'); } else { d.removeAttribute('aria-current'); } });
+      };
+      dots.forEach(function (d, k) { d.addEventListener('click', function () { show(k); }); });
+      stage.addEventListener('animationend', function (e) { var b = e.target && e.target.parentNode; if (b && b.classList && b.classList.contains('q-dot') && b.classList.contains('is-on')) show(cur + 1); });
+      stage.classList.add('q-js'); show(0);
+    })();
     function initPixelPaint(root, startOpen) {
       var noop = function () {};
       if (!root) return noop;
-      var grid = root.querySelector('.pp-grid');
-      if (!grid) return noop;
+      var grid = root.querySelector('.pp-grid'), cv = root.querySelector('.pp-canvas');
+      if (!grid || !cv || !cv.getContext) return noop;
+      var N = 12, TOTAL = N * N;
       var cells = Array.prototype.slice.call(grid.querySelectorAll('.pp-cell'));
-      var prev = Array.prototype.slice.call(root.querySelectorAll('.pp-prev span'));
       var sws = Array.prototype.slice.call(root.querySelectorAll('.pp-sw'));
-      var status = root.querySelector('.pp-status');
+      var custom = root.querySelector('.pp-custom'), customIn = custom ? custom.querySelector('input') : null;
+      var eraser = root.querySelector('[data-pp="eraser"]'), clr = root.querySelector('[data-pp="clear"]');
+      var dl = root.querySelector('[data-pp="download"]'), status = root.querySelector('.pp-status');
+      var cx = cv.getContext('2d');
       var tog = root.querySelector('.pp-toggle'), board = root.querySelector('.pp-board');
       var setOpen = function (o) {
         root.classList.toggle('is-collapsed', !o);
@@ -220,76 +239,81 @@
       };
       if (tog) tog.addEventListener('click', function () { setOpen(!!(board && board.hidden)); });
       setOpen(!!startOpen);
-      var data = []; for (var n = 0; n < 64; n++) data.push('');
-      var color = '#111827', down = false, last = -1;
-      var PAL = { k: '#111827', b: '#2563EB', l: '#60A5FA', p: '#BFDBFE', g: '#6B7280', s: '#D1D5DB' };
-      var PRESETS = [
-        ['........', '.bb..bb.', 'bpbbbbbb', 'bbbbbbbb', 'bbbbbbbb', '.bbbbbb.', '..bbbb..', '...bb...'],
-        ['..kkkk..', '.kppppk.', 'kpkppkpk', 'kppppppk', 'kpbppbpk', 'kppbbppk', '.kppppk.', '..kkkk..'],
-        ['bbbbbbbb', 'bbbbbbbb', '.....bb.', '....bb..', '...bb...', '..bb....', 'bbbbbbbb', 'bbbbbbbb'],
-        ['k.......', 'kk......', 'kpk.....', 'kppk....', 'kpppk...', 'kppkkk..', 'kk.kp...', 'k...k...'],
-        ['...l....', '...l....', '..lbl...', 'llbbbll.', '..lbl...', '...l..p.', '...l.ppp', '......p.']
-      ];
+      var PAL = {"k": "#111827", "g": "#6B7280", "s": "#D1D5DB", "w": "#FFFFFF", "b": "#2563EB", "l": "#60A5FA", "p": "#BFDBFE", "v": "#8B5CF6", "m": "#F472B6", "r": "#EF4444", "o": "#F97316", "y": "#FACC15", "n": "#22C55E", "d": "#15803D", "t": "#92400E", "f": "#FDBA74"};
+      var PRESETS = [["............", "..rrr..rrr..", ".rrrrrrrrrr.", ".rwrrrrrrrr.", ".rrrrrrrrrr.", ".rrrrrrrrrr.", "..rrrrrrrr..", "...rrrrrr...", "....rrrr....", ".....rr.....", "............", "............"], ["....kkkk....", "..kkyyyykk..", ".kyyyyyyyyk.", ".kyykyykyyk.", "kyyykyykyyyk", "kyyyyyyyyyyk", "kyyyyyyyyyyk", "kykyyyyyykyk", "kyykyyyykyyk", ".kyykkkkyyk.", "..kkyyyykk..", "....kkkk...."], [".....yy.....", "....yyyy....", "....yyyy....", "yyyyyyyyyyyy", ".yyyyyyyyyy.", "..yyyyyyyy..", "...yyyyyy...", "..yyyyyyyy..", "..yyyyyyyy..", ".yyyy..yyyy.", ".yyy....yyy.", "yy........yy"], ["..s..s......", ".s..s.......", "..s..s......", "............", "kkkkkkkkk...", "ktttttttkkk.", "kpppppppk.k.", "kpppppppk.k.", "kpppppppkkk.", ".kpppppk....", "..kkkkk.....", "sssssssssss."], ["....vvvv....", "..vvvvvvvv..", ".vvvvvvvvvv.", ".vvwwvvwwvv.", "vvvwkvvwkvvv", "vvvwkvvwkvvv", "vvvvvvvvvvvv", "vvvvvvvvvvvv", "vvvvvvvvvvvv", "vvvvvvvvvvvv", "vvv.vvvv.vvv", "vv...vv...vv"], ["....rrrr....", "..rrrrrrrr..", ".rrwwrrrwwr.", ".rwwrrrrwwr.", "rrrrrrrrrrrr", "rwrrrwwrrrwr", "rrrrrrrrrrrr", "...ffffff...", "...fkffkf...", "...ffffff...", "...ffffff...", "....ffff...."], [".o........o.", ".oo......oo.", ".ooo....ooo.", ".oooooooooo.", "oooooooooooo", "ookkooookkoo", "oooooooooooo", "ooooommooooo", "oooookkooooo", ".oooooooooo.", "..oooooooo..", "....oooo...."], [".......yyy..", "......yyy...", ".....yyy....", "....yyy.....", "...yyyyyyy..", "..yyyyyyy...", ".....yyy....", "....yyy.....", "...yyy......", "..yyy.......", ".yy.........", "y..........."], ["...mm..mm...", "..mmmmmmmm..", "..mmmyymmm..", "..mmyyyymm..", "..mmmyymmm..", "..mmmmmmmm..", "...mm..mm...", ".....nn.....", "..nn.nn.....", "...nnnn.....", ".....nn.....", ".....nn....."], ["....kkkk....", "....kbbk....", "...kkkkkk...", "..kbbbbbbk..", ".kbbbbbbbbk.", ".kbbbwwbbbk.", ".kbbbwwbbbk.", "..kbbkkbbk..", "...kbkkbk...", "....kkkk....", ".....kk.....", "............"], [".........l..", "........lll.", "....bb...l..", "....bb......", "....bb......", "...bbbb.....", "bbbbbbbbbb..", "bbbbbbbbbb..", "...bbbb.....", "....bb......", "....bb......", "....bb......"], ["............", "............", "...b.....b..", "....b...b...", "...bbbbbbb..", "..bb.bbb.bb.", ".bbbbbbbbbbb", ".b.bbbbbbb.b", ".b.b.....b.b", "....bb.bb...", "............", "............"]];
+      var NAMES = ["Heart", "Smiley", "Star", "Coffee", "Ghost", "Mushroom", "Cat", "Bolt", "Flower", "Pen tool", "AI sparkle", "Invader"];
+      var data = []; for (var n = 0; n < TOTAL; n++) data.push('');
+      var color = '#111827', erasing = false, down = false, bag = [], raf = 0;
       var say = function (t) { if (status) status.textContent = t; };
-      var set = function (i, c) {
-        if (i < 0 || i > 63) return;
-        data[i] = c;
-        cells[i].style.background = c || '';
-        if (prev[i]) { prev[i].style.background = c || ''; prev[i].style.boxShadow = c ? '0 0 0 0.6px ' + c : ''; }
+      var draw = function (ctx, S) {
+        ctx.clearRect(0, 0, S, S);
+        var u = S / 512;
+        var rr = function (x0, y0, w, h, r) { ctx.beginPath(); ctx.moveTo(x0 + r, y0); ctx.arcTo(x0 + w, y0, x0 + w, y0 + h, r); ctx.arcTo(x0 + w, y0 + h, x0, y0 + h, r); ctx.arcTo(x0, y0 + h, x0, y0, r); ctx.arcTo(x0, y0, x0 + w, y0, r); ctx.closePath(); };
+        ctx.save(); ctx.shadowColor = 'rgba(17,24,39,0.18)'; ctx.shadowBlur = 20 * u; ctx.shadowOffsetY = 6 * u;
+        rr(20 * u, 16 * u, 472 * u, 472 * u, 64 * u); ctx.fillStyle = '#FFFFFF'; ctx.fill(); ctx.restore();
+        var c = 30 * u, x0 = 76 * u, y0 = 50 * u;
+        data.forEach(function (col, i) { if (!col) return; ctx.fillStyle = col; ctx.fillRect(x0 + (i % N) * c, y0 + Math.floor(i / N) * c, Math.ceil(c), Math.ceil(c)); });
+        // Small grey ZA mark (the navbar logo) in the bottom-right corner of the sticker.
+        var LOGO = [50,61.6, 50,166.1, 302.1,166.1, 50,607.6, 409.3,607.6, 602.9,269.2, 739.4,510.1, 583.4,510.1, 527.7,607.6, 913.5,607.6, 602.9,61.6, 345.2,511.5, 226.9,511.5, 487.3,61.6];
+        var ls = 44 * u / 863.5, lx = 408 * u, ly = 454 * u - 546 * ls;
+        ctx.beginPath();
+        for (var p = 0; p < LOGO.length; p += 2) { var px = lx + (LOGO[p] - 50) * ls, py = ly + (LOGO[p + 1] - 61.6) * ls; if (p) ctx.lineTo(px, py); else ctx.moveTo(px, py); }
+        ctx.closePath(); ctx.fillStyle = '#9CA3AF'; ctx.fill();
       };
-      var paintFrom = function (el) {
-        var c = el && el.closest ? el.closest('.pp-cell') : null;
-        if (!c || !grid.contains(c)) return;
-        set(+c.getAttribute('data-i'), color);
+      var refresh = function () {
+        if (raf) return;
+        raf = requestAnimationFrame(function () {
+          raf = 0; draw(cx, 512);
+          var has = data.some(Boolean);
+          if (dl) dl.disabled = !has;
+          if (clr) clr.disabled = !has;
+        });
       };
-      var onDown = function (e) {
-        var c = e.target && e.target.closest ? e.target.closest('.pp-cell') : null;
-        if (!c) return;
-        down = true; e.preventDefault(); paintFrom(c);
-      };
+      var set = function (i, c) { if (i < 0 || i >= TOTAL || !cells[i]) return; data[i] = c; cells[i].style.background = c || ''; refresh(); };
+      var paintFrom = function (el) { var c = el && el.closest ? el.closest('.pp-cell') : null; if (!c || !grid.contains(c)) return; set(+c.getAttribute('data-i'), erasing ? '' : color); };
+      var onDown = function (e) { var c = e.target && e.target.closest ? e.target.closest('.pp-cell') : null; if (!c) return; down = true; e.preventDefault(); paintFrom(c); };
       var onMove = function (e) { if (down) paintFrom(document.elementFromPoint(e.clientX, e.clientY)); };
       var onUp = function () { down = false; };
-      var onKeyClick = function (e) { if (e.detail === 0) paintFrom(e.target); };
       grid.addEventListener('pointerdown', onDown);
-      grid.addEventListener('click', onKeyClick);
+      grid.addEventListener('click', function (e) { if (e.detail === 0) paintFrom(e.target); });
       window.addEventListener('pointermove', onMove);
       window.addEventListener('pointerup', onUp);
       window.addEventListener('pointercancel', onUp);
-      sws.forEach(function (b) {
-        b.addEventListener('click', function () {
-          color = b.getAttribute('data-color') || '';
-          sws.forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
-        });
+      var pick = function (c, which) {
+        color = c; erasing = false; grid.classList.remove('is-erasing');
+        if (eraser) eraser.setAttribute('aria-pressed', 'false');
+        sws.forEach(function (o) { o.setAttribute('aria-pressed', o === which ? 'true' : 'false'); });
+        if (custom) custom.classList.toggle('is-on', which === custom);
+      };
+      sws.forEach(function (b) { b.addEventListener('click', function () { pick(b.getAttribute('data-color'), b); }); });
+      if (customIn) {
+        var useCustom = function () { custom.classList.add('is-set'); custom.style.setProperty('--custom', customIn.value); pick(customIn.value, custom); };
+        customIn.addEventListener('input', useCustom); customIn.addEventListener('change', useCustom);
+      }
+      if (eraser) eraser.addEventListener('click', function () {
+        erasing = eraser.getAttribute('aria-pressed') !== 'true';
+        eraser.setAttribute('aria-pressed', erasing ? 'true' : 'false'); grid.classList.toggle('is-erasing', erasing);
+        say(erasing ? 'Eraser on.' : 'Eraser off.');
       });
-      var act = function (name, fn) { var b = root.querySelector('[data-pp="' + name + '"]'); if (b) b.addEventListener('click', fn); };
-      act('clear', function () { for (var i = 0; i < 64; i++) set(i, ''); say('Cleared. Start again.'); });
-      act('surprise', function () {
-        var k; do { k = Math.floor(Math.random() * PRESETS.length); } while (k === last && PRESETS.length > 1);
-        last = k;
-        PRESETS[k].forEach(function (row, r) { for (var c = 0; c < 8; c++) set(r * 8 + c, PAL[row.charAt(c)] || ''); });
-        say('Here’s one to start from. Make it yours.');
+      if (clr) clr.addEventListener('click', function () { for (var i = 0; i < TOTAL; i++) set(i, ''); say('Cleared. Start again.'); });
+      var sur = root.querySelector('[data-pp="surprise"]');
+      if (sur) sur.addEventListener('click', function () {
+        if (!bag.length) { for (var j = 0; j < PRESETS.length; j++) bag.push(j); for (var a = bag.length - 1; a > 0; a--) { var b = Math.floor(Math.random() * (a + 1)), t = bag[a]; bag[a] = bag[b]; bag[b] = t; } }
+        var k = bag.pop();
+        PRESETS[k].forEach(function (row, r) { for (var c = 0; c < N; c++) set(r * N + c, PAL[row.charAt(c)] || ''); });
+        say(NAMES[k] + ' loaded. Make it yours.');
       });
-      act('download', function () {
-        if (!data.some(Boolean)) { say('Paint a pixel first.'); return; }
-        var W = 640, H = 720, cv = document.createElement('canvas');
-        cv.width = W; cv.height = H;
-        var x = cv.getContext('2d');
-        var rr = function (x0, y0, w, h, r) {
-          x.beginPath(); x.moveTo(x0 + r, y0);
-          x.arcTo(x0 + w, y0, x0 + w, y0 + h, r); x.arcTo(x0 + w, y0 + h, x0, y0 + h, r);
-          x.arcTo(x0, y0 + h, x0, y0, r); x.arcTo(x0, y0, x0 + w, y0, r); x.closePath();
-        };
-        x.save(); x.shadowColor = 'rgba(17,24,39,0.18)'; x.shadowBlur = 24; x.shadowOffsetY = 8;
-        rr(24, 16, 592, 672, 72); x.fillStyle = '#FFFFFF'; x.fill(); x.restore();
-        data.forEach(function (c, i) { if (!c) return; x.fillStyle = c; x.fillRect(64 + (i % 8) * 64, 56 + Math.floor(i / 8) * 64, 64, 64); });
-        x.fillStyle = '#6B7280'; x.font = '500 20px "IBM Plex Mono", ui-monospace, monospace'; x.textAlign = 'center';
-        x.fillText('CRAFTED AT ZEEAHMAD SPOT', W / 2, 636);
-        var a = document.createElement('a');
-        a.href = cv.toDataURL('image/png'); a.download = 'zeeshan-sticker.png';
+      if (dl) dl.addEventListener('click', function () {
+        if (!data.some(Boolean)) return;
+        var out = document.createElement('canvas'); out.width = 512; out.height = 512; draw(out.getContext('2d'), 512);
+        var a = document.createElement('a'); a.href = out.toDataURL('image/png'); a.download = 'zeeshan-sticker.png';
         document.body.appendChild(a); a.click(); a.remove();
         say('Sticker downloaded. Nice work.');
       });
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
+      refresh();
       return function () {
+        if (raf) cancelAnimationFrame(raf);
         window.removeEventListener('pointermove', onMove);
         window.removeEventListener('pointerup', onUp);
         window.removeEventListener('pointercancel', onUp);
