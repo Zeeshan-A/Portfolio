@@ -1141,6 +1141,7 @@ a:hover .arr-ne,button:hover .arr-ne{transform:translate(3px,-3px)}
 /* Hero stats: cards sized to their content instead of stretching across the row */
 @container page (min-width:721px){.hero .stats{grid-template-columns:repeat(3,minmax(200px,max-content))}.hero .stats>.stat{padding-right:var(--space-12)}}
 /* Sticker maker v2: 12x12 grid, tool column, 512px download */
+.pp-sw[hidden],.pp-sw.is-slot:not([data-color]){display:none}
 .pp:not(.is-collapsed){grid-template-columns:minmax(0,1fr);gap:var(--space-12)}
 .pp:not(.is-collapsed) .pp-intro{flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:var(--space-8)}
 .pp:not(.is-collapsed) .pp-copy{flex:1 1 420px;min-width:0}

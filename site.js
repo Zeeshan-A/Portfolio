@@ -286,9 +286,17 @@
         if (custom) custom.classList.toggle('is-on', which === custom);
       };
       sws.forEach(function (b) { b.addEventListener('click', function () { pick(b.getAttribute('data-color'), b); }); });
+      // Custom colour: the swatch above the picker shows the picked colour and updates live as it changes.
+      var slot = root.querySelector('.pp-sw.is-slot');
+      var setCustom = function () {
+        var c = customIn.value; if (!c) return;
+        if (!slot) { pick(c, custom); return; }
+        slot.setAttribute('data-color', c); slot.style.background = c; slot.title = c;
+        pick(c, slot);
+      };
       if (customIn) {
-        var useCustom = function () { custom.classList.add('is-set'); custom.style.setProperty('--custom', customIn.value); pick(customIn.value, custom); };
-        customIn.addEventListener('input', useCustom); customIn.addEventListener('change', useCustom);
+        customIn.addEventListener('input', setCustom);
+        customIn.addEventListener('change', setCustom);
       }
       if (eraser) eraser.addEventListener('click', function () {
         erasing = eraser.getAttribute('aria-pressed') !== 'true';
