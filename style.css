@@ -1138,6 +1138,10 @@ a:hover .arr-ne,button:hover .arr-ne{transform:translate(3px,-3px)}
 .p-rail-btn:hover:not(:disabled){border-color:var(--text);background:var(--text);color:var(--bg)}
 .p-rail-btn:focus-visible{outline:2px solid var(--signal-ink);outline-offset:2px}
 .p-rail-btn:disabled{opacity:.35;cursor:default}
+/* Logo band: logos 10% larger, wider gaps */
+.logo-track li{height:50px;padding-right:80px}
+.logo-track img{zoom:1.1}
+@container page (max-width:720px){.logo-track li{height:40px;padding-right:48px}.logo-track img{zoom:1;transform:scale(.88)}}
 /* Hero stats: cards sized to their content instead of stretching across the row */
 @container page (min-width:721px){.hero .stats{grid-template-columns:repeat(3,minmax(200px,max-content))}.hero .stats>.stat{padding-right:var(--space-12)}}
 /* Sticker maker v2: 12x12 grid, tool column, 512px download */
