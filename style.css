@@ -1191,3 +1191,13 @@ a:hover .arr-ne,button:hover .arr-ne{transform:translate(3px,-3px)}
   .pp-tools-row,.pp-swatches{grid-template-columns:repeat(auto-fill,44px);display:flex;flex-wrap:wrap}
   .pp-out{align-items:center}
 }
+/* Sindh feature: on phones the card hugs its cover (desktop keeps the 500px set on the canvas) */
+@container page (max-width:720px){.sf-visual{height:auto!important}}
+/* Sindh feature on phones: cover first, then copy, button last */
+@container page (max-width:720px){.sf-visual{order:-1}}
+/* More projects: arrows sit at the right when the header wraps on smaller screens */
+.p-rail-bar{margin-left:auto}
+/* journey toggle: centred on phones */
+@container page (max-width:720px){.jr-more{display:flex;width:fit-content;margin-inline:auto}}
+/* Sindh feature button: centred on phones */
+@container page (max-width:720px){.sf-copy>.btn{align-self:center!important}}
